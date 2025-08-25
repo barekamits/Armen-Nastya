@@ -246,35 +246,37 @@
       .img-15 { width: 40% !important; }
       .img-19 { width: 50% !important; }
       
-      .row img {
-        max-width: 180px;
-        opacity: 0;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-        position: relative;
-      }
+      @media (max-width: 768px) {
+        /* Անիմացիան մոբայլի վրա */
+        .row img {
+          max-width: 180px;
+          opacity: 0;
+          animation-duration: 2s;
+          animation-fill-mode: forwards;
+          animation-timing-function: ease-in-out;
+          position: relative;
+        }
 
-      .girl {
-        margin-right: -60px;
-        transform: translateX(-50px);
-        animation-name: slideFromLeft;
-      }
+        .girl {
+          margin-right: -60px;
+          transform: translateX(-50px);
+          animation-name: slideFromLeft;
+        }
 
-      .boy {
-        margin-left: -60px;
-        transform: translateX(50px);
-        animation-name: slideFromRight;
-      }
+        .boy {
+          margin-left: -60px;
+          transform: translateX(50px);
+          animation-name: slideFromRight;
+        }
 
-      @keyframes slideFromLeft { 
-        to { transform: translateX(0); opacity: 1; } 
-      }
+        @keyframes slideFromLeft { 
+          to { transform: translateX(0); opacity: 1; } 
+        }
 
-      @keyframes slideFromRight { 
-        to { transform: translateX(0); opacity: 1; } 
+        @keyframes slideFromRight { 
+          to { transform: translateX(0); opacity: 1; } 
+        }
       }
-
       /* ՍՐՏԻԿՆԵՐԸ */
       .wait-heart svg {
         width: 24px !important;
