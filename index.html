@@ -66,27 +66,27 @@
     .title-text { font-size: 40px; margin-top: 8px; }
     .date-text { font-size: 36px; margin-top: 8px; }
     .invite-text { font-size: 28px; margin-top: 6px; line-height: 1.4; }
-    .psakadrutyun-text { font-size: 28px; margin-top: -170px; }
+    .psakadrutyun-text { font-size: 28px; margin-top: 10px; }
     .party-location { font-family: 'Heghnar', serif; font-size: 28px; margin-top: 3px; }
     .psakadrutyun-location,
     .time-text,
     .party-text,
     .restoran-time,
     .love-text,
-    .waiting-text { font-size: 28px; margin-top: 40px; line-height: 1.3; }
+    .waiting-text { font-size: 28px; margin-top: 5px; line-height: 1.3; }
 
     .confirm-text {
       font-size: 28px;
-      margin-top: 40px; /* իջացրեցի ներքև */
+      margin-top: 5px;
     }
 
     /* Սրտիկներ */
     .wait-heart {
-      display: inline-flex; /* փոխեք flex-ը inline-flex-ի */
+      display: inline-flex;
       justify-content: center;
-      align-items: center;  /* սրտիկները ուղղեք տվյալ տեքստի վերևում */
+      align-items: center;
       gap: 6px;
-      margin-top: 0;  /* հեռացնում ենք margin-top-ը */
+      margin-top: 0;
     }
 
     .wait-heart.inline {
@@ -109,8 +109,8 @@
     /* Աղջկա նկարը row-ում կենտրոնում */
     .row {
       display: flex;
-      justify-content: center;  /* հորիզոնական կենտրոն */
-      align-items: center;      /* ուղղահայաց կենտրոն (եթե բարձրություն լինի) */
+      justify-content: center;
+      align-items: center;
       width: 100%;
       margin: 20px 0;
     }
@@ -130,14 +130,14 @@
     .img-15 { width: 30%; }
     .img-19 { width: 40%; }
 
-    /* Invite-text-ից հետո տարրերը վերև */
+    /* Invite-text-ից հետո տարրերը համաչափ հեռավորությամբ */
     .content-after-invite {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 30px;
       width: 100%;
-      transform: translateY(-220px);
+      margin-top: 30px;
     }
 
     /* Մոբայլ */
@@ -157,9 +157,8 @@
 <body>
   <div class="gallery">
     <img src="1.png" alt="Նկար 1" class="img-1">
-    <div class="title-text">Արմեն & Նաստյա</div>
+    <div class="title-text">Արմեն և Նաստյա</div>
 
-    <!-- Աղջկա նկարը մեջտեղում -->
     <div class="row">
       <img src="coupletoghether.png" alt="Աղջիկ" class="girl">
     </div>
@@ -168,8 +167,8 @@
 
     <div class="invite-text">
       Սիրելի հարազատներ,<br>
-      սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց արարողությանը <br>
-      և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը
+      սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց հանդեսին<br>
+      և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը։
     </div>
 
     <div class="content-after-invite">
@@ -179,17 +178,18 @@
       <div class="time-text">14։30</div>
 
       <img src="9.png" alt="Նկար 9" class="img-9">
+  
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
-      <div class="restoran-time">17։00</div>
+       <div class="restoran-time">17։00</div>
 
       <img src="restoran.png" alt="Նկար 13" class="img-13">
-      <img src="15.png" alt="Նկար 15" class="img-15">
+   
 
+      <img src="15.png" alt="Նկար 15" class="img-15">
       <div class="love-text">
         Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմիոցիաներ
       </div>
-
       <div class="wait-heart">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
@@ -199,7 +199,6 @@
       <div class="confirm-text">
         Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 15-ը
       </div>
-
       <div class="waiting-text">
         Սպասում ենք
         <span class="wait-heart inline">
@@ -208,8 +207,8 @@
           </svg>
         </span>
       </div>
-
       <img src="20.png" alt="Նկար 20" class="img-19">
+    
     </div>
   </div>
 </body>
