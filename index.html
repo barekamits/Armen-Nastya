@@ -184,34 +184,20 @@
       width: 100%;
       transform: translateY(-180px);
     }
-    /* Մոբայլ հարմարեցումներ */
-    @media (max-width: 600px) {
-      /* Նկարները մեծացնենք 15-20% */
-      .gallery img {
-        transform: scale(1.15); /* Մատչելիորեն մեծացնում է առանց լեյաութը խաթարելու */
-      }
+  /* Մոբայլ հարմարեցում բոլոր տարրերի համար */
+@media (max-width: 768px) {
+  .gallery {
+    transform: scale(1.2); /* մեծացնում է 20% */
+    transform-origin: top center; /* մեծացման կենտրոնը վերևում */
+  }
 
-      /* Տեքստերը մեծացնենք 1.2 անգամ */
-      .title-text,
-      .date-text,
-      .invite-text,
-      .psakadrutyun-text,
-      .psakadrutyun-location,
-      .time-text,
-      .party-text,
-      .party-location,
-      .restoran-time,
-      .love-text,
-      .confirm-text,
-      .waiting-text {
-        font-size: 1.2em; /* proportional մեծացում */
-      }
-
-      /* Row-ի տղա-աղջիկ նկարների սլայդ անիմացիաներ նույն մնան */
-      .girl, .boy {
-        transform: translateX(0); /* անիմացիան պահվում է */
-      }
+  /* Եթե շատ փոքր էկրան, ավելացնենք ավելի մեծացում */
+  @media (max-width: 480px) {
+    .gallery {
+      transform: scale(1.4);
     }
+  }
+}
   </style>
 </head>
 <body>
@@ -272,3 +258,4 @@
   </div>
 </body>
 </html>
+
