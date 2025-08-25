@@ -184,18 +184,48 @@
       width: 100%;
       transform: translateY(-180px);
     }
-  /* Մոբայլ հարմարեցում բոլոր տարրերի համար */
+/* Մոբայլ հարմարեցումներ */
 @media (max-width: 768px) {
-  .gallery {
-    transform: scale(1.2); /* մեծացնում է 20% */
-    transform-origin: top center; /* մեծացման կենտրոնը վերևում */
-  }
+  /* Տեքստերի proportional մեծացում */
+  .title-text      { font-size: 48px; }
+  .date-text       { font-size: 44px; }
+  .invite-text     { font-size: 36px; }
+  .psakadrutyun-text,
+  .psakadrutyun-location,
+  .time-text,
+  .party-text,
+  .party-location,
+  .restoran-time,
+  .love-text,
+  .confirm-text,
+  .waiting-text   { font-size: 34px; }
 
-  /* Եթե շատ փոքր էկրան, ավելացնենք ավելի մեծացում */
-  @media (max-width: 480px) {
-    .gallery {
-      transform: scale(1.4);
-    }
+  /* Նկարների լայնություն proportional մեծացում */
+  .img-1, .img-3girl, .img-3boy,
+  .img-6, .img-9, .img-13, .img-15, .img-19 {
+    max-width: 120%; /* նախկին 100%-ի փոխարեն */
+    height: auto;
+  }
+}
+
+/* Եթե էկրանը շատ փոքր է */
+@media (max-width: 480px) {
+  .title-text      { font-size: 56px; }
+  .date-text       { font-size: 50px; }
+  .invite-text     { font-size: 40px; }
+  .psakadrutyun-text,
+  .psakadrutyun-location,
+  .time-text,
+  .party-text,
+  .party-location,
+  .restoran-time,
+  .love-text,
+  .confirm-text,
+  .waiting-text   { font-size: 38px; }
+
+  .img-1, .img-3girl, .img-3boy,
+  .img-6, .img-9, .img-13, .img-15, .img-19 {
+    max-width: 140%;
   }
 }
   </style>
@@ -258,4 +288,5 @@
   </div>
 </body>
 </html>
+
 
