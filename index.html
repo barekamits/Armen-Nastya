@@ -4,269 +4,242 @@
   <meta charset="UTF-8">
   <title>Հրավիրատոմս</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    @font-face {
+      font-family: 'Vrdznagir';
+      src: url('Vrdznagir.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
-    html, body {
-      height: auto;
-      overflow-x: hidden;
+    @font-face {
+      font-family: 'Heghnar';
+      src: url('HEGHNAR.TTF') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: #fffaf4; 
+      background: #fffaf4;
       padding: 20px;
       display: flex;
       justify-content: center;
-      position: relative;
-      height: auto;
       min-height: 100vh;
     }
+
     .gallery {
       display: flex;
       flex-direction: column;
-      gap: 25px;
-      align-items: center; 
+      align-items: center;
+      gap: 10px;
       max-width: 900px;
-      position: relative;
     }
+
     .gallery img {
       max-width: 100%;
       height: auto;
       display: block;
     }
+
+    /* Բոլոր տեքստերի հիմնական ոճ */
+    .title-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: 40px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: 8px;
+      max-width: 80%;
+    }
+
+    .date-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: 36px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: 8px;
+      max-width: 80%;
+    }
+
+    .invite-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: 28px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: 6px;
+      max-width: 80%;
+    }
+
+    .psakadrutyun-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: 28px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: -150px;
+      max-width: 80%;
+    }
+    .party-location {
+      font-family: 'Heghnar', serif;
+      font-size: 28px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: 3px;
+    }
+    .psakadrutyun-location,
+    .time-text,
+    .party-text,
+    .restoran-time,
+    .love-text,
+    .confirm-text,
+    .waiting-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: 28px;
+      color: #000;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+      margin-top: 3px;
+      max-width: 80%;
+    }
+
+    .wait-heart.inline {
+      display: inline-flex;
+      vertical-align: middle;
+      gap: 6px;
+      margin-left: 6px;
+    }
+
     /* Տղա-աղջիկ row */
     .row {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      position: relative;
-      overflow: hidden;
+      gap: 0; /* Հեռացրեցի բացասական gap */
       width: 100%;
-      margin-top: -130px;
+      position: relative;
     }
     .row img {
-      max-width: 200px;
+      max-width: 180px;
       opacity: 0;
-      animation-duration: 3.5s;
+      animation-duration: 2s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in-out;
+      position: relative;
     }
-    /* աղջիկը ձախից */
+
     .girl {
-      transform: translateX(-300px);
+      margin-right: -60px; /* մոտեցում */
+      transform: translateX(-50px); /* փոքր շարժում ձախից */
       animation-name: slideFromLeft;
-      margin-right: -80px;
     }
-    /* տղան աջից */
+
     .boy {
-      transform: translateX(300px);
+      margin-left: -60px; /* մոտեցում */
+      transform: translateX(50px); /* փոքր շարժում աջից */
       animation-name: slideFromRight;
-      margin-left: -80px;
     }
-    @keyframes slideFromLeft {
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+
+    @keyframes slideFromLeft { 
+      to { transform: translateX(0); opacity: 1; } 
     }
-    @keyframes slideFromRight {
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+
+    @keyframes slideFromRight { 
+      to { transform: translateX(0); opacity: 1; } 
     }
-    /* Երկրորդ նկարը աջ տեղափոխված */
-    .center-img {
+    /* Նկարների չափեր */
+    .img-1  { width: 50%; }
+    .img-6  { width: 40%; }
+    .img-9  { width: 50%; }
+    .img-13 { width: 50%; }
+    .img-15 { width: 50%; }
+    .img-19 { width: 40%; }
+
+    /* Սրտիկների ոճ */
+    .wait-heart {
       display: flex;
-      justify-content: flex-start;
-      width: 80%;
-      margin-left: -60px;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 6px;
     }
-    .move-right {
-      position: relative;
-      left: 80px;
-      max-width: 600px;
-      width: 120%;
-      height: auto;
+
+    .wait-heart svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: #000;
+      stroke-width: 2.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .center-img img {
-      max-width: 600px;
+
+    /* Invite-text-ից հետո բոլոր տարրերը միասին վերև բարձրացնել */
+    .content-after-invite {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       width: 100%;
-      height: auto;
-    }
-    
-    /* Առանձին կլասսեր յուրաքանչյուր նկարի համար */
-    .img-1 {
-      position: relative;
-      top: 0;
-      margin-top: 20px;
-      width: 50%;
-      height: auto;
-    }
-    
-    .img-2 {
-      position: relative;
-      top: -60px;
-      margin-top: 20px;
-    }
-    
-    .img-3girl {
-      position: relative;
-      top: -90px;
-      margin-top: 20px;
-    }
-    
-    .img-3boy {
-      position: relative;
-      top: -90px;
-      margin-top: 20px;
-    }
-    
-    .img-4 {
-      position: relative;
-      top: -200px;
-      margin-top: 20px;
-      width: 68%;
-    }
-    
-    .img-5 {
-      position: relative;
-      top: -250px;
-      margin-top: 20px;
-    }
-    
-    .img-6 {
-      position: relative;
-      top: -490px;
-      margin-top: 20px;
-    }
-    
-    .img-7 {
-      position: relative;
-      top: -740px;
-      margin-top: 20px;
-      width: 68%;
-    }
-    
-    .img-8 {
-      position: relative;
-      top: -830px;
-      margin-top: 20px;
-      width: 68%;
-    }
-    
-    .img-9 {
-      position: relative;
-      top: -860px;
-      margin-top: 20px;
-    }
-    
-    .img-10 {
-      position: relative;
-      top: -910px;
-      margin-top: 20px;
-    }
-    
-    .img-11 {
-      position: relative;
-      top: -1020px;
-      margin-top: 20px;
-    }
-    
-    .img-12 {
-      position: relative;
-      top: -1140px;
-      margin-top: 20px;
-    }
-    
-    .img-13 {
-      position: relative;
-      top: -1220px;
-      margin-top: 20px;
-    }
-    
-    .img-14 {
-      position: relative;
-      top: -1320px;
-      margin-top: 20px;
-    }
-    
-    .img-15 {
-      position: relative;
-      top: -1400px;
-      margin-top: 20px;
-      width: 40%;
-      height: auto;
-    }
-    .img-16 {
-      position: relative;
-      top: -1440px;
-      margin-top: 20px;
-    }
-    
-    .img-17 {
-      position: relative;
-      top: -1500px;
-      margin-top: 20px;
-    }
-    
-    .img-18 {
-      position: relative;
-      top: -1560px;
-      margin-top: 20px;
-    }
-    
-    .img-19 {
-      position: relative;
-      top: -1620px;
-      margin-top: 20px;
-      width: 40%;
-      height: auto;
-    }
-    
-    .img-20 {
-      position: relative;
-      top: -1680px;
-      margin-top: 20px;
-      transform: translateX(0px);
-      margin-bottom: -1680px;
-    }
-    
-    .container-wrapper {
-      height: auto;
-      overflow: hidden;
+      transform: translateY(-180px);
     }
   </style>
 </head>
 <body>
-  <div class="container-wrapper">
-    <div class="gallery">
-      <img src="1.png" alt="Նկար 1" class="img-1">
-      <div class="center-img">
-        <img src="2corrected.png" alt="Նկար 2" class="img-2 move-right">
-      </div>
-      <div class="row">
-        <img src="3girl.png" alt="Աղջիկ" class="img-3girl girl">
-        <img src="3boy.png" alt="Տղա" class="img-3boy boy">
-      </div>
-      <img src="4.png" alt="Նկար 4" class="img-4">
-      <img src="5corrected.png" alt="Նկար 5" class="img-5">
+  <div class="gallery">
+    <img src="1.png" alt="Նկար 1" class="img-1">
+    <div class="title-text">Արմեն և Նաստյա</div>
+
+    <div class="row">
+      <img src="3girl.png" alt="Աղջիկ" class="img-3girl girl">
+      <img src="3boy.png" alt="Տղա" class="img-3boy boy">
+    </div>
+
+    <div class="date-text">Հոկտեմբերի 17</div>
+
+    <div class="invite-text">
+      Սիրելի հարազատներ,<br>
+      սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց հանդեսին<br>
+      և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը։
+    </div>
+
+    <div class="content-after-invite">
       <img src="6.png" alt="Նկար 6" class="img-6">
-      <img src="7.png" alt="Նկար 7" class="img-7">
-      <img src="8 .png" alt="Նկար 8" class="img-8">
+      <div class="psakadrutyun-text">Պսակադրություն</div>
+      <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
+
       <img src="9.png" alt="Նկար 9" class="img-9">
-      <img src="10.png" alt="Նկար 10" class="img-10">
-      <img src="11.png" alt="Նկար 11" class="img-11">
-      <img src="12.png" alt="Նկար 12" class="img-12">
-      <img src="13.png" alt="Նկար 13" class="img-13">
-      <img src="14.png" alt="Նկար 14" class="img-14">
+      <div class="time-text">14։30</div>
+      <div class="party-text">Տոնական խնջույք</div>
+      <div class="party-location">Ohana YVN</div>
+
+      <img src="restoran.png" alt="Նկար 13" class="img-13">
+      <div class="restoran-time">17։00</div>
+
       <img src="15.png" alt="Նկար 15" class="img-15">
-      <img src="16.png" alt="Նկար 16" class="img-16">
-      <img src="17.png" alt="Նկար 17" class="img-17">
-      <img src="17corrected.png" alt="Նկար 18" class="img-18">
+      <div class="love-text">
+        Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմիոցիաներ
+      </div>
+      <div class="wait-heart">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
+      </div>
+
+      <div class="confirm-text">
+        Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 15-ը
+      </div>
+
       <img src="20.png" alt="Նկար 20" class="img-19">
-      <img src="20corrected.png" alt="Նկար 19" class="img-20">
+      <div class="waiting-text">
+        Սպասում ենք
+        <span class="wait-heart inline">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+          </svg>
+        </span>
+      </div>
     </div>
   </div>
 </body>
