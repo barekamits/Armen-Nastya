@@ -26,7 +26,6 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     .gallery {
@@ -200,16 +199,13 @@
     @media (max-width: 768px) {
       body {
         padding: 15px;
-        min-height: 100vh;
-        overflow-x: hidden;
       }
       
       .gallery {
         gap: 15px;
-        max-width: 100%;
       }
 
-      /* ՏԵՔՍՏԵՐԻ ՉԱՓԵՐԸ */
+      /* ՏԵՔՍՏԵՐԻ ՉԱՓԵՐԸ - ԿՐԿՆԱԾ ԵՆ ԱՎԵԼԻ ՓՈՔՐ */
       .title-text { 
         font-size: 32px !important; 
         line-height: 1.2;
@@ -286,7 +282,7 @@
       }
     }
 
-    /* ՓՈՔՐ ՄՈԲԱՅԼԻ ՀԱՄԱՐ */
+    /* ՓՈՔՐ ՄՈԲԱՅԼԻ ՀԱՄԱՐ - ՏԵՔՍՏԵՐԸ ԱՎԵԼԻ ՓՈՔՐ ԵՆ */
     @media (max-width: 480px) {
       body {
         padding: 12px;
@@ -296,7 +292,7 @@
         gap: 12px;
       }
 
-      /* ՏԵՔՍՏԵՐԸ */
+      /* ՏԵՔՍՏԸ - ԿՐԿՆԱԾ ԵՆ ՀԱՐՄԱՐ ՉԱՓԵՐ */
       .title-text { 
         font-size: 28px !important; 
         margin-top: 10px;
