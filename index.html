@@ -225,14 +225,25 @@
       }
       
       .psakadrutyun-text,
+      .party-text {
+        font-family: 'Vrdznagir', serif;
+        font-size: 34px;        /* ավելի մեծ տառաչափ */
+        font-weight: bold;      /* թավ */
+        color: #000;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.25); /* ավելի արտահայտիչ ստվեր */
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      },
       .psakadrutyun-location,
       .time-text,
-      .party-text,
       .party-location,
       .restoran-time,
       .love-text,
       .confirm-text,
       .waiting-text { 
+        margin-top: 15px; /* կամ 20px ըստ քո ուզած չափի */
         font-size: 22px !important; 
         line-height: 1.3;
         max-width: 95%;
@@ -293,9 +304,10 @@
         gap: 15px !important;
         transform: translateY(-150px) !important;
       }
-      
-      .psakadrutyun-text {
-        margin-top: -120px !important;
+      .psakadrutyun-text,
+      .party-text {
+        font-size: 28px !important;
+        line-height: 1.3;
       }
     }
 
@@ -422,14 +434,16 @@
       <img src="6.png" alt="Նկար 6" class="img-6">
       <div class="psakadrutyun-text">Պսակադրություն</div>
       <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
+      <div class="time-text">14։30</div>
 
       <img src="9.png" alt="Նկար 9" class="img-9">
-      <div class="time-text">14։30</div>
+  
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
+       <div class="restoran-time">17։00</div>
 
       <img src="restoran.png" alt="Նկար 13" class="img-13">
-      <div class="restoran-time">17։00</div>
+   
 
       <img src="15.png" alt="Նկար 15" class="img-15">
       <div class="love-text">
@@ -444,8 +458,6 @@
       <div class="confirm-text">
         Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 15-ը
       </div>
-
-      <img src="20.png" alt="Նկար 20" class="img-19">
       <div class="waiting-text">
         Սպասում ենք
         <span class="wait-heart inline">
@@ -454,6 +466,8 @@
           </svg>
         </span>
       </div>
+      <img src="20.png" alt="Նկար 20" class="img-19">
+    
     </div>
   </div>
 </body>
