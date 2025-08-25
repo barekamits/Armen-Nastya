@@ -2,6 +2,7 @@
 <html lang="hy">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Հրավիրատոմս</title>
   <style>
     @font-face {
@@ -41,7 +42,7 @@
       display: block;
     }
 
-    /* Բոլոր տեքստերի հիմնական ոճ */
+    /* Desktop բոլոր տեքստերի հիմնական ոճ */
     .title-text {
       font-family: 'Vrdznagir', serif;
       font-size: 40px;
@@ -81,6 +82,7 @@
       margin-top: -150px;
       max-width: 80%;
     }
+    
     .party-location {
       font-family: 'Heghnar', serif;
       font-size: 28px;
@@ -89,6 +91,7 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: 3px;
     }
+    
     .psakadrutyun-location,
     .time-text,
     .party-text,
@@ -117,10 +120,11 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 0; /* Հեռացրեցի բացասական gap */
+      gap: 0;
       width: 100%;
       position: relative;
     }
+    
     .row img {
       max-width: 180px;
       opacity: 0;
@@ -131,14 +135,14 @@
     }
 
     .girl {
-      margin-right: -60px; /* մոտեցում */
-      transform: translateX(-50px); /* փոքր շարժում ձախից */
+      margin-right: -60px;
+      transform: translateX(-50px);
       animation-name: slideFromLeft;
     }
 
     .boy {
-      margin-left: -60px; /* մոտեցում */
-      transform: translateX(50px); /* փոքր շարժում աջից */
+      margin-left: -60px;
+      transform: translateX(50px);
       animation-name: slideFromRight;
     }
 
@@ -149,6 +153,7 @@
     @keyframes slideFromRight { 
       to { transform: translateX(0); opacity: 1; } 
     }
+    
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
     .img-6  { width: 40%; }
@@ -184,12 +189,21 @@
       width: 100%;
       transform: translateY(-180px);
     }
-/* Մոբայլ հարմարեցումներ */
+
+/* ՄՈԲԱՅԼ ԱՄԵՆԱՄԵԾ ՀԱՐՄԱՐԵՑՈՒՄՆԵՐ */
 @media (max-width: 768px) {
-  /* Տեքստերի նշանակալի մեծացում */
-  .title-text      { font-size: 60px; }
-  .date-text       { font-size: 54px; }
-  .invite-text     { font-size: 42px; }
+  body {
+    padding: 30px;
+  }
+  
+  .gallery {
+    gap: 25px;
+  }
+
+  /* ԲՈԼՈՐ ՏԵՔՍՏԵՐԻ ՉԱՓԵՐԸ 2.5 ԱՆԳԱՄ ՄԵԾԱՑՎԱԾ */
+  .title-text      { font-size: 100px !important; line-height: 1.1; }
+  .date-text       { font-size: 90px !important; line-height: 1.1; }
+  .invite-text     { font-size: 70px !important; line-height: 1.3; }
   .psakadrutyun-text,
   .psakadrutyun-location,
   .time-text,
@@ -198,36 +212,52 @@
   .restoran-time,
   .love-text,
   .confirm-text,
-  .waiting-text   { font-size: 40px; }
+  .waiting-text   { font-size: 65px !important; line-height: 1.2; }
 
-  /* Նկարների նշանակալի մեծացում */
-  .img-1, .img-3girl, .img-3boy,
-  .img-6, .img-9, .img-13, .img-15, .img-19 {
-    max-width: 150%;
-    height: auto;
+  /* ՆԿԱՐՆԵՐԻ ՉԱՓԵՐԸ 2 ԱՆԳԱՄ ՄԵԾԱՑՎԱԾ */
+  .img-1 { width: 100% !important; }
+  .img-6 { width: 80% !important; }
+  .img-9 { width: 100% !important; }
+  .img-13 { width: 100% !important; }
+  .img-15 { width: 100% !important; }
+  .img-19 { width: 80% !important; }
+  
+  .img-3girl, .img-3boy {
+    max-width: 300px !important;
   }
 
-  /* Սրտիկների մեծացում */
+  /* ՍՐՏԻԿՆԵՐԸ ՄԵԾԱՑՆԵԼ */
   .wait-heart svg {
-    width: 35px;
-    height: 35px;
+    width: 60px !important;
+    height: 60px !important;
   }
 
-  /* Բացատներ մեծացում */
-  .gallery {
-    gap: 15px;
-  }
-
+  /* ԲԱՑԱՏՆԵՐԸ ՄԵԾԱՑՆԵԼ */
   .content-after-invite {
-    gap: 15px;
+    gap: 25px !important;
+    transform: translateY(-250px);
+  }
+  
+  /* ԱՄԱՆԱԿԱՅԻՆ ՏԵՔՍՏԻ ՀԱՄԱՐ ԱՌԱՆՁԻՆ ՈՃ */
+  .psakadrutyun-text {
+    margin-top: -200px !important;
   }
 }
 
-/* Եթե էկրանը շատ փոքր է */
+/* ՓՈՔՐ ՄՈԲԱՅԼԻ ՀԱՄԱՐ ԱՅԼ ԵՎՍ ՄԵԾԱՑՎԱԾ */
 @media (max-width: 480px) {
-  .title-text      { font-size: 70px; }
-  .date-text       { font-size: 62px; }
-  .invite-text     { font-size: 48px; }
+  body {
+    padding: 40px;
+  }
+  
+  .gallery {
+    gap: 30px;
+  }
+
+  /* ԲՈԼՈՐ ՏԵՔՍՏԵՐԸ 3 ԱՆԳԱՄ ՄԵԾԱՑՎԱԾ */
+  .title-text      { font-size: 120px !important; }
+  .date-text       { font-size: 105px !important; }
+  .invite-text     { font-size: 80px !important; }
   .psakadrutyun-text,
   .psakadrutyun-location,
   .time-text,
@@ -236,26 +266,34 @@
   .restoran-time,
   .love-text,
   .confirm-text,
-  .waiting-text   { font-size: 45px; }
+  .waiting-text   { font-size: 75px !important; }
 
-  .img-1, .img-3girl, .img-3boy,
-  .img-6, .img-9, .img-13, .img-15, .img-19 {
-    max-width: 170%;
+  /* ՆԿԱՐՆԵՐԸ ԱՅԼ ԵՎՍ ՄԵԾԱՑՎԱԾ */
+  .img-1 { width: 120% !important; }
+  .img-6 { width: 100% !important; }
+  .img-9 { width: 120% !important; }
+  .img-13 { width: 120% !important; }
+  .img-15 { width: 120% !important; }
+  .img-19 { width: 100% !important; }
+  
+  .img-3girl, .img-3boy {
+    max-width: 350px !important;
   }
 
-  /* Սրտիկների ավելի մեծացում */
+  /* ՍՐՏԻԿՆԵՐԸ ԱՅԼ ԵՎՍ ՄԵԾ */
   .wait-heart svg {
-    width: 40px;
-    height: 40px;
+    width: 70px !important;
+    height: 70px !important;
   }
 
-  /* Բացատներ ավելի մեծացում */
-  .gallery {
-    gap: 20px;
-  }
-
+  /* ԲԱՑԱՏՆԵՐԸ ԱՅԼ ԵՎՍ ՄԵԾԱՑՎԱԾ */
   .content-after-invite {
-    gap: 18px;
+    gap: 30px !important;
+    transform: translateY(-300px);
+  }
+  
+  .psakadrutyun-text {
+    margin-top: -250px !important;
   }
 }
   </style>
@@ -318,7 +356,3 @@
   </div>
 </body>
 </html>
-
-
-
-
