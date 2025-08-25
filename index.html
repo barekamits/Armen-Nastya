@@ -247,17 +247,32 @@
       .img-19 { width: 50% !important; }
       
       .row img {
-        max-width: 140px !important;
+        max-width: 180px;
+        opacity: 0;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        position: relative;
       }
 
       .girl {
-        margin-right: -40px !important;
-        transform: translateX(-30px) !important;
+        margin-right: -60px;
+        transform: translateX(-50px);
+        animation-name: slideFromLeft;
       }
 
       .boy {
-        margin-left: -40px !important;
-        transform: translateX(30px) !important;
+        margin-left: -60px;
+        transform: translateX(50px);
+        animation-name: slideFromRight;
+      }
+
+      @keyframes slideFromLeft { 
+        to { transform: translateX(0); opacity: 1; } 
+      }
+
+      @keyframes slideFromRight { 
+        to { transform: translateX(0); opacity: 1; } 
       }
 
       /* ՍՐՏԻԿՆԵՐԸ */
@@ -373,8 +388,8 @@
     <div class="title-text">Արմեն և Նաստյա</div>
 
     <div class="row">
-      <img src="3girl.png" alt="Աղջիկ" class="img-3girl girl">
-      <img src="3boy.png" alt="Տղա" class="img-3boy boy">
+      <img src="3girl.png" alt="Աղջիկ" class="girl">
+      <img src="3boy.png" alt="Տղա" class="boy">
     </div>
 
     <div class="date-text">Հոկտեմբերի 17</div>
