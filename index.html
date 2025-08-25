@@ -2,7 +2,7 @@
 <html lang="hy">
 <head>
   <meta charset="UTF-8">
-  <title>Արմեն և Նաստյա</title>
+  <title>Հրավիրատոմս</title>
   <style>
     @font-face {
       font-family: 'Vrdznagir';
@@ -21,7 +21,7 @@
 
     body {
       background: #fffaf4;
-      padding: 10px;
+      padding: 20px;
       display: flex;
       justify-content: center;
       min-height: 100vh;
@@ -32,8 +32,7 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      max-width: 100%;
-      width: 100%;
+      max-width: 900px;
     }
 
     .gallery img {
@@ -50,7 +49,7 @@
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: 8px;
-      max-width: 90%;
+      max-width: 80%;
     }
 
     .date-text {
@@ -60,7 +59,7 @@
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: 8px;
-      max-width: 90%;
+      max-width: 80%;
     }
 
     .invite-text {
@@ -70,8 +69,7 @@
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: 6px;
-      max-width: 95%;
-      line-height: 1.4;
+      max-width: 80%;
     }
 
     .psakadrutyun-text {
@@ -81,7 +79,7 @@
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: -150px;
-      max-width: 90%;
+      max-width: 80%;
     }
     .party-location {
       font-family: 'Heghnar', serif;
@@ -104,8 +102,7 @@
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
       margin-top: 3px;
-      max-width: 95%;
-      line-height: 1.3;
+      max-width: 80%;
     }
 
     .wait-heart.inline {
@@ -152,39 +149,13 @@
     @keyframes slideFromRight { 
       to { transform: translateX(0); opacity: 1; } 
     }
-
     /* Նկարների չափեր */
-    .img-1  { width: 60%; }
-    .img-6  { width: 50%; }
-    .img-9  { width: 60%; }
-    .img-13 { width: 60%; }
-    .img-15 { width: 60%; }
-    .img-19 { width: 50%; }
-
-    /* Mobile responsive adjustments */
-    @media (max-width: 600px) {
-      .title-text { font-size: 32px; }
-      .date-text { font-size: 28px; }
-      .invite-text { font-size: 22px; }
-      .psakadrutyun-text,
-      .psakadrutyun-location,
-      .time-text,
-      .party-text,
-      .restoran-time,
-      .love-text,
-      .confirm-text,
-      .waiting-text { font-size: 22px; }
-      .party-location { font-size: 22px; }
-      
-      .img-1  { width: 70%; }
-      .img-6  { width: 60%; }
-      .img-9  { width: 70%; }
-      .img-13 { width: 70%; }
-      .img-15 { width: 70%; }
-      .img-19 { width: 60%; }
-      
-      .row img { max-width: 140px; }
-    }
+    .img-1  { width: 50%; }
+    .img-6  { width: 40%; }
+    .img-9  { width: 50%; }
+    .img-13 { width: 50%; }
+    .img-15 { width: 50%; }
+    .img-19 { width: 40%; }
 
     /* Սրտիկների ոճ */
     .wait-heart {
@@ -212,6 +183,34 @@
       gap: 10px;
       width: 100%;
       transform: translateY(-180px);
+    }
+    /* Մոբայլ հարմարեցումներ */
+    @media (max-width: 600px) {
+      /* Նկարները մեծացնենք 15-20% */
+      .gallery img {
+        transform: scale(1.15); /* Մատչելիորեն մեծացնում է առանց լեյաութը խաթարելու */
+      }
+
+      /* Տեքստերը մեծացնենք 1.2 անգամ */
+      .title-text,
+      .date-text,
+      .invite-text,
+      .psakadrutyun-text,
+      .psakadrutyun-location,
+      .time-text,
+      .party-text,
+      .party-location,
+      .restoran-time,
+      .love-text,
+      .confirm-text,
+      .waiting-text {
+        font-size: 1.2em; /* proportional մեծացում */
+      }
+
+      /* Row-ի տղա-աղջիկ նկարների սլայդ անիմացիաներ նույն մնան */
+      .girl, .boy {
+        transform: translateX(0); /* անիմացիան պահվում է */
+      }
     }
   </style>
 </head>
