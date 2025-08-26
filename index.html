@@ -20,7 +20,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Gochi+Hand&display=swap');
 
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -67,12 +66,10 @@
     .party-text,
     .psakadrutyun-text {
       font-family: 'Vrdznagir', serif;
-      font-size: 40px; /* փոքրացրել եմ */
+      font-size: 40px;
       line-height: 1.2;
+      margin-top: 15px; /* նույնն եմ դրել */
     }
-    
-    .psakadrutyun-text { margin-top: -200px; }
-    .party-text { margin-top: 15px; }
 
     .title-text { font-size: 40px; margin-top: 8px; }
     .date-text { font-size: 40px; margin-top: -10px; }
@@ -137,7 +134,7 @@
 
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
-    .img-6  { width: 50%; margin-top: -189px; }
+    .img-6  { width: 50%; margin-bottom: -20px; } /* բացասական top-ի փոխարեն */
     .img-9  { width: 50%; }
     .img-13 { width: 50%; }
     .img-15 { width: 30%; }
@@ -153,58 +150,51 @@
       margin-top: 30px;
     }
 
-@media (max-width: 768px) {
-  .gallery img {
-    width: 60% !important;   
-    max-width: 200px;        
-    margin: 0 auto;
-  }
+    /* Մոբայլի կարգավորումներ */
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 60% !important;   
+        max-width: 200px;        
+        margin: 0 auto;
+      }
 
-  /* 6-րդ նկարի համար հատուկ կարգավորում */
-  .gallery img.img-6 {
-    margin-top: -150px !important; 
-    margin-bottom: 20px !important; /* տակի տարրի հետ բացատ */
-  }
+      .img-6 {
+        margin-bottom: -10px !important;
+      }
 
-  /* Պսակադրություն տեքստի համար */
-  .psakadrutyun-text { 
-    margin-top: -100px !important; /* ավելի վեր */
-    font-size: 32px !important;
-  }
+      .party-text,
+      .psakadrutyun-text { font-size: 32px !important; }
 
-  .title-text { font-size: 32px !important; }
-  .date-text { font-size: 30px !important; }
-  .invite-text { font-size: 22px !important; }
-  .party-location,
-  .psakadrutyun-location,
-  .time-text,
-  .restoran-time { font-size: 24px !important; }
-}
+      .title-text { font-size: 32px !important; }
+      .date-text { font-size: 30px !important; }
+      .invite-text { font-size: 22px !important; }
+      .party-location,
+      .psakadrutyun-location,
+      .time-text,
+      .restoran-time { font-size: 24px !important; }
+    }
 
-@media (max-width: 480px) {
-  .gallery img {
-    width: 60% !important;   
-    max-width: 180px;        
-  }
+    @media (max-width: 480px) {
+      .gallery img {
+        width: 60% !important;   
+        max-width: 180px;        
+      }
 
-  .gallery img.img-6 {
-    margin-top: -120px !important; 
-    margin-bottom: 15px !important;
-  }
+      .img-6 {
+        margin-bottom: -5px !important;
+      }
 
-  .psakadrutyun-text { 
-    margin-top: -40px !important;
-    font-size: 28px !important;
-  }
+      .party-text,
+      .psakadrutyun-text { font-size: 28px !important; }
 
-  .title-text { font-size: 28px !important; }
-  .date-text { font-size: 26px !important; }
-  .invite-text { font-size: 18px !important; }
-  .party-location,
-  .psakadrutyun-location,
-  .time-text,
-  .restoran-time { font-size: 20px !important; }
-}
+      .title-text { font-size: 28px !important; }
+      .date-text { font-size: 26px !important; }
+      .invite-text { font-size: 18px !important; }
+      .party-location,
+      .psakadrutyun-location,
+      .time-text,
+      .restoran-time { font-size: 20px !important; }
+    }
   </style>
 </head>
 <body>
@@ -234,10 +224,9 @@
   
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
-       <div class="restoran-time">17։00</div>
+      <div class="restoran-time">17։00</div>
 
       <img src="restoran.png" alt="Նկար 13" class="img-13">
-   
 
       <img src="15.png" alt="Նկար 15" class="img-15">
       <div class="love-text">
@@ -261,16 +250,7 @@
         </span>
       </div>
       <img src="20.png" alt="Նկար 20" class="img-19">
-    
     </div>
   </div>
 </body> 
 </html>
-
-
-
-
-
-
-
-
