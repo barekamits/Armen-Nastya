@@ -153,21 +153,21 @@
       margin-top: 30px;
     }
 
-    /* Մոբայլ */
-    @media (max-width: 768px) {
-      .gallery img {
-        width: 60% !important;   /* կես էկրանը */
-        max-width: 200px;        /* որ շատ չմեծանա */
-        margin: 0 auto;
-      }
-  img.img-6 {
-    margin-top: -60px !important;  
-    display: block; /* որ հաստատ կիրառվի */
+@media (max-width: 768px) {
+  .gallery img {
+    width: 60% !important;   /* կես էկրանը */
+    max-width: 200px;        /* որ շատ չմեծանա */
+    margin: 0 auto;
   }
-      .title-text { font-size: 32px !important; }
-      .date-text { font-size: 30px !important; }
-      .invite-text { font-size: 22px !important; }
-    }
+
+  .gallery img.img-6 {
+    margin-top: -60px !important; /* բարձրացնում ա */
+  }
+
+  .title-text { font-size: 32px !important; }
+  .date-text { font-size: 30px !important; }
+  .invite-text { font-size: 22px !important; }
+}
 
     @media (max-width: 480px) {
       .gallery img {
@@ -240,6 +240,7 @@
   </div>
 </body> 
 </html>
+
 
 
 
