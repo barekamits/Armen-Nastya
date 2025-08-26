@@ -151,50 +151,51 @@
     }
 
     /* Մոբայլի կարգավորումներ */
-    @media (max-width: 768px) {
-      .gallery img {
-        width: 60% !important;   
-        max-width: 200px;        
-        margin: 0 auto;
-      }
+ /* Մոբայլի կարգավորումներ */
+@media (max-width: 768px) {
+  .gallery img {
+    width: 60% !important;   
+    max-width: 200px;        
+    margin: 0 auto;
+  }
 
-      .img-6 {
-        margin-bottom: -10px !important;
-      }
+  .img-6 {
+    margin-bottom: -25px !important; /* ավելի մոտ քաշում է Պսակադրություն տեքստին */
+  }
 
-      .party-text,
-      .psakadrutyun-text { font-size: 32px !important; }
+  .party-text,
+  .psakadrutyun-text { font-size: 32px !important; }
 
-      .title-text { font-size: 32px !important; }
-      .date-text { font-size: 30px !important; }
-      .invite-text { font-size: 22px !important; }
-      .party-location,
-      .psakadrutyun-location,
-      .time-text,
-      .restoran-time { font-size: 24px !important; }
-    }
+  .title-text { font-size: 32px !important; }
+  .date-text { font-size: 30px !important; }
+  .invite-text { font-size: 26px !important; } /* մեծացրեցի */
+  .party-location,
+  .psakadrutyun-location,
+  .time-text,
+  .restoran-time { font-size: 24px !important; }
+}
 
-    @media (max-width: 480px) {
-      .gallery img {
-        width: 60% !important;   
-        max-width: 180px;        
-      }
+@media (max-width: 480px) {
+  .gallery img {
+    width: 60% !important;   
+    max-width: 180px;        
+  }
 
-      .img-6 {
-        margin-bottom: -5px !important;
-      }
+  .img-6 {
+    margin-bottom: -20px !important; /* էլ ավելի մոտ քաշում ենք */
+  }
 
-      .party-text,
-      .psakadrutyun-text { font-size: 28px !important; }
+  .party-text,
+  .psakadrutyun-text { font-size: 28px !important; }
 
-      .title-text { font-size: 28px !important; }
-      .date-text { font-size: 26px !important; }
-      .invite-text { font-size: 18px !important; }
-      .party-location,
-      .psakadrutyun-location,
-      .time-text,
-      .restoran-time { font-size: 20px !important; }
-    }
+  .title-text { font-size: 28px !important; }
+  .date-text { font-size: 26px !important; }
+  .invite-text { font-size: 22px !important; } /* փոքր մոբայլի համար էլ ավելի մեծ */
+  .party-location,
+  .psakadrutyun-location,
+  .time-text,
+  .restoran-time { font-size: 20px !important; }
+}
   </style>
 </head>
 <body>
@@ -254,3 +255,4 @@
   </div>
 </body> 
 </html>
+
