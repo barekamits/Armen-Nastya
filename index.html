@@ -155,19 +155,30 @@
 
 @media (max-width: 768px) {
   .gallery img {
-    width: 60% !important;   /* կես էկրանը */
-    max-width: 200px;        /* որ շատ չմեծանա */
+    width: 60% !important;   
+    max-width: 200px;        
     margin: 0 auto;
   }
 
- .gallery img.img-6 {
-    transform: translateY(-120px) !important;
-    margin-bottom: -120px !important; /* որ հետևյալ տարրերը չմնան հեռու */
+  /* 6-րդ նկարի համար հատուկ կարգավորում */
+  .gallery img.img-6 {
+    margin-top: -150px !important; 
+    margin-bottom: 20px !important; /* տակի տարրի հետ բացատ */
+  }
+
+  /* Պսակադրություն տեքստի համար */
+  .psakadrutyun-text { 
+    margin-top: -50px !important; /* փոքրացրել բացասական margin-ը */
+    font-size: 32px !important;
   }
 
   .title-text { font-size: 32px !important; }
   .date-text { font-size: 30px !important; }
   .invite-text { font-size: 22px !important; }
+  .party-location,
+  .psakadrutyun-location,
+  .time-text,
+  .restoran-time { font-size: 24px !important; }
 }
 
 @media (max-width: 480px) {
@@ -177,12 +188,22 @@
   }
 
   .gallery img.img-6 {
-    margin-top: -100px !important; /* փոքր էկրանների համար */
+    margin-top: -120px !important; 
+    margin-bottom: 15px !important;
+  }
+
+  .psakadrutyun-text { 
+    margin-top: -40px !important;
+    font-size: 28px !important;
   }
 
   .title-text { font-size: 28px !important; }
   .date-text { font-size: 26px !important; }
   .invite-text { font-size: 18px !important; }
+  .party-location,
+  .psakadrutyun-location,
+  .time-text,
+  .restoran-time { font-size: 20px !important; }
 }
   </style>
 </head>
@@ -245,6 +266,7 @@
   </div>
 </body> 
 </html>
+
 
 
 
