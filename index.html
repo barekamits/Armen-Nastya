@@ -134,7 +134,12 @@
 
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
-    .img-6  { width: 50%; margin-bottom: -20px; }
+    .img-6  { 
+      width: 50%; 
+      display: block;
+      margin: 0 auto;   /* վերևից ու ներքևից բացատ չլինի */
+      padding: 0;
+    }
     .img-9  { width: 50%; }
     .img-13 { width: 50%; }
     .img-15 { width: 30%; }
@@ -165,8 +170,7 @@
       .img-6 {
         width: 70% !important;
         max-width: 220px !important;
-        margin-bottom: -15px !important;
-        margin-top: -10px !important; /* Ավելացված է վերևի բացատը վերացնելու համար */
+        margin: 0 auto !important;  /* այլևս բացասական margin-ներ չկան */
       }
 
       .content-after-invite {
@@ -210,8 +214,7 @@
       .img-6 {
         width: 75% !important;
         max-width: 200px !important;
-        margin-bottom: -10px !important;
-        margin-top: -8px !important; /* Ավելացված է վերևի բացատը վերացնելու համար */
+        margin: 0 auto !important; /* բացատ չկա */
       }
 
       .content-after-invite {
