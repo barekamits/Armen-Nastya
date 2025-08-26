@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Հրավիրատոմս</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Gochi+Hand&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+    @font-face {
+      font-family: 'Vrdznagir';
+      src: url('Vrdznagir.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -16,7 +21,7 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: 'Gochi Hand', cursive; /* Վրձնագիր տառատեսակ բոլոր հայկական տեքստերի համար */
     }
 
     .gallery {
@@ -44,8 +49,10 @@
     .restoran-time,
     .love-text,
     .confirm-text,
-    .waiting-text {
-      font-family: 'Arial', serif;
+    .waiting-text,
+    .party-text,
+    .psakadrutyun-text {
+      font-family: 'Gochi Hand', cursive; /* բոլորն էլ վրձնագիր */
       color: #000;
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
@@ -54,27 +61,24 @@
 
     .party-text,
     .psakadrutyun-text {
-      font-family: 'Arial', serif;
+      font-family: 'Vrdznagir';
       font-size: 40px;
       line-height: 1.2;
       margin-top: 15px;
     }
 
-    .title-text { font-size: 40px; margin-top: 8px; }
-    .date-text { font-size: 40px; margin-top: -10px; }
-    .invite-text { font-size: 28px; margin-top: 6px; line-height: 1.4; }
-    .party-location { 
-      font-family: 'Gochi Hand', cursive; 
-      font-size: 28px; 
-      margin-top: 3px; 
-    }
+    .title-text { font-family:'Vrdznagir';font-size: 40px; margin-top: 8px; }
+    .date-text { font-family:'Vrdznagir';font-size: 40px; margin-top: -10px; }
+    .invite-text {font-family:'Vrdznagir'; font-size: 28px; margin-top: 6px; line-height: 1.4; }
+    .party-location { font-size: 28px; margin-top: 3px; }
     .psakadrutyun-location,
     .time-text,
     .restoran-time,
     .love-text,
-    .waiting-text { font-size: 28px; margin-top: 19px; line-height: 1.3; }
+    .waiting-text {font-family: 'Vrdznagir'; font-size: 28px; margin-top: 19px; line-height: 1.3; }
 
     .confirm-text {
+      font-family:'Vrdznagir';
       font-size: 28px;
       margin-top: 5px;
     }
@@ -123,7 +127,12 @@
 
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
-    .img-6  { width: 50%; margin-bottom: -20px; }
+    .img-6  {  
+      width: 15% !important;    /* Փոքրացրել եմ */
+      max-width: 120px !important;
+      margin: 0 auto -5px auto !important;
+      display: block;
+    }
     .img-9  { width: 50%; }
     .img-13 { width: 50%; }
     .img-15 { width: 30%; }
@@ -134,9 +143,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       width: 100%;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     /* Մոբայլի կարգավորումներ */
@@ -146,46 +155,35 @@
       }
       
       .gallery img {
-        width: 60% !important;   
+        width: auto;
         max-width: 200px;        
         margin: 0 auto;
       }
 
       .img-6 {
-        width: 70% !important;
-        max-width: 220px !important;
-        margin-bottom: -15px !important;
-        margin-top: -25px !important; /* Կարևոր փոփոխություն */
+        width: 30% !important;
+        max-width: 100px !important;
+        margin: -15px auto -10px auto !important;
       }
 
       .content-after-invite {
-        gap: 20px !important;
-        margin-top: 10px !important; /* Կրճատել վերևի բացատը */
+        gap: 15px !important;
+        margin-top: 10px !important;
       }
 
       .party-text,
       .psakadrutyun-text { 
         font-size: 32px !important; 
-        margin-top: 5px !important; /* Կրճատել բացատը */
+        margin-top: 5px !important;
       }
 
       .title-text { font-size: 32px !important; }
       .date-text { font-size: 30px !important; }
-      .invite-text { 
-        font-size: 26px !important; 
-        margin-bottom: 5px !important; /* Կրճատել ներքևի բացատը */
-      }
+      .invite-text { font-size: 24px !important; margin-bottom: 5px !important; }
       .party-location,
       .psakadrutyun-location,
       .time-text,
-      .restoran-time { 
-        font-size: 24px !important; 
-        margin-top: 5px !important; /* Կրճատել բացատը */
-      }
-      
-      .row {
-        margin: 10px 0 !important;
-      }
+      .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
     }
 
     @media (max-width: 480px) {
@@ -195,60 +193,40 @@
       }
       
       .gallery img {
-        width: 65% !important;   
-        max-width: 180px;        
+        width: auto;
+        max-width: 160px;        
       }
 
       .img-6 {
-        width: 75% !important;
-        max-width: 200px !important;
-        margin-bottom: -10px !important;
-        margin-top: -20px !important; /* Կարևոր փոփոխություն */
+        width: 35% !important;
+        max-width: 90px !important;
+        margin: -10px auto -5px auto !important;
       }
 
       .content-after-invite {
-        gap: 15px !important;
-        margin-top: 5px !important; /* Կրճատել վերևի բացատը */
+        gap: 10px !important;
+        margin-top: 5px !important;
       }
 
       .party-text,
-      .psakadrutyun-text { 
-        font-size: 28px !important; 
-        margin-top: 5px !important; /* Կրճատել բացատը */
-      }
-
-      .title-text { font-size: 28px !important; }
-      .date-text { font-size: 26px !important; }
-      .invite-text { 
-        font-size: 22px !important; 
-        margin-top: 5px !important;
-        margin-bottom: 0 !important; /* Կրճատել ներքևի բացատը */
-      }
+      .psakadrutyun-text { font-size: 26px !important; margin-top: 5px !important; }
+      .title-text { font-size: 26px !important; }
+      .date-text { font-size: 24px !important; }
+      .invite-text { font-size: 20px !important; margin-top: 5px !important; margin-bottom: 0 !important; }
       .party-location,
       .psakadrutyun-location,
       .time-text,
-      .restoran-time { 
-        font-size: 20px !important; 
-        margin-top: 5px !important; /* Կրճատել բացատը */
-      }
-      
-      .row {
-        margin: 8px 0 !important;
-      }
-      
-      body {
-        padding: 10px;
-      }
+      .restoran-time { font-size: 18px !important; margin-top: 5px !important; }
     }
   </style>
 </head>
 <body>
   <div class="gallery">
-    <img src="https://via.placeholder.com/400x100?text=1.png" alt="Նկար 1" class="img-1">
+    <img src="1.png" alt="Նկար 1" class="img-1">
     <div class="title-text">Արմեն & Նաստյա</div>
 
     <div class="row">
-      <img src="https://via.placeholder.com/200x200?text=couple.png" alt="Աղջիկ" class="girl">
+      <img src="coupletoghether.png" alt="Զույգ" class="girl">
     </div>
 
     <div class="date-text">Հոկտեմբերի 17</div>
@@ -260,20 +238,20 @@
     </div>
 
     <div class="content-after-invite">
-      <img src="https://via.placeholder.com/400x150?text=6.png" alt="Նկար 6" class="img-6">
+      <img src="locloc.png" alt="Նկար 6" class="img-6">
       <div class="psakadrutyun-text">Պսակադրություն</div>
       <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
       <div class="time-text">14։30</div>
 
-      <img src="https://via.placeholder.com/400x100?text=9.png" alt="Նկար 9" class="img-9">
+      <img src="9.png" alt="Նկար 9" class="img-9">
   
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
       <div class="restoran-time">17։00</div>
 
-      <img src="https://via.placeholder.com/400x150?text=restoran.png" alt="Նկար 13" class="img-13">
+      <img src="restoran.png" alt="Նկար 13" class="img-13">
 
-      <img src="https://via.placeholder.com/250x100?text=15.png" alt="Նկար 15" class="img-15">
+      <img src="15.png" alt="Նկար 15" class="img-15">
       <div class="love-text">
         Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմիոցիաներ
       </div>
@@ -294,7 +272,7 @@
           </svg>
         </span>
       </div>
-      <img src="https://via.placeholder.com/300x100?text=20.png" alt="Նկար 20" class="img-19">
+      <img src="20.png" alt="Նկար 20" class="img-19">
     </div>
   </div>
 </body> 
