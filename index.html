@@ -68,7 +68,7 @@
       font-family: 'Vrdznagir', serif;
       font-size: 40px;
       line-height: 1.2;
-      margin-top: 15px; /* նույնն եմ դրել */
+      margin-top: 15px;
     }
 
     .title-text { font-size: 40px; margin-top: 8px; }
@@ -134,7 +134,7 @@
 
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
-    .img-6  { width: 50%; margin-bottom: -20px; } /* բացասական top-ի փոխարեն */
+    .img-6  { width: 50%; margin-bottom: -20px; }
     .img-9  { width: 50%; }
     .img-13 { width: 50%; }
     .img-15 { width: 30%; }
@@ -151,55 +151,100 @@
     }
 
     /* Մոբայլի կարգավորումներ */
- /* Մոբայլի կարգավորումներ */
-@media (max-width: 768px) {
-  .gallery img {
-    width: 60% !important;   
-    max-width: 200px;        
-    margin: 0 auto;
-  }
+    @media (max-width: 768px) {
+      .gallery {
+        gap: 5px; /* նվազեցրել gap-ը */
+      }
+      
+      .gallery img {
+        width: 60% !important;   
+        max-width: 200px;        
+        margin: 0 auto;
+      }
 
-  .img-6 {
-    width: 75% !important;   /* մոբայլում մեծացնում ենք */
-    max-width: 250px !important;
-    margin-bottom: -25px !important; 
-  }
+      .img-6 {
+        width: 70% !important;
+        max-width: 220px !important;
+        margin-bottom: -15px !important; 
+      }
 
-  .party-text,
-  .psakadrutyun-text { font-size: 32px !important; }
+      .content-after-invite {
+        gap: 20px !important; /* նվազեցնել բացատները */
+        margin-top: 20px !important;
+      }
 
-  .title-text { font-size: 32px !important; }
-  .date-text { font-size: 30px !important; }
-  .invite-text { font-size: 26px !important; }
-  .party-location,
-  .psakadrutyun-location,
-  .time-text,
-  .restoran-time { font-size: 24px !important; }
-}
+      .party-text,
+      .psakadrutyun-text { 
+        font-size: 32px !important; 
+        margin-top: 10px !important;
+      }
 
-@media (max-width: 480px) {
-  .gallery img {
-    width: 60% !important;   
-    max-width: 180px;        
-  }
+      .title-text { font-size: 32px !important; }
+      .date-text { font-size: 30px !important; }
+      .invite-text { font-size: 26px !important; }
+      .party-location,
+      .psakadrutyun-location,
+      .time-text,
+      .restoran-time { 
+        font-size: 24px !important; 
+        margin-top: 10px !important;
+      }
+      
+      .row {
+        margin: 10px 0 !important;
+      }
+    }
 
-  .img-6 {
-    width: 85% !important;   /* ամենափոքր էկրանին էլ ավելի մեծ */
-    max-width: 280px !important;
-    margin-bottom: -20px !important;
-  }
+    @media (max-width: 480px) {
+      .gallery {
+        gap: 3px;
+        padding: 10px;
+      }
+      
+      .gallery img {
+        width: 65% !important;   
+        max-width: 180px;        
+      }
 
-  .party-text,
-  .psakadrutyun-text { font-size: 28px !important; }
+      .img-6 {
+        width: 75% !important;
+        max-width: 200px !important;
+        margin-bottom: -10px !important;
+      }
 
-  .title-text { font-size: 28px !important; }
-  .date-text { font-size: 26px !important; }
-  .invite-text { font-size: 22px !important; }
-  .party-location,
-  .psakadrutyun-location,
-  .time-text,
-  .restoran-time { font-size: 20px !important; }
-}
+      .content-after-invite {
+        gap: 15px !important;
+        margin-top: 15px !important;
+      }
+
+      .party-text,
+      .psakadrutyun-text { 
+        font-size: 28px !important; 
+        margin-top: 8px !important;
+      }
+
+      .title-text { font-size: 28px !important; }
+      .date-text { font-size: 26px !important; }
+      .invite-text { 
+        font-size: 22px !important; 
+        margin-top: 5px !important;
+      }
+      .party-location,
+      .psakadrutyun-location,
+      .time-text,
+      .restoran-time { 
+        font-size: 20px !important; 
+        margin-top: 8px !important;
+      }
+      
+      .row {
+        margin: 8px 0 !important;
+      }
+      
+      body {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -259,5 +304,3 @@
   </div>
 </body> 
 </html>
-
-
