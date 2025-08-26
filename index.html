@@ -71,7 +71,7 @@
       line-height: 1.2;
     }
     
-    .psakadrutyun-text { margin-top: -150px; }
+    .psakadrutyun-text { margin-top: -200px; }
     .party-text { margin-top: 15px; }
 
     .title-text { font-size: 40px; margin-top: 8px; }
@@ -158,12 +158,21 @@
       .title-text { font-size: 32px !important; }
       .date-text { font-size: 30px !important; }
       .invite-text { font-size: 22px !important; }
+      .gallery img {
+        width: 80% !important;  /* բոլորը նույն չափ */
+        max-width: 350px;       /* որ շատ չմեծանա */
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 480px) {
       .title-text { font-size: 28px !important; }
       .date-text { font-size: 26px !important; }
       .invite-text { font-size: 18px !important; }
+      .gallery img {
+        width: 100% !important;
+        max-width: none;
+      }
     }
   </style>
 </head>
