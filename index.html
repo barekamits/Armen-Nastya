@@ -28,6 +28,14 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: 'ArTar_TumanianDzeragir';
+      src: url('ArTar_TumanianDzeragir_U.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -75,9 +83,9 @@
       font-weight: 400;
     }
 
-    /* Շանս ֆոնտ եկեղեցու համար - fallback-ներով */
+    /* Tumanian ֆոնտ եկեղեցու համար */
     .psakadrutyun-location {
-      font-family: 'ArmChanceU', 'Vrdznagir', 'Times New Roman', Georgia, serif;
+      font-family: 'ArTar_TumanianDzeragir', 'Vrdznagir', 'Times New Roman', Georgia, serif;
       color: #000;
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
@@ -121,20 +129,25 @@
       margin-top: -10px; 
       font-weight: bold;
     }
-    .invite-text { 
+    .invite-text,
+    .love-text { 
       font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
       font-size: 28px; 
       margin-top: 6px; 
       line-height: 1.4; 
     }
     .time-text,
-    .restoran-time,
-    .love-text,
-    .waiting-text { 
+    .restoran-time { 
       font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
       font-size: 28px; 
       margin-top: 19px; 
       line-height: 1.3; 
+    }
+    .waiting-text { 
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
+      font-size: 28px; 
+      margin-top: 6px; 
+      line-height: 1.4; 
     }
 
     .confirm-text {
@@ -225,7 +238,7 @@
     }
 
     .font-loaded .psakadrutyun-location {
-      font-family: 'ArmChanceU', 'Vrdznagir', 'Times New Roman', Georgia, serif;
+      font-family: 'ArTar_TumanianDzeragir', 'Vrdznagir', 'Times New Roman', Georgia, serif;
     }
 
     .font-loaded .party-location {
@@ -243,11 +256,14 @@
       .party-text, .psakadrutyun-text { font-size: 32px !important; margin-top: 5px !important; }
       .title-text { font-size: 32px !important; }
       .date-text { font-size: 30px !important; }
-      .invite-text { font-size: 22px !important; margin-bottom: 5px !important; }
+      .invite-text,
+      .love-text,
+      .waiting-text { font-size: 22px !important; margin-bottom: 5px !important; }
       .party-location,
       .psakadrutyun-location,
       .time-text,
       .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
+      .psakadrutyun-location { font-size: 24px !important; }
       .confirm-text { font-size: 18px !important; margin-top: 25px !important; }
     }
 
@@ -260,11 +276,14 @@
       .party-text, .psakadrutyun-text { font-size: 26px !important; margin-top: 5px !important; }
       .title-text { font-size: 26px !important; }
       .date-text { font-size: 24px !important; }
-      .invite-text { font-size: 18px !important; margin-top: 5px !important; margin-bottom: 0 !important; }
+      .invite-text,
+      .love-text,
+      .waiting-text { font-size: 18px !important; margin-top: 5px !important; margin-bottom: 0 !important; }
       .party-location,
       .psakadrutyun-location,
       .time-text,
       .restoran-time { font-size: 18px !important; margin-top: 5px !important; }
+      .psakadrutyun-location { font-size: 20px !important; }
       .confirm-text { font-size: 16px !important; margin-top: 20px !important; }
     }
 
@@ -311,7 +330,9 @@
       <img src="restoran.png" alt="Նկար 13" class="img-13">
 
       <div class="love-text">
+
         Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմիոցիաներ
+
       </div>
       <div class="wait-heart">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
