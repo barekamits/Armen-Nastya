@@ -10,16 +10,22 @@
 
     @font-face {
       font-family: 'Vrdznagir';
-      src: url('Vrdznagir.otf') format('opentype');
+      src: url('Vrdznagir.otf') format('opentype'),
+           url('Vrdznagir.woff2') format('woff2'),
+           url('Vrdznagir.woff') format('woff');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     @font-face {
       font-family: 'ArmChanceU';
-      src: url('ArmChanceU.ttf') format('truetype');
+      src: url('ArmChanceU.ttf') format('truetype'),
+           url('ArmChanceU.woff2') format('woff2'),
+           url('ArmChanceU.woff') format('woff');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,11 +54,11 @@
       display: block;
     }
 
-    /* Տեքստերի ոճեր */
+    /* Տեքստերի ոճեր - Fallback ֆոնտերով */
     .title-text,
     .date-text,
     .invite-text {
-      font-family: 'Vrdznagir';
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
       font-size: 28px;
       margin: 6px auto;
       line-height: 1.4;
@@ -61,15 +67,17 @@
     }
 
     .party-location {
-      font-family: 'Dancing Script', cursive !important;
+      font-family: 'Dancing Script', 'Vrdznagir', cursive, 'Times New Roman', serif;
       font-size: 28px;
       margin-top: 3px;
       text-align: center;
+      font-style: italic;
+      font-weight: 400;
     }
 
-    /* Շանս ֆոնտ եկեղեցու համար */
+    /* Շանս ֆոնտ եկեղեցու համար - fallback-ներով */
     .psakadrutyun-location {
-      font-family:'ArmChanceU';
+      font-family: 'ArmChanceU', 'Vrdznagir', 'Times New Roman', Georgia, serif;
       color: #000;
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
@@ -86,7 +94,7 @@
     .waiting-text,
     .party-text,
     .psakadrutyun-text {
-      font-family: 'Gochi Hand', cursive;
+      font-family: 'Gochi Hand', cursive, Arial, sans-serif;
       color: #000;
       text-align: center;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
@@ -95,22 +103,42 @@
 
     .party-text,
     .psakadrutyun-text {
-      font-family: 'Vrdznagir';
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
       font-size: 40px;
       line-height: 1.2;
       margin-top: 15px;
     }
 
-    .title-text { font-family:'Vrdznagir'; font-size: 40px; margin-top: 8px; }
-    .date-text { font-family:'Vrdznagir'; font-size: 40px; margin-top: -10px; }
-    .invite-text { font-family:'Vrdznagir'; font-size: 28px; margin-top: 6px; line-height: 1.4; }
+    .title-text { 
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
+      font-size: 40px; 
+      margin-top: 8px; 
+      font-weight: bold;
+    }
+    .date-text { 
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
+      font-size: 40px; 
+      margin-top: -10px; 
+      font-weight: bold;
+    }
+    .invite-text { 
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
+      font-size: 28px; 
+      margin-top: 6px; 
+      line-height: 1.4; 
+    }
     .time-text,
     .restoran-time,
     .love-text,
-    .waiting-text { font-family: 'Vrdznagir'; font-size: 28px; margin-top: 19px; line-height: 1.3; }
+    .waiting-text { 
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
+      font-size: 28px; 
+      margin-top: 19px; 
+      line-height: 1.3; 
+    }
 
     .confirm-text {
-      font-family:'Vrdznagir';
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
       font-size: 26px;
       margin-top: 60px;
       color: #000;
@@ -167,7 +195,7 @@
       margin: 0 auto -5px auto !important;
       display: block;
     }
-    .img-9  { width: 35%; } /* Փոքրացրած 9-րդ նկարը */
+    .img-9  { width: 35%; }
     .img-13 { width: 50%; }
     .img-15 { width: 30%; }
     .img-19 { width: 40%; margin-top: 40px; }
@@ -182,12 +210,35 @@
       margin-top: 20px;
     }
 
+    /* Ֆոնտ բեռնման ստուգում և alternative */
+    .font-loaded .title-text,
+    .font-loaded .date-text,
+    .font-loaded .invite-text,
+    .font-loaded .party-text,
+    .font-loaded .psakadrutyun-text,
+    .font-loaded .time-text,
+    .font-loaded .restoran-time,
+    .font-loaded .love-text,
+    .font-loaded .waiting-text,
+    .font-loaded .confirm-text {
+      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+    }
+
+    .font-loaded .psakadrutyun-location {
+      font-family: 'ArmChanceU', 'Vrdznagir', 'Times New Roman', Georgia, serif;
+    }
+
+    .font-loaded .party-location {
+      font-family: 'Dancing Script', 'Vrdznagir', cursive, 'Times New Roman', serif;
+      font-style: italic;
+    }
+
     /* Մոբայլի կարգավորումներ */
     @media (max-width: 768px) {
       .gallery { gap: 5px; }
       .gallery img { width: auto; max-width: 200px; margin: 0 auto; }
       .img-6 { width: 30% !important; max-width: 100px !important; margin: -15px auto -10px auto !important; }
-      .img-9 { width: 25% !important; } /* Ավելի փոքր մոբայլում */
+      .img-9 { width: 25% !important; }
       .content-after-invite { gap: 15px !important; margin-top: 10px !important; }
       .party-text, .psakadrutyun-text { font-size: 32px !important; margin-top: 5px !important; }
       .title-text { font-size: 32px !important; }
@@ -204,7 +255,7 @@
       .gallery { gap: 3px; padding: 10px; }
       .gallery img { width: auto; max-width: 160px; }
       .img-6 { width: 35% !important; max-width: 90px !important; margin: -10px auto -5px auto !important; }
-      .img-9 { width: 20% !important; } /* Առավել փոքր փոքր էկրաններում */
+      .img-9 { width: 20% !important; }
       .content-after-invite { gap: 10px !important; margin-top: 5px !important; }
       .party-text, .psakadrutyun-text { font-size: 26px !important; margin-top: 5px !important; }
       .title-text { font-size: 26px !important; }
@@ -215,6 +266,16 @@
       .time-text,
       .restoran-time { font-size: 18px !important; margin-top: 5px !important; }
       .confirm-text { font-size: 16px !important; margin-top: 20px !important; }
+    }
+
+    /* Ֆոնտ բեռնման անիմացիա */
+    @keyframes fadeIn {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+
+    .gallery {
+      animation: fadeIn 0.5s ease-in;
     }
   </style>
 </head>
@@ -275,5 +336,15 @@
       Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 15-ը
     </div>
   </div>
+
+  <script>
+    // Ֆոնտի բեռնման ստուգում
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ավելացնում ենք font-loaded կլաս body-ին
+      setTimeout(function() {
+        document.body.classList.add('font-loaded');
+      }, 100);
+    });
+  </script>
 </body>
 </html>
