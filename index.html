@@ -212,6 +212,33 @@
       line-height: 1.6;
     }
 
+    /* ArmBernhard ֆոնտ եկեղեցու և հաստատման համար */
+    .psakadrutyun-location,
+    .confirm-text,
+    .directions-btn {
+      font-family: 'ArmCoronetU' !important;
+      font-weight: normal !important;
+    }
+
+    /* Ինչպես հասնել կոճակներ */
+    .directions-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 16px;
+      font-size: 20px;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .directions-btn:hover {
+      color: #666;
+      transform: translateY(-2px);
+    }
+
     /* Սրտիկներ */
     .wait-heart {
       display: inline-flex;
@@ -291,13 +318,6 @@
       font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
     }
 
-    /* ArmBernhard ֆոնտ եկեղեցու և հաստատման համար */
-    .psakadrutyun-location,
-    .confirm-text {
-      font-family: 'ArmCoronetU' !important;
-      font-weight: normal !important;
-    }
-
     .font-loaded .party-location {
       font-family: 'Dancing Script', serif;
       font-style: italic;
@@ -336,6 +356,7 @@
       .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
       .psakadrutyun-location { font-size: 24px !important; }
       .confirm-text { font-size: 18px !important; margin-top: 15px !important; }
+      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: 8px !important; }
     }
 
     @media (max-width: 480px) {
@@ -413,12 +434,14 @@
       <div class="psakadrutyun-text">Պսակադրություն</div>
       <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
       <div class="time-text">14։30</div>
+      <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">Ինչպես հասնել</button>
 
       <img src="9.png" alt="Նկար 9" class="img-9">
 
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
       <div class="restoran-time">17։00</div>
+      <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">Ինչպես հասնել</button>
 
       <img src="restoran.png" alt="Նկար 13" class="img-13">
 
