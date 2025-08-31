@@ -230,8 +230,27 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
-      margin-top: 10px;
+      margin-top: -80px !important;
       display: inline-block;
+    }
+
+    /* Location container */
+    .location-container {
+      display: flex;
+      align-items: flex-start;  /* վերև բերում է երեխաներին */
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .location-container .directions-btn {
+      position: relative;
+      top: -10px;  /* որքան պետք է */
+      left: -20px;   /* ավելի մեծ բացասական արժեք՝ ավելի ձախ */
+    }
+    .location-container .img-6 {
+      margin: 6px 0 0 15px !important;
+      width: 35px !important;
+      max-width: 35px !important;
     }
 
     .directions-btn:hover {
@@ -284,9 +303,9 @@
     /* Նկարների չափեր */
     .img-1  { width: 50%; }
     .img-6  {
-      width: 10% !important;
-      max-width: 80px !important;
-      margin: 0 auto -5px auto !important;
+      width: 6% !important;
+      max-width: 50px !important;
+      margin: -15px auto -5px auto !important;
       display: block;
     }
     .img-9  { width: 55%; }
@@ -342,7 +361,8 @@
         margin: 0 auto; 
         overflow: hidden;
       }
-      .img-6 { width: 20% !important; max-width: 70px !important; margin: -15px auto -10px auto !important; }
+      .img-6 { width: 12% !important; max-width: 40px !important; margin: -20px auto -10px auto !important; }
+      .location-container .img-6 { margin: 5px 0 0 12px !important; width: 30px !important; max-width: 30px !important; }
       .img-9 { width: 45% !important; }
       .img-church { width: 45% !important; }
       .content-after-invite { gap: 15px !important; margin-top: 10px !important; }
@@ -358,7 +378,7 @@
       .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
       .psakadrutyun-location { font-size: 24px !important; }
       .confirm-text { font-size: 18px !important; margin-top: 15px !important; }
-      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: 8px !important; }
+      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: 5px !important; }
     }
 
     @media (max-width: 480px) {
@@ -379,7 +399,8 @@
         max-width: 160px; 
         overflow: hidden;
       }
-      .img-6 { width: 25% !important; max-width: 60px !important; margin: -10px auto -5px auto !important; }
+      .img-6 { width: 15% !important; max-width: 35px !important; margin: -25px auto -8px auto !important; }
+      .location-container .img-6 { margin: 0 !important; width: 25px !important; max-width: 25px !important; }
       .img-9 { width: 35% !important; }
       .img-church { width: 40% !important; }
       .content-after-invite { gap: 10px !important; margin-top: 5px !important; }
@@ -402,6 +423,8 @@
         letter-spacing: 0.2px !important; 
         word-spacing: -1px !important; 
       }
+      .location-container { gap: 6px !important; }
+      .directions-btn { font-size: 16px !important; padding: 4px 8px !important; }
     }
 
     /* Ֆոնտ բեռնման անիմացիա */
@@ -438,16 +461,20 @@
       <div class="psakadrutyun-text">Պսակադրություն</div>
       <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
       <div class="time-text">14։30</div>
-      <img src="locloc.png" alt="Նկար 6" class="img-6">
-      <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">Ինչպես հասնել</button>
+      <div class="location-container">
+        <img src="locloc.png" alt="Նկար 6" class="img-6">
+        <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">Ինչպես հասնել</button>
+      </div>
 
       <img src="9.png" alt="Նկար 9" class="img-9">
 
       <div class="party-text">Տոնական խնջույք</div>
       <div class="party-location">Ohana YVN</div>
       <div class="restoran-time">17։00</div>
-       <img src="locloc.png" alt="Նկար 6" class="img-6">
-      <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">Ինչպես հասնել</button>
+      <div class="location-container">
+        <img src="locloc.png" alt="Նկար 6" class="img-6">
+        <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">Ինչպես հասնել</button>
+      </div>
 
       <img src="restoran.png" alt="Նկար 13" class="img-13">
 
