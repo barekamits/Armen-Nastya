@@ -230,29 +230,27 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
+      margin-top: -80px !important;
       display: inline-block;
     }
 
     /* Location container */
     .location-container {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      align-items: flex-start;  /* վերև բերում է երեխաներին */
       justify-content: center;
       gap: 8px;
       margin-top: 10px;
     }
     .location-container .directions-btn {
       position: relative;
-      top: 0px;
-      left: 0px;
-      white-space: nowrap;
+      top: -10px;  /* որքան պետք է */
+      left: -20px;   /* ավելի մեծ բացասական արժեք՝ ավելի ձախ */
     }
     .location-container .img-6 {
-      margin: 0 !important;
+      margin: 6px 0 0 15px !important;
       width: 35px !important;
       max-width: 35px !important;
-      flex-shrink: 0;
     }
 
     .directions-btn:hover {
@@ -364,27 +362,7 @@
         overflow: hidden;
       }
       .img-6 { width: 12% !important; max-width: 40px !important; margin: -20px auto -10px auto !important; }
-      .location-container .img-6 { 
-        margin: 0 !important; 
-        width: 30px !important; 
-        max-width: 30px !important;
-        flex-shrink: 0 !important;
-        display: block !important;
-        position: relative !important;
-      }
-      .location-container { 
-        gap: 8px !important; 
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        display: flex !important;
-      }
-      .location-container .directions-btn { 
-        top: 0 !important; 
-        left: 0 !important;
-        display: inline-block !important;
-        white-space: nowrap !important;
-      }
+      .location-container .img-6 { margin: 5px 0 0 12px !important; width: 30px !important; max-width: 30px !important; }
       .img-9 { width: 45% !important; }
       .img-church { width: 45% !important; }
       .content-after-invite { gap: 15px !important; margin-top: 10px !important; }
@@ -400,7 +378,7 @@
       .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
       .psakadrutyun-location { font-size: 24px !important; }
       .confirm-text { font-size: 18px !important; margin-top: 15px !important; }
-      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: 5px !important; }
+      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: -10px !important; }
     }
 
     @media (max-width: 480px) {
@@ -422,30 +400,7 @@
         overflow: hidden;
       }
       .img-6 { width: 15% !important; max-width: 35px !important; margin: -25px auto -8px auto !important; }
-      .location-container .img-6 { 
-        margin: 0 !important; 
-        width: 25px !important; 
-        max-width: 25px !important;
-        flex-shrink: 0 !important;
-        display: block !important;
-        position: relative !important;
-      }
-      .location-container { 
-        gap: 6px !important; 
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        display: flex !important;
-        margin-top: 5px !important;
-      }
-  .location-container .directions-btn { 
-  font-size: 16px !important; 
-  padding: 4px 8px !important;
-  display: inline-block !important;
-  white-space: nowrap !important;
-  position: relative; 
-  top: -15px;   /* 👈 սա կբարձրացնի կոճակը */
-}
+      .location-container .img-6 { margin: 0 !important; width: 25px !important; max-width: 25px !important; }
       .img-9 { width: 35% !important; }
       .img-church { width: 40% !important; }
       .content-after-invite { gap: 10px !important; margin-top: 5px !important; }
@@ -468,6 +423,7 @@
         letter-spacing: 0.2px !important; 
         word-spacing: -1px !important; 
       }
+      .location-container { gap: 6px !important; }
       .directions-btn { font-size: 16px !important; padding: 4px 8px !important; }
     }
 
@@ -575,4 +531,3 @@
   </script>
 </body>
 </html>
-
