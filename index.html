@@ -230,18 +230,17 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
-      margin-top: -80px !important;
       display: inline-block;
     }
 
     /* Location container */
     .location-container {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap: 8px;
       margin-top: 10px;
-      flex-wrap: nowrap;
     }
     .location-container .directions-btn {
       position: relative;
@@ -374,8 +373,8 @@
         position: relative !important;
       }
       .location-container { 
-        gap: 6px !important; 
-        flex-wrap: nowrap !important;
+        gap: 8px !important; 
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
         display: flex !important;
@@ -432,8 +431,8 @@
         position: relative !important;
       }
       .location-container { 
-        gap: 4px !important; 
-        flex-wrap: nowrap !important;
+        gap: 6px !important; 
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
         display: flex !important;
@@ -467,7 +466,6 @@
         letter-spacing: 0.2px !important; 
         word-spacing: -1px !important; 
       }
-      .location-container { gap: 6px !important; }
       .directions-btn { font-size: 16px !important; padding: 4px 8px !important; }
     }
 
