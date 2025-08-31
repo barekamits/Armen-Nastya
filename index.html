@@ -1,543 +1,637 @@
 <!DOCTYPE html>
 <html lang="hy">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Հրավիրատոմս</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Dancing+Script:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
-
-    @font-face {
-      font-family: 'Vrdznagir';
-      src: url('Vrdznagir.woff2') format('woff2'),
-           url('Vrdznagir.woff') format('woff'),
-           url('Vrdznagir.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'ArmChanceU';
-      src: url('ArmChanceU.woff2') format('woff2'),
-           url('ArmChanceU.woff') format('woff'),
-           url('ArmChanceU.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'ArTar_TumanianDzeragir';
-      src: url('ArTar_TumanianDzeragir_U.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-    
-    @font-face {
-      font-family: 'ArmBernhard';
-      src: url('ArmBernhard.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: block;
-    }
-    @font-face {
-      font-family: 'ArTarumian Anpuit';
-      src: url('ArTarumianAnpuitUnicode.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-      unicode-range: U+0530-058F, U+FB13-FB17;
-    }
-    @font-face {
-      font-family: 'BrabionU-Medium';
-      src: url('BrabionU-Medium.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-      unicode-range: U+0530-058F, U+FB13-FB17;
-    }
-    @font-face {
-      font-family: 'ArmCoronetU';
-      src: url('ArmCoronetU.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-      unicode-range: U+0530-058F, U+FB13-FB17;
-    }
-    @font-face {
-      font-family: 'Monsterratarm-Light';
-      src: url('Montserratarm-Light.otf') format('opentype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-      unicode-range: U+0530-058F, U+FB13-FB17;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html {
-      overflow-x: hidden;
-      width: 100%;
-    }
-
-    body {
-      background: #fffaf4;
-      padding: 20px 20px 60px 20px;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-      font-family: 'Gochi Hand', cursive;
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
-    }
-
-    .gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      max-width: 900px;
-      width: 100%;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .gallery img {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      display: block;
-      overflow: hidden;
-    }
-
-    /* Տեքստերի ոճեր - Fallback ֆոնտերով */
-    .title-text,
-    .date-text,
-    .invite-text {
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-      font-size: 28px;
-      margin: 6px auto;
-      line-height: 1.4;
-      text-align: center;
-      max-width: 90%;
-    }
-
-    .party-location {
-      font-family: 'Dancing Script';
-      font-size: 28px;
-      margin-top: 3px;
-      text-align: center;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    /* ArmBernhard ֆոնտ եկեղեցու համար */
-    .psakadrutyun-location {
-      font-family: 'ArmCoronetU' !important;
-      color: #000;
-      text-align: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-      max-width: 90%;
-      font-size: 28px;
-      margin-top: 19px;
-      line-height: 1.3;
-      font-weight: normal;
-    }
-
-    .time-text,
-    .restoran-time,
-    .love-text,
-    .confirm-text,
-    .waiting-text,
-    .party-text,
-    .psakadrutyun-text {
-      font-family: 'Gochi Hand', cursive, Arial, sans-serif;
-      color: #000;
-      text-align: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-      max-width: 90%;
-    }
-
-    .party-text,
-    .psakadrutyun-text {
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-      font-size: 40px;
-      line-height: 1.2;
-      margin-top: 15px;
-    }
-
-    .title-text { 
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
-      font-size: 40px; 
-      margin-top: 8px; 
-      font-weight: bold;
-    }
-    .date-text { 
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
-      font-size: 40px; 
-      margin-top: -10px; 
-      font-weight: bold;
-    }
-    .invite-text,
-    .love-text { 
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
-      font-size: 28px; 
-      margin-top: 6px; 
-      line-height: 1.4; 
-    }
-    .time-text,
-    .restoran-time { 
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
-      font-size: 28px; 
-      margin-top: 19px; 
-      line-height: 1.3; 
-    }
-    .waiting-text { 
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif; 
-      font-size: 28px; 
-      margin-top: 6px; 
-      line-height: 1.4; 
-    }
-
-    .confirm-text {
-      font-family: 'ArmCoronetU' !important;
-      font-size: 26px;
-      margin-top: 60px;
-      color: #000;
-      font-style: normal;
-      line-height: 1.6;
-    }
-
-    /* ArmBernhard ֆոնտ եկեղեցու և հաստատման համար */
-    .psakadrutyun-location,
-    .confirm-text,
-    .directions-btn {
-      font-family: 'ArmCoronetU' !important;
-      font-weight: normal !important;
-    }
-
-    /* Ինչպես հասնել կոճակներ */
-    .directions-btn {
-      background: transparent;
-      border: none;
-      padding: 8px 16px;
-      font-size: 20px;
-      color: #000;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      margin-top: -80px !important;
-      display: inline-block;
-    }
-
-    /* Location container */
-    .location-container {
-      display: flex;
-      align-items: flex-start;  /* վերև բերում է երեխաներին */
-      justify-content: center;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .location-container .directions-btn {
-      position: relative;
-      top: -10px;  /* որքան պետք է */
-      left: -20px;   /* ավելի մեծ բացասական արժեք՝ ավելի ձախ */
-    }
-    .location-container .img-6 {
-      margin: 6px 0 0 15px !important;
-      width: 35px !important;
-      max-width: 35px !important;
-    }
-
-    .directions-btn:hover {
-      color: #666;
-      transform: translateY(-2px);
-    }
-
-    /* Սրտիկներ */
-    .wait-heart {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      margin-top: 0;
-    }
-
-    .wait-heart.inline {
-      display: inline-flex;
-      vertical-align: middle;
-      gap: 6px;
-      margin-left: 6px;
-    }
-
-    .wait-heart svg {
-      width: 28px;
-      height: 28px;
-      fill: none;
-      stroke: #000;
-      stroke-width: 2.3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* Աղջկա նկարը row-ում կենտրոնում */
-    .row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 20px 0;
-    }
-
-    .row img {
-      display: block;
-      max-width: 200px;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    /* Նկարների չափեր */
-    .img-1  { width: 50%; }
-    .img-6  {
-      width: 6% !important;
-      max-width: 50px !important;
-      margin: -15px auto -5px auto !important;
-      display: block;
-    }
-    .img-9  { width: 55%; }
-    .img-13 { width: 50%; }
-    .img-15 { width: 30%; }
-    .img-19 { width: 40%; margin-top: 40px; }
-    .img-church { width: 50%; margin: 0 auto; }
-
-    /* Invite-text-ից հետո տարրերը համաչափ հեռավորությամբ */
-    .content-after-invite {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    /* Ֆոնտ բեռնման ստուգում - ուղղված */
-    .font-loaded .title-text,
-    .font-loaded .date-text,
-    .font-loaded .invite-text,
-    .font-loaded .party-text,
-    .font-loaded .psakadrutyun-text,
-    .font-loaded .time-text,
-    .font-loaded .restoran-time,
-    .font-loaded .love-text,
-    .font-loaded .waiting-text,
-    .font-loaded .confirm-text {
-      font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-    }
-
-    .font-loaded .party-location {
-      font-family: 'Dancing Script', serif;
-      font-style: italic;
-    }
-
-    /* Մոբայլի կարգավորումներ */
-    @media (max-width: 768px) {
-      body { 
-        padding: 15px 15px 50px 15px; 
-        overflow-x: hidden;
-      }
-      .gallery { 
-        gap: 5px; 
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      .gallery img { 
-        width: auto; 
-        max-width: 200px; 
-        margin: 0 auto; 
-        overflow: hidden;
-      }
-      .img-6 { width: 12% !important; max-width: 40px !important; margin: -20px auto -10px auto !important; }
-      .location-container .img-6 { margin: 5px 0 0 12px !important; width: 30px !important; max-width: 30px !important; }
-      .img-9 { width: 45% !important; }
-      .img-church { width: 45% !important; }
-      .content-after-invite { gap: 15px !important; margin-top: 10px !important; }
-      .party-text, .psakadrutyun-text { font-size: 32px !important; margin-top: 5px !important; }
-      .title-text { font-size: 32px !important; }
-      .date-text { font-size: 30px !important; }
-      .invite-text,
-      .love-text,
-      .waiting-text { font-size: 22px !important; margin-bottom: 5px !important; }
-      .party-location,
-      .psakadrutyun-location,
-      .time-text,
-      .restoran-time { font-size: 22px !important; margin-top: 5px !important; }
-      .psakadrutyun-location { font-size: 24px !important; }
-      .confirm-text { font-size: 18px !important; margin-top: 15px !important; }
-      .directions-btn { font-size: 18px !important; padding: 6px 12px !important; margin-top: 2px !important;   margin-left: 10px !important;}
-    }
-
-    @media (max-width: 480px) {
-      body { 
-        padding: 10px 10px 30px 10px; 
-        overflow-x: hidden;
-        width: 100%;
-      }
-      .gallery { 
-        gap: 3px; 
-        padding: 5px; 
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      .gallery img { 
-        width: auto; 
-        max-width: 160px; 
-        overflow: hidden;
-      }
-      .img-6 { width: 15% !important; max-width: 35px !important; margin: -25px auto -8px auto !important; }
-      .location-container .img-6 { margin: 0 !important; width: 25px !important; max-width: 25px !important; }
-      .img-9 { width: 35% !important; }
-      .img-church { width: 40% !important; }
-      .content-after-invite { gap: 10px !important; margin-top: 5px !important; }
-      .party-text, .psakadrutyun-text { font-size: 26px !important; margin-top: 5px !important; }
-      .title-text { font-size: 26px !important; }
-      .date-text { font-size: 24px !important; }
-      .invite-text,
-      .love-text,
-      .waiting-text { font-size: 18px !important; margin-top: 5px !important; margin-bottom: 0 !important; }
-      .party-location,
-      .psakadrutyun-location,
-      .time-text,
-      .restoran-time { font-size: 18px !important; margin-top: 5px !important; }
-      .psakadrutyun-location { font-size: 20px !important; }
-      .confirm-text { 
-        font-size: 16px !important; 
-        margin-top: 10px !important; 
-        line-height: 1.8 !important; 
-        margin-bottom: 0 !important; 
-        letter-spacing: 0.2px !important; 
-        word-spacing: -1px !important; 
-      }
-      .location-container { gap: 6px !important; }
-      .directions-btn { font-size: 16px !important; padding: 4px 8px !important; }
-    }
-
-    /* Ֆոնտ բեռնման անիմացիա */
-    @keyframes fadeIn {
-      from { opacity: 0.5; }
-      to { opacity: 1; }
-    }
-
-    .gallery {
-      animation: fadeIn 0.5s ease-in;
-    }
-  </style>
-</head>
-<body>
-  <div class="gallery">
-    <img src="1.png" alt="Նկար 1" class="img-1">
-    <div class="title-text">Արմեն & Նաստյա</div>
-
-    <div class="row">
-      <img src="coupletoghether.png" alt="Զույգ" class="girl">
-    </div>
-
-    <div class="date-text">Հոկտեմբերի 17</div>
-
-    <div class="invite-text">
-      Սիրելի հարազատներ,<br>
-      սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց արարողությանը<br>
-      և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը
-    </div>
-
-    <div class="content-after-invite">
-      
-      <img src="as.png" alt="Եկեղեցի" class="img-church">
-      <div class="psakadrutyun-text">Պսակադրություն</div>
-      <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
-      <div class="time-text">14։30</div>
-      <div class="location-container">
-        <img src="locloc.png" alt="Նկար 6" class="img-6">
-        <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">Ինչպես հասնել</button>
-      </div>
-
-      <img src="9.png" alt="Նկար 9" class="img-9">
-
-      <div class="party-text">Տոնական խնջույք</div>
-      <div class="party-location">Ohana YVN</div>
-      <div class="restoran-time">17։00</div>
-      <div class="location-container">
-        <img src="locloc.png" alt="Նկար 6" class="img-6">
-        <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">Ինչպես հասնել</button>
-      </div>
-
-      <img src="restoran.png" alt="Նկար 13" class="img-13">
-
-      <div class="love-text">
-        Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմոցիաներ
-      </div>
-      <div class="wait-heart">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/></svg>
-      </div>
-
-      <img src="15.png" alt="Նկար 15" class="img-15">
-
-      <div class="waiting-text">
-        Սպասում ենք
-        <span class="wait-heart inline">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-          </svg>
-        </span>
-      </div>
-      <img src="20.png" alt="Նկար 20" class="img-19">
-    </div>
-
-<div class="confirm-text">
-  Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">15</span>-ը
-</div>
-  </div>
-
-  <script>
-    // ArmBernhard ֆոնտի ստուգում
-    document.addEventListener('DOMContentLoaded', function() {
-      
-      // Ստուգում ենք ֆոնտի բեռնումը
-      const testDiv = document.createElement('div');
-      testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
-      testDiv.style.fontFamily = 'ArmBernhard';
-      testDiv.style.fontSize = '20px';
-      testDiv.style.position = 'absolute';
-      testDiv.style.top = '-9999px';
-      document.body.appendChild(testDiv);
-      
-      // Տպում ենք, թե ինչ ֆոնտ է օգտագործվում
-      setTimeout(function() {
-        console.log('🔍 Ֆոնտի ստուգում:');
-        console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
-        console.log('ArmBernhard.ttf ֆայլը պե՞տք է լինի HTML ֆայլի նույն թղթապանակում');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Հրավիրատոմս</title>
+    <style>
+        /* ===== ՖՈՆՏԵՐԻ ՆԵՐՄՈՒԾՈՒՄ ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
         
-        document.body.removeChild(testDiv);
-        document.body.classList.add('font-loaded');
-      }, 500);
-    });
-  </script>
+        /* Հայերեն ֆոնտեր */
+        @font-face {
+            font-family: 'Vrdznagir';
+            src: url('Vrdznagir.woff2') format('woff2'),
+                 url('Vrdznagir.woff') format('woff'),
+                 url('Vrdznagir.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'ArmCoronetU';
+            src: url('ArmCoronetU.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0530-058F, U+FB13-FB17;
+        }
+        
+        /* ===== ԲԱԶԱՅԻՆ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        body {
+            background: #fffaf4;
+            padding: 20px 20px 60px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Gochi Hand', cursive;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        /* ===== ՀԻՄՆԱԿԱՆ ԿՈՆՏԵՅՆԵՐ ===== */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 900px;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .gallery img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+            overflow: hidden;
+        }
+        
+        /* ===== ՏԵՔՍՏԱՅԻՆ ՈՃԵՐ ===== */
+        .title-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 40px;
+            margin-top: 8px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
+        }
+        
+        .date-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 40px;
+            margin-top: -10px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
+        }
+        
+        .invite-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin: 6px auto;
+            line-height: 1.4;
+            text-align: center;
+            max-width: 90%;
+        }
+        
+        .party-text,
+        .psakadrutyun-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 40px;
+            line-height: 1.2;
+            margin-top: 15px;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            max-width: 90%;
+        }
+        
+        .party-location {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            margin-top: 3px;
+            text-align: center;
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .psakadrutyun-location {
+            font-family: 'ArmCoronetU', serif !important;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            max-width: 90%;
+            font-size: 28px;
+            margin-top: 19px;
+            line-height: 1.3;
+            font-weight: normal;
+        }
+        
+        .time-text,
+        .restoran-time {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin-top: 19px;
+            line-height: 1.3;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            max-width: 90%;
+        }
+        
+        .love-text,
+        .waiting-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin-top: 6px;
+            line-height: 1.4;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            max-width: 90%;
+        }
+        
+        .confirm-text {
+            font-family: 'ArmCoronetU', serif !important;
+            font-size: 26px;
+            margin-top: 60px;
+            color: #000;
+            font-style: normal;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            max-width: 90%;
+        }
+        
+        /* ===== ՆԿԱՐՆԵՐԻ ՉԱՓԵՐ ===== */
+        .img-1 {
+            width: 50%;
+        }
+        
+        .img-6 {
+            width: 6% !important;
+            max-width: 50px !important;
+            margin: -15px auto -5px auto !important;
+            display: block;
+        }
+        
+        .img-9 {
+            width: 55%;
+        }
+        
+        .img-13 {
+            width: 50%;
+        }
+        
+        .img-15 {
+            width: 30%;
+        }
+        
+        .img-19 {
+            width: 40%;
+            margin-top: 40px;
+        }
+        
+        .img-church {
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        /* ===== ԱՂՋԿԱ ՆԿԱՐ ===== */
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .row img {
+            display: block;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        /* ===== ՎԱՅՐԻ ՏԵՂԵԿՈՒԹՅՈՒՆՆԵՐ ===== */
+        .content-after-invite {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .location-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .location-container .directions-btn {
+            position: relative;
+            top: -10px;
+            left: -20px;
+        }
+        
+        .location-container .img-6 {
+            margin: 6px 0 0 15px !important;
+            width: 35px !important;
+            max-width: 35px !important;
+        }
+        
+        .directions-btn {
+            font-family: 'ArmCoronetU', serif !important;
+            background: transparent;
+            border: none;
+            padding: 8px 16px;
+            font-size: 20px;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: -80px !important;
+            display: inline-block;
+            font-weight: normal !important;
+        }
+        
+        .directions-btn:hover {
+            color: #666;
+            transform: translateY(-2px);
+        }
+        
+        /* ===== ՍՐՏԻԿՆԵՐ ===== */
+        .wait-heart {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-top: 0;
+        }
+        
+        .wait-heart.inline {
+            display: inline-flex;
+            vertical-align: middle;
+            gap: 6px;
+            margin-left: 6px;
+        }
+        
+        .wait-heart svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #000;
+            stroke-width: 2.3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* ===== ՄՈԲԱՅԼԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ (768px և ցածր) ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 15px 50px 15px;
+                overflow-x: hidden;
+            }
+            
+            .gallery {
+                gap: 5px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            
+            .gallery img {
+                width: auto;
+                max-width: 200px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            
+            .img-6 {
+                width: 12% !important;
+                max-width: 40px !important;
+                margin: -20px auto -10px auto !important;
+            }
+            
+            .location-container .img-6 {
+                margin: 5px 0 0 12px !important;
+                width: 30px !important;
+                max-width: 30px !important;
+            }
+            
+            .img-9 {
+                width: 45% !important;
+            }
+            
+            .img-church {
+                width: 45% !important;
+            }
+            
+            .content-after-invite {
+                gap: 15px !important;
+                margin-top: 10px !important;
+            }
+            
+            .party-text,
+            .psakadrutyun-text {
+                font-size: 32px !important;
+                margin-top: 5px !important;
+            }
+            
+            .title-text {
+                font-size: 32px !important;
+            }
+            
+            .date-text {
+                font-size: 30px !important;
+            }
+            
+            .invite-text,
+            .love-text,
+            .waiting-text {
+                font-size: 22px !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .party-location,
+            .time-text,
+            .restoran-time {
+                font-size: 22px !important;
+                margin-top: 5px !important;
+            }
+            
+            .psakadrutyun-location {
+                font-size: 24px !important;
+            }
+            
+            .confirm-text {
+                font-size: 18px !important;
+                margin-top: 15px !important;
+            }
+            
+            .directions-btn {
+                font-size: 18px !important;
+                padding: 6px 12px !important;
+                margin-top: 2px !important;
+                margin-left: 10px !important;
+            }
+        }
+        
+        /* ===== ՓՈՔՐ ՄՈԲԱՅԼ (480px և ցածր) ===== */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 10px 30px 10px;
+                overflow-x: hidden;
+                width: 100%;
+            }
+            
+            .gallery {
+                gap: 3px;
+                padding: 5px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            
+            .gallery img {
+                width: auto;
+                max-width: 160px;
+                overflow: hidden;
+            }
+            
+            .img-6 {
+                width: 15% !important;
+                max-width: 35px !important;
+                margin: -25px auto -8px auto !important;
+            }
+            
+            .location-container .img-6 {
+                margin: 0 !important;
+                width: 25px !important;
+                max-width: 25px !important;
+            }
+            
+            .img-9 {
+                width: 35% !important;
+            }
+            
+            .img-church {
+                width: 40% !important;
+            }
+            
+            .content-after-invite {
+                gap: 10px !important;
+                margin-top: 5px !important;
+            }
+            
+            .party-text,
+            .psakadrutyun-text {
+                font-size: 26px !important;
+                margin-top: 5px !important;
+            }
+            
+            .title-text {
+                font-size: 26px !important;
+            }
+            
+            .date-text {
+                font-size: 24px !important;
+            }
+            
+            .invite-text,
+            .love-text,
+            .waiting-text {
+                font-size: 18px !important;
+                margin-top: 5px !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .party-location,
+            .time-text,
+            .restoran-time {
+                font-size: 18px !important;
+                margin-top: 5px !important;
+            }
+            
+            .psakadrutyun-location {
+                font-size: 20px !important;
+            }
+            
+            .confirm-text {
+                font-size: 16px !important;
+                margin-top: 10px !important;
+                line-height: 1.8 !important;
+                margin-bottom: 0 !important;
+                letter-spacing: 0.2px !important;
+                word-spacing: -1px !important;
+            }
+            
+            .location-container {
+                gap: 6px !important;
+            }
+            
+            .directions-btn {
+                font-size: 16px !important;
+                padding: 4px 8px !important;
+            }
+        }
+        
+        /* ===== ՖՈՆՏ ԲԵՌՆՄԱՆ ԱՆԻՄԱՑԻԱ ===== */
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        
+        .gallery {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .font-loaded .title-text,
+        .font-loaded .date-text,
+        .font-loaded .invite-text,
+        .font-loaded .party-text,
+        .font-loaded .psakadrutyun-text,
+        .font-loaded .time-text,
+        .font-loaded .restoran-time,
+        .font-loaded .love-text,
+        .font-loaded .waiting-text,
+        .font-loaded .confirm-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+        }
+        
+        .font-loaded .party-location {
+            font-family: 'Dancing Script', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <!-- Վերևի նկար -->
+        <img src="1.png" alt="Նկար 1" class="img-1">
+        
+        <!-- Անուններ -->
+        <div class="title-text">Արմեն & Նաստյա</div>
+        
+        <!-- Զույգի նկար -->
+        <div class="row">
+            <img src="coupletoghether.png" alt="Զույգ" class="girl">
+        </div>
+        
+        <!-- Ամսաթիվ -->
+        <div class="date-text">Հոկտեմբերի 17</div>
+        
+        <!-- Հրավիրական տեքստ -->
+        <div class="invite-text">
+            Սիրելի հարազատներ,<br>
+            սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց արարողությանը<br>
+            և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը
+        </div>
+        
+        <!-- Արարողության մանրամասներ -->
+        <div class="content-after-invite">
+            
+            <!-- Եկեղեցու բաժին -->
+            <img src="as.png" alt="Եկեղեցի" class="img-church">
+            <div class="psakadrutyun-text">Պսակադրություն</div>
+            <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
+            <div class="time-text">14։30</div>
+            <div class="location-container">
+                <img src="locloc.png" alt="Վայր" class="img-6">
+                <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">
+                    Ինչպես հասնել
+                </button>
+            </div>
+            
+            <!-- Ռեստորանի բաժին -->
+            <img src="9.png" alt="Նկար 9" class="img-9">
+            <div class="party-text">Տոնական խնջույք</div>
+            <div class="party-location">Ohana YVN</div>
+            <div class="restoran-time">17։00</div>
+            <div class="location-container">
+                <img src="locloc.png" alt="Վայր" class="img-6">
+                <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">
+                    Ինչպես հասնել
+                </button>
+            </div>
+            
+            <img src="restoran.png" alt="Ռեստորան" class="img-13">
+            
+            <!-- Սիրո հաղորդագրություն -->
+            <div class="love-text">
+                Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմոցիաներ
+            </div>
+            
+            <!-- Սրտիկներ -->
+            <div class="wait-heart">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                </svg>
+            </div>
+            
+            <img src="15.png" alt="Նկար 15" class="img-15">
+            
+            <!-- Սպասելու տեքստ -->
+            <div class="waiting-text">
+                Սպասում ենք 
+                <span class="wait-heart inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <img src="20.png" alt="Վերջին նկար" class="img-19">
+        </div>
+        
+        <!-- Հաստատման տեքստ -->
+        <div class="confirm-text">
+            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
+            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">15</span>-ը
+        </div>
+    </div>
+
+    <script>
+        // Ֆոնտի բեռնման ստուգում
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ստուգում ենք ֆոնտի բեռնումը
+            const testDiv = document.createElement('div');
+            testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
+            testDiv.style.fontFamily = 'ArmBernhard';
+            testDiv.style.fontSize = '20px';
+            testDiv.style.position = 'absolute';
+            testDiv.style.top = '-9999px';
+            document.body.appendChild(testDiv);
+
+            // Տպում ենք, թե ինչ ֆոնտ է օգտագործվում
+            setTimeout(function() {
+                console.log('🔍 Ֆոնտի ստուգում:');
+                console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
+                console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
+                document.body.removeChild(testDiv);
+                document.body.classList.add('font-loaded');
+            }, 500);
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
