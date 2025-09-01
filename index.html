@@ -333,20 +333,24 @@
         
         .countdown-container {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
         
         .countdown-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(255,255,255,0.8);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
             min-width: 70px;
         }
         
@@ -356,6 +360,11 @@
             font-weight: bold;
             color: #000;
             line-height: 1;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
         }
         
         .countdown-label {
@@ -363,6 +372,9 @@
             font-size: 14px;
             color: #666;
             margin-top: 5px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
         
         /* ===== ԱՆԻՄԱՑԻԱՆԵՐ ===== */
@@ -568,7 +580,7 @@
             }
             
             .countdown-item {
-                padding: 10px !important;
+                padding: 0 !important;
                 min-width: 60px !important;
             }
             
@@ -684,76 +696,26 @@
                 padding: 4px 8px !important;
             }
             
-            /* ===== ՀԵՏՀԱՇՎԱՐԿԻ ՈՃԵՐ ===== */
-            .countdown-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 30px auto;
-                max-width: 90%;
-            }
-
             .countdown-title {
-                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-                font-size: 32px;
-                font-weight: bold;
-                text-align: center;
-                color: #000;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-                margin-bottom: 20px;
+                font-size: 22px !important;
             }
-
+            
             .countdown-container {
-                display: flex;
-                gap: 20px;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
+                gap: 8px !important;
             }
-
+            
             .countdown-item {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-                padding: 0 !important;
-                margin: 0 5px !important;
-                min-width: 70px !important;
+                min-width: 50px !important;
             }
-
-            .countdown-number,
-            #days, #hours, #minutes, #seconds {
-                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-                font-size: 36px;
-                font-weight: bold;
-                color: #000;
-                line-height: 1;
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
+            
+            .countdown-number {
+                font-size: 24px !important;
             }
-
+            
             .countdown-label {
-                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-                font-size: 14px;
-                color: #666;
-                margin-top: 5px;
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
+                font-size: 10px !important;
             }
-            .countdown-section * {
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
+        }
 
         .font-loaded .title-text,
         .font-loaded .date-text,
@@ -851,31 +813,30 @@
                     <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31 1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
                 </svg>
             </div>
             
-            <!-- Հետհաշվարկ -->
             <div class="countdown-section">
-                <div class="countdown-title">Մեր հարսանիքին մնացել է</div>
-                <div class="countdown-container">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">0</div>
-                        <div class="countdown-label">օր</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">0</div>
-                        <div class="countdown-label">ժամ</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">0</div>
-                        <div class="countdown-label">րոպե</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">0</div>
-                        <div class="countdown-label">վրկ</div>
-                    </div>
+              <div class="countdown-title">Մնաց մինչև հարսանիքը</div>
+              <div class="countdown-container">
+                <div class="countdown-item">
+                  <div id="days" class="countdown-number">0</div>
+                  <div class="countdown-label">Օր</div>
                 </div>
+                <div class="countdown-item">
+                  <div id="hours" class="countdown-number">0</div>
+                  <div class="countdown-label">Ժամ</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="minutes" class="countdown-number">0</div>
+                  <div class="countdown-label">Րոպե</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="seconds" class="countdown-number">0</div>
+                  <div class="countdown-label">Վայրկյան</div>
+                </div>
+              </div>
             </div>
 
             <img src="15.png" alt="Նկար 15" class="img-15">
@@ -883,106 +844,107 @@
             <!-- Սպասելու տեքստ -->
             <div class="waiting-text">
                 Սիրով սպասում ենք բոլորիդ
-                            <span class="wait-heart inline">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                                </svg>
-                            </span>
-                            </div>
+                <span class="wait-heart inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                    </svg>
+                </span>
+            </div>
 
-                            <img src="20.png" alt="Վերջին նկար" class="img-19">
-                            </div>
+            <img src="20.png" alt="Վերջին նկար" class="img-19">
+        </div>
 
-                            <!-- Հաստատման տեքստ -->
-                            <div class="confirm-text">
-                            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
-                            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
-                            </div>
-                            </div>
+        <!-- Հաստատման տեքստ -->
+        <div class="confirm-text">
+            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
+            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
+        </div>
+    </div>
 
-                         <script>
-                            // Scroll-based անիմացիա
-                            const observerOptions = {
-                            threshold: 0.2,
-                            rootMargin: '0px 0px -50px 0px'
-                            };
+    <script>
+        // Scroll-based անիմացիա
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-                            const observer = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('animate');
-                            }
-                            });
-                            }, observerOptions);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-                            document.addEventListener('DOMContentLoaded', function() {
-                            // Ֆոնտի բեռնման ստուգում
-                            const testDiv = document.createElement('div');
-                            testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
-                            testDiv.style.fontFamily = 'ArmBernhard';
-                            testDiv.style.fontSize = '20px';
-                            testDiv.style.position = 'absolute';
-                            testDiv.style.top = '-9999px';
-                            document.body.appendChild(testDiv);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ֆոնտի բեռնման ստուգում
+            const testDiv = document.createElement('div');
+            testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
+            testDiv.style.fontFamily = 'ArmBernhard';
+            testDiv.style.fontSize = '20px';
+            testDiv.style.position = 'absolute';
+            testDiv.style.top = '-9999px';
+            document.body.appendChild(testDiv);
 
-                            setTimeout(function() {
-                            console.log('🔍 Ֆոնտի ստուգում:');
-                            console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
-                            console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
-                            document.body.removeChild(testDiv);
-                            document.body.classList.add('font-loaded');
-                            }, 500);
+            setTimeout(function() {
+                console.log('🔍 Ֆոնտի ստուգում:');
+                console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
+                console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
+                document.body.removeChild(testDiv);
+                document.body.classList.add('font-loaded');
+            }, 500);
 
-                            // Բոլոր տարրերը ավելացնել observer-ին
-                            const elementsToAnimate = document.querySelectorAll('.gallery img, .main-message');
-                            elementsToAnimate.forEach(element => {
-                            observer.observe(element);
-                            });
+            // Բոլոր տարրերը ավելացնել observer-ին
+            const elementsToAnimate = document.querySelectorAll('.gallery img, .main-message');
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
 
-                            // Առաջին նկարը և գլխավոր հաղորդագրությունը անմիջապես ցուցադրել
-                            const firstImg = document.querySelector('.img-1');
-                            const mainMessage = document.querySelector('.main-message');
+            // Առաջին նկարը և գլխավոր հաղորդագրությունը անմիջապես ցուցադրել
+            const firstImg = document.querySelector('.img-1');
+            const mainMessage = document.querySelector('.main-message');
 
-                            if (firstImg) {
-                            setTimeout(() => {
-                                firstImg.classList.add('animate');
-                            }, 300);
-                            }
+            if (firstImg) {
+                setTimeout(() => {
+                    firstImg.classList.add('animate');
+                }, 300);
+            }
 
-                            if (mainMessage) {
-                            setTimeout(() => {
-                                mainMessage.classList.add('animate');
-                            }, 500);
-                            }
-                            });
-                                // Հետհաշվարկի ֆունկցիա
-                                function updateCountdown() {
-                                    const weddingDate = new Date('2025-10-17T14:30:00');
-                                    const now = new Date();
-                                    const difference = weddingDate - now;
+            if (mainMessage) {
+                setTimeout(() => {
+                    mainMessage.classList.add('animate');
+                }, 500);
+            }
+        });
 
-                                    if (difference > 0) {
-                                        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                                        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                                        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        // Հետհաշվարկի ֆունկցիա
+        function updateCountdown() {
+            const weddingDate = new Date('2025-10-17T14:30:00');
+            const now = new Date();
+            const difference = weddingDate - now;
 
-                                        document.getElementById('days').textContent = days;
-                                        document.getElementById('hours').textContent = hours;
-                                        document.getElementById('minutes').textContent = minutes;
-                                        document.getElementById('seconds').textContent = seconds;
-                                    } else {
-                                        // Եթե ամսաթիվը անցել է
-                                        document.getElementById('days').textContent = 0;
-                                        document.getElementById('hours').textContent = 0;
-                                        document.getElementById('minutes').textContent = 0;
-                                        document.getElementById('seconds').textContent = 0;
-                                    }
-                                }
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                                // Հետհաշվարկը սկսել
-                                updateCountdown(); // Առաջին կանչ
-                                setInterval(updateCountdown, 1000); // Յուրաքանչյուր վայրկյան թարմացնել
-                            </script>
-                            </body>
-                            </html>
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                // Եթե ամսաթիվը անցել է
+                document.getElementById('days').textContent = 0;
+                document.getElementById('hours').textContent = 0;
+                document.getElementById('minutes').textContent = 0;
+                document.getElementById('seconds').textContent = 0;
+            }
+        }
+
+        // Հետհաշվարկը սկսել
+        updateCountdown(); // Առաջին կանչ
+        setInterval(updateCountdown, 1000); // Յուրաքանչյուր վայրկյան թարմացնել
+    </script>
+</body>
+</html>
