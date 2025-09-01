@@ -74,6 +74,19 @@
             overflow: hidden;
         }
         
+        /* ===== ՆՈՐՈՒՅԹ - ԳԼԽԱՎՈՐ ՀԱՂՈՐԴԱԳՐՈՒԹՅՈՒՆ ===== */
+        .main-message {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 45px;
+            margin: 0 auto 30px auto;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
+            color: #000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+        }
+        
         /* ===== ՏԵՔՍՏԱՅԻՆ ՈՃԵՐ ===== */
         .title-text {
             font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
@@ -299,6 +312,158 @@
             stroke-linejoin: round;
         }
         
+        /* ===== ՀԵՏՀԱՇՎԱՐԿԻ ՈՃԵՐ ===== */
+        .countdown-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px auto;
+            max-width: 90%;
+        }
+
+        .countdown-title {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
+        }
+        
+        .countdown-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 70px;
+        }
+        
+        .countdown-number {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* ===== ԱՆԻՄԱՑԻԱՆԵՐ ===== */
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-20px);
+            }
+            50% {
+                transform: scale(1.05) translateY(-5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.1) rotate(-10deg);
+            }
+            60% {
+                transform: scale(1.1) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .gallery {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        /* Նկարների սկզբնական վիճակ */
+        .gallery img {
+            opacity: 0;
+            transform: scale(0.3) translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .gallery .girl {
+            opacity: 0;
+            transform: scale(0.1) rotate(-10deg);
+            transition: all 0.8s ease-out;
+        }
+        
+        /* Անիմացիոն կլասներ */
+        .img-1.animate {
+            animation: popIn 0.8s ease-out both;
+        }
+        
+        .girl.animate {
+            animation: bounceIn 1s ease-out both;
+        }
+        
+        .img-church.animate {
+            animation: popIn 0.8s ease-out both;
+        }
+        
+        .img-9.animate {
+            animation: slideInUp 0.8s ease-out both;
+        }
+        
+        .img-13.animate {
+            animation: popIn 0.8s ease-out both;
+        }
+        
+        .img-15.animate {
+            animation: bounceIn 0.8s ease-out both;
+        }
+        
+        .img-19.animate {
+            animation: popIn 1s ease-out both;
+        }
+        
+        .img-6.animate {
+            animation: bounceIn 0.6s ease-out both;
+        }
+        
+        .main-message.animate {
+            animation: fadeIn 1.2s ease-out both;
+        }
+        
         /* ===== ՄՈԲԱՅԼԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ (768px և ցածր) ===== */
         @media (max-width: 768px) {
             body {
@@ -318,6 +483,11 @@
                 max-width: 200px;
                 margin: 0 auto;
                 overflow: hidden;
+            }
+            
+            .main-message {
+                font-size: 36px !important;
+                margin: 0 auto 25px auto !important;
             }
             
             .img-6 {
@@ -388,6 +558,27 @@
                 margin-top: 2px !important;
                 margin-left: 10px !important;
             }
+            
+            .countdown-title {
+                font-size: 26px !important;
+            }
+            
+            .countdown-container {
+                gap: 10px !important;
+            }
+            
+            .countdown-item {
+                padding: 10px !important;
+                min-width: 60px !important;
+            }
+            
+            .countdown-number {
+                font-size: 28px !important;
+            }
+            
+            .countdown-label {
+                font-size: 12px !important;
+            }
         }
         
         /* ===== ՓՈՔՐ ՄՈԲԱՅԼ (480px և ցածր) ===== */
@@ -410,6 +601,11 @@
                 width: auto;
                 max-width: 160px;
                 overflow: hidden;
+            }
+            
+            .main-message {
+                font-size: 28px !important;
+                margin: 0 auto 20px auto !important;
             }
             
             .img-6 {
@@ -487,18 +683,78 @@
                 font-size: 16px !important;
                 padding: 4px 8px !important;
             }
-        }
-        
-        /* ===== ՖՈՆՏ ԲԵՌՆՄԱՆ ԱՆԻՄԱՑԻԱ ===== */
-        @keyframes fadeIn {
-            from { opacity: 0.5; }
-            to { opacity: 1; }
-        }
-        
-        .gallery {
-            animation: fadeIn 0.5s ease-in;
-        }
-        
+            
+            /* ===== ՀԵՏՀԱՇՎԱՐԿԻ ՈՃԵՐ ===== */
+            .countdown-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 30px auto;
+                max-width: 90%;
+            }
+
+            .countdown-title {
+                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+                font-size: 32px;
+                font-weight: bold;
+                text-align: center;
+                color: #000;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+                margin-bottom: 20px;
+            }
+
+            .countdown-container {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .countdown-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 5px !important;
+                min-width: 70px !important;
+            }
+
+            .countdown-number,
+            #days, #hours, #minutes, #seconds {
+                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+                font-size: 36px;
+                font-weight: bold;
+                color: #000;
+                line-height: 1;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .countdown-label {
+                font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+                font-size: 14px;
+                color: #666;
+                margin-top: 5px;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            .countdown-section * {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
         .font-loaded .title-text,
         .font-loaded .date-text,
         .font-loaded .invite-text,
@@ -508,7 +764,11 @@
         .font-loaded .restoran-time,
         .font-loaded .love-text,
         .font-loaded .waiting-text,
-        .font-loaded .confirm-text {
+        .font-loaded .confirm-text,
+        .font-loaded .main-message,
+        .font-loaded .countdown-title,
+        .font-loaded .countdown-number,
+        .font-loaded .countdown-label {
             font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
         }
         
@@ -521,19 +781,25 @@
 
 <body>
     <div class="gallery">
-        <!-- Վերևի նկար -->
-        <img src="1.png" alt="Նկար 1" class="img-1">
+        <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
+        <div class="main-message">Մենք ամուսնանում ենք</div>
         
-        <!-- Անուններ -->
-        <div class="title-text">Արմեն & Նաստյա</div>
-        
-        <!-- Զույգի նկար -->
+        <!-- zuyginkar -->
         <div class="row">
             <img src="coupletoghether.png" alt="Զույգ" class="girl">
         </div>
         
+        
+        <!-- Անուններ -->
+        <div class="title-text">Արմեն & Նաստյա</div>
+        
+        <!-- bajakner -->
+        <img src="1.png" alt="Նկար 1" class="img-1">
+        
         <!-- Ամսաթիվ -->
         <div class="date-text">Հոկտեմբերի 17</div>
+
+        <img src="waiter.png" alt="Եկեղեցի" class="img-church">
         
         <!-- Հրավիրական տեքստ -->
         <div class="invite-text">
@@ -545,11 +811,11 @@
         <!-- Արարողության մանրամասներ -->
         <div class="content-after-invite">
             
-            <!-- Եկեղեցու բաժին -->
-            <img src="as.png" alt="Եկեղեցի" class="img-church">
+            <!-- momeribajin -->
+            <img src="candles.png" alt="Եկեղեցի" class="img-church">
             <div class="psakadrutyun-text">Պսակադրություն</div>
-            <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
             <div class="time-text">14։30</div>
+            <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
             <div class="location-container">
                 <img src="locloc.png" alt="Վայր" class="img-6">
                 <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">
@@ -558,10 +824,10 @@
             </div>
             
             <!-- Ռեստորանի բաժին -->
-            <img src="9.png" alt="Նկար 9" class="img-9">
+            <img src="as.png" alt="Նկար 9" class="img-9">
             <div class="party-text">Տոնական խնջույք</div>
-            <div class="party-location">Ohana YVN</div>
             <div class="restoran-time">17։00</div>
+            <div class="party-location">Ohana YVN</div>
             <div class="location-container">
                 <img src="locloc.png" alt="Վայր" class="img-6">
                 <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">
@@ -569,7 +835,7 @@
                 </button>
             </div>
             
-            <img src="restoran.png" alt="Ռեստորան" class="img-13">
+            <img src="restnew.png" alt="Ռեստորան" class="img-13">
             
             <!-- Սիրո հաղորդագրություն -->
             <div class="love-text">
@@ -585,53 +851,137 @@
                     <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31 1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
                 </svg>
             </div>
             
+            <div class="countdown-section">
+              <div class="countdown-title">Մնաց մինչև հարսանիքը</div>
+              <div class="countdown-container">
+                <div class="countdown-item">
+                  <div id="days" class="countdown-number">0</div>
+                  <div class="countdown-label">Օր</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="hours" class="countdown-number">0</div>
+                  <div class="countdown-label">Ժամ</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="minutes" class="countdown-number">0</div>
+                  <div class="countdown-label">Րոպե</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="seconds" class="countdown-number">0</div>
+                  <div class="countdown-label">Վայրկյան</div>
+                </div>
+              </div>
+            </div>
+
             <img src="15.png" alt="Նկար 15" class="img-15">
             
             <!-- Սպասելու տեքստ -->
             <div class="waiting-text">
-                Սպասում ենք 
-                <span class="wait-heart inline">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                    </svg>
-                </span>
-            </div>
-            
-            <img src="20.png" alt="Վերջին նկար" class="img-19">
-        </div>
-        
-        <!-- Հաստատման տեքստ -->
-        <div class="confirm-text">
-            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
-            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">15</span>-ը
-        </div>
-    </div>
+                Սիրով սպասում ենք բոլորիդ
+                            <span class="wait-heart inline">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+                                </svg>
+                            </span>
+                            </div>
 
-    <script>
-        // Ֆոնտի բեռնման ստուգում
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ստուգում ենք ֆոնտի բեռնումը
-            const testDiv = document.createElement('div');
-            testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
-            testDiv.style.fontFamily = 'ArmBernhard';
-            testDiv.style.fontSize = '20px';
-            testDiv.style.position = 'absolute';
-            testDiv.style.top = '-9999px';
-            document.body.appendChild(testDiv);
+                            <img src="20.png" alt="Վերջին նկար" class="img-19">
+                            </div>
 
-            // Տպում ենք, թե ինչ ֆոնտ է օգտագործվում
-            setTimeout(function() {
-                console.log('🔍 Ֆոնտի ստուգում:');
-                console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
-                console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
-                document.body.removeChild(testDiv);
-                document.body.classList.add('font-loaded');
-            }, 500);
-        });
-    </script>
-</body>
-</html>
+                            <!-- Հաստատման տեքստ -->
+                            <div class="confirm-text">
+                            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
+                            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
+                            </div>
+                            </div>
+
+                         <script>
+                            // Scroll-based անիմացիա
+                            const observerOptions = {
+                            threshold: 0.2,
+                            rootMargin: '0px 0px -50px 0px'
+                            };
+
+                            const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                            }
+                            });
+                            }, observerOptions);
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                            // Ֆոնտի բեռնման ստուգում
+                            const testDiv = document.createElement('div');
+                            testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
+                            testDiv.style.fontFamily = 'ArmBernhard';
+                            testDiv.style.fontSize = '20px';
+                            testDiv.style.position = 'absolute';
+                            testDiv.style.top = '-9999px';
+                            document.body.appendChild(testDiv);
+
+                            setTimeout(function() {
+                            console.log('🔍 Ֆոնտի ստուգում:');
+                            console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
+                            console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
+                            document.body.removeChild(testDiv);
+                            document.body.classList.add('font-loaded');
+                            }, 500);
+
+                            // Բոլոր տարրերը ավելացնել observer-ին
+                            const elementsToAnimate = document.querySelectorAll('.gallery img, .main-message');
+                            elementsToAnimate.forEach(element => {
+                            observer.observe(element);
+                            });
+
+                            // Առաջին նկարը և գլխավոր հաղորդագրությունը անմիջապես ցուցադրել
+                            const firstImg = document.querySelector('.img-1');
+                            const mainMessage = document.querySelector('.main-message');
+
+                            if (firstImg) {
+                            setTimeout(() => {
+                                firstImg.classList.add('animate');
+                            }, 300);
+                            }
+
+                            if (mainMessage) {
+                            setTimeout(() => {
+                                mainMessage.classList.add('animate');
+                            }, 500);
+                            }
+                            });
+                                // Հետհաշվարկի ֆունկցիա
+                                function updateCountdown() {
+                                    const weddingDate = new Date('2025-10-17T14:30:00');
+                                    const now = new Date();
+                                    const difference = weddingDate - now;
+
+                                    if (difference > 0) {
+                                        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                                        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                                        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                                        document.getElementById('days').textContent = days;
+                                        document.getElementById('hours').textContent = hours;
+                                        document.getElementById('minutes').textContent = minutes;
+                                        document.getElementById('seconds').textContent = seconds;
+                                    } else {
+                                        // Եթե ամսաթիվը անցել է
+                                        document.getElementById('days').textContent = 0;
+                                        document.getElementById('hours').textContent = 0;
+                                        document.getElementById('minutes').textContent = 0;
+                                        document.getElementById('seconds').textContent = 0;
+                                    }
+                                }
+
+                                // Հետհաշվարկը սկսել
+                                updateCountdown(); // Առաջին կանչ
+                                setInterval(updateCountdown, 1000); // Յուրաքանչյուր վայրկյան թարմացնել
+                            </script>
+                            </body>
+                            </html>
