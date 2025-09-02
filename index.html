@@ -68,10 +68,13 @@
         
         .gallery img {
             max-width: 100%;
-            width: auto;
+            width: 30%; /* Բոլոր նկարների համար 15-րդ նկարի չափով */
             height: auto;
             display: block;
             overflow: hidden;
+            opacity: 0;
+            transform: scale(0.3) translateY(20px);
+            transition: all 0.6s ease-out;
         }
         
         /* ===== ՆՈՐՈՒՅԹ - ԳԼԽԱՎՈՐ ՀԱՂՈՐԴԱԳՐՈՒԹՅՈՒՆ ===== */
@@ -186,38 +189,21 @@
             max-width: 90%;
         }
         
-        /* ===== ՆԿԱՐՆԵՐԻ ՉԱՓԵՐ ===== */
-        .img-1 {
-            width: 50%;
+        /* ===== ՆԿԱՐՆԵՐԻ ՀԱՏՈՒԿ ՉԱՓԵՐ ===== */
+        .couple-img {
+            width: 30% !important; /* Զույգի նկար նույն չափով */
         }
         
-        .img-6 {
-            width: 6% !important;
-            max-width: 50px !important;
+        .location-icon {
+            width: 6% !important; /* Վայրի իկոնները փոքր մնան */
+            max-width: 40px !important;
             margin: -15px auto -5px auto !important;
-            display: block;
         }
         
-        .img-9 {
-            width: 55%;
-        }
-        
-        .img-13 {
-            width: 50%;
-        }
-        
-        .img-15 {
-            width: 30%;
-        }
-        
-        .img-19 {
-            width: 40%;
-            margin-top: 40px;
-        }
-        
-        .img-church {
-            width: 50%;
-            margin: 0 auto;
+        .location-container .location-icon {
+            margin: 6px 0 0 15px !important;
+            width: 35px !important;
+            max-width: 35px !important;
         }
         
         /* ===== ԱՂՋԿԱ ՆԿԱՐ ===== */
@@ -258,12 +244,6 @@
             position: relative;
             top: -10px;
             left: -20px;
-        }
-        
-        .location-container .img-6 {
-            margin: 6px 0 0 15px !important;
-            width: 35px !important;
-            max-width: 35px !important;
         }
         
         .directions-btn {
@@ -389,7 +369,7 @@
                 transform: scale(0.3) translateY(-20px);
             }
             50% {
-                transform: scale(1.05) translateY(-5px);
+                transform: scale(1.15) translateY(-5px);
             }
             100% {
                 opacity: 1;
@@ -403,7 +383,7 @@
                 transform: scale(0.1) rotate(-10deg);
             }
             60% {
-                transform: scale(1.1) rotate(5deg);
+                transform: scale(1.2) rotate(5deg);
             }
             100% {
                 opacity: 1;
@@ -426,50 +406,14 @@
             animation: fadeIn 0.5s ease-in;
         }
         
-        /* Նկարների սկզբնական վիճակ */
-        .gallery img {
-            opacity: 0;
-            transform: scale(0.3) translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-        
-        .gallery .girl {
-            opacity: 0;
-            transform: scale(0.1) rotate(-10deg);
-            transition: all 0.8s ease-out;
-        }
-        
-        /* Անիմացիոն կլասներ */
-        .img-1.animate {
+        /* Բոլոր նկարների համար pop-in անիմացիա */
+        .gallery img.animate {
             animation: popIn 0.8s ease-out both;
         }
         
+        /* Հատուկ անիմացիա զույգի նկարի համար */
         .girl.animate {
             animation: bounceIn 1s ease-out both;
-        }
-        
-        .img-church.animate {
-            animation: popIn 0.8s ease-out both;
-        }
-        
-        .img-9.animate {
-            animation: slideInUp 0.8s ease-out both;
-        }
-        
-        .img-13.animate {
-            animation: popIn 0.8s ease-out both;
-        }
-        
-        .img-15.animate {
-            animation: bounceIn 0.8s ease-out both;
-        }
-        
-        .img-19.animate {
-            animation: popIn 1s ease-out both;
-        }
-        
-        .img-6.animate {
-            animation: bounceIn 0.6s ease-out both;
         }
         
         .main-message.animate {
@@ -491,35 +435,29 @@
             }
             
             .gallery img {
-                width: auto;
-                max-width: 200px;
-                margin: 0 auto;
+                width: 30%; /* Մոբայլում նույն չափ */
                 overflow: hidden;
+            }
+            
+            .couple-img {
+                width: 30% !important;
+            }
+            
+            .location-icon {
+                width: 6% !important;
+                max-width: 30px !important;
+                margin: -20px auto -10px auto !important;
+            }
+            
+            .location-container .location-icon {
+                margin: 5px 0 0 12px !important;
+                width: 25px !important;
+                max-width: 25px !important;
             }
             
             .main-message {
                 font-size: 36px !important;
                 margin: 0 auto 25px auto !important;
-            }
-            
-            .img-6 {
-                width: 12% !important;
-                max-width: 40px !important;
-                margin: -20px auto -10px auto !important;
-            }
-            
-            .location-container .img-6 {
-                margin: 5px 0 0 12px !important;
-                width: 30px !important;
-                max-width: 30px !important;
-            }
-            
-            .img-9 {
-                width: 45% !important;
-            }
-            
-            .img-church {
-                width: 45% !important;
             }
             
             .content-after-invite {
@@ -610,34 +548,29 @@
             }
             
             .gallery img {
-                width: auto;
-                max-width: 160px;
+                width: 30%; /* Փոքր մոբայլում նույն չափ */
                 overflow: hidden;
+            }
+            
+            .couple-img {
+                width: 30% !important;
+            }
+            
+            .location-icon {
+                width: 6% !important;
+                max-width: 25px !important;
+                margin: -25px auto -8px auto !important;
+            }
+            
+            .location-container .location-icon {
+                margin: 0 !important;
+                width: 20px !important;
+                max-width: 20px !important;
             }
             
             .main-message {
                 font-size: 28px !important;
                 margin: 0 auto 20px auto !important;
-            }
-            
-            .img-6 {
-                width: 15% !important;
-                max-width: 35px !important;
-                margin: -25px auto -8px auto !important;
-            }
-            
-            .location-container .img-6 {
-                margin: 0 !important;
-                width: 25px !important;
-                max-width: 25px !important;
-            }
-            
-            .img-9 {
-                width: 35% !important;
-            }
-            
-            .img-church {
-                width: 40% !important;
             }
             
             .content-after-invite {
@@ -748,7 +681,7 @@
         
         <!-- zuyginkar -->
         <div class="row">
-            <img src="coupletoghether.png" alt="Զույգ" class="girl">
+            <img src="coupletoghether.png" alt="Զույգ" class="girl couple-img">
         </div>
         
         
@@ -756,12 +689,12 @@
         <div class="title-text">Արմեն & Նաստյա</div>
         
         <!-- bajakner -->
-        <img src="1.png" alt="Նկար 1" class="img-1">
+        <img src="1.png" alt="Նկար 1">
         
         <!-- Ամսաթիվ -->
         <div class="date-text">Հոկտեմբերի 17</div>
 
-        <img src="waiter.png" alt="Եկեղեցի" class="img-church">
+        <img src="waiter.png" alt="Եկեղեցի">
         
         <!-- Հրավիրական տեքստ -->
         <div class="invite-text">
@@ -774,30 +707,30 @@
         <div class="content-after-invite">
             
             <!-- momeribajin -->
-            <img src="candles.png" alt="Եկեղեցի" class="img-church">
+            <img src="candles.png" alt="Եկեղեցի">
             <div class="psakadrutyun-text">Պսակադրություն</div>
             <div class="time-text">14։30</div>
             <div class="psakadrutyun-location">Մուղնու Սբ․ Գևորգ Եկեղեցի</div>
             <div class="location-container">
-                <img src="locloc.png" alt="Վայր" class="img-6">
+                <img src="locloc.png" alt="Վայր" class="location-icon">
                 <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">
                     Ինչպես հասնել
                 </button>
             </div>
             
             <!-- Ռեստորանի բաժին -->
-            <img src="as.png" alt="Նկար 9" class="img-9">
+            <img src="as.png" alt="Նկար 9">
             <div class="party-text">Տոնական խնջույք</div>
             <div class="restoran-time">17։00</div>
             <div class="party-location">Ohana YVN</div>
             <div class="location-container">
-                <img src="locloc.png" alt="Վայր" class="img-6">
+                <img src="locloc.png" alt="Վայր" class="location-icon">
                 <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">
                     Ինչպես հասնել
                 </button>
             </div>
             
-            <img src="restnew.png" alt="Ռեստորան" class="img-13">
+            <img src="restnew.png" alt="Ռեստորան">
             
             <!-- Սիրո հաղորդագրություն -->
             <div class="love-text">
@@ -818,28 +751,29 @@
             </div>
             
             <div class="countdown-section">
-              <div class="countdown-title">Մնաց մինչև հարսանիքը</div>
+                <img src="dancingpeople.png" alt="Վերջին նկար">
+              <div class="countdown-title">Մեր հարսանիքին մնաց</div>
               <div class="countdown-container">
                 <div class="countdown-item">
                   <div id="days" class="countdown-number">0</div>
-                  <div class="countdown-label">Օր</div>
+                  <div class="countdown-label">օր</div>
                 </div>
                 <div class="countdown-item">
                   <div id="hours" class="countdown-number">0</div>
-                  <div class="countdown-label">Ժամ</div>
+                  <div class="countdown-label">ժամ</div>
                 </div>
                 <div class="countdown-item">
                   <div id="minutes" class="countdown-number">0</div>
-                  <div class="countdown-label">Րոպե</div>
+                  <div class="countdown-label">րոպե</div>
                 </div>
                 <div class="countdown-item">
                   <div id="seconds" class="countdown-number">0</div>
-                  <div class="countdown-label">Վայրկյան</div>
+                  <div class="countdown-label">վայրկյան</div>
                 </div>
               </div>
             </div>
 
-            <img src="15.png" alt="Նկար 15" class="img-15">
+            <img src="15.png" alt="Նկար 15">
             
             <!-- Սպասելու տեքստ -->
             <div class="waiting-text">
@@ -851,7 +785,7 @@
                 </span>
             </div>
 
-            <img src="20.png" alt="Վերջին նկար" class="img-19">
+            <img src="20.png" alt="Վերջին նկար">
         </div>
 
         <!-- Հաստատման տեքստ -->
@@ -869,9 +803,12 @@
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
+                    // Ընթացիկ ուշացման հաշվարկ
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 200); // 200ms ուշացում յուրաքանչյուր նկարի համար
                 }
             });
         }, observerOptions);
@@ -894,26 +831,26 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // Բոլոր տարրերը ավելացնել observer-ին
+            // Բոլոր նկարները ավելացնել observer-ին
             const elementsToAnimate = document.querySelectorAll('.gallery img, .main-message');
             elementsToAnimate.forEach(element => {
                 observer.observe(element);
             });
 
             // Առաջին նկարը և գլխավոր հաղորդագրությունը անմիջապես ցուցադրել
-            const firstImg = document.querySelector('.img-1');
             const mainMessage = document.querySelector('.main-message');
-
-            if (firstImg) {
-                setTimeout(() => {
-                    firstImg.classList.add('animate');
-                }, 300);
-            }
-
             if (mainMessage) {
                 setTimeout(() => {
                     mainMessage.classList.add('animate');
-                }, 500);
+                }, 300);
+            }
+
+            // Զույգի նկարը առաջինը ցուցադրել
+            const coupleImg = document.querySelector('.girl');
+            if (coupleImg) {
+                setTimeout(() => {
+                    coupleImg.classList.add('animate');
+                }, 600);
             }
         });
 
