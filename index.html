@@ -459,6 +459,22 @@
         .main-message.animate {
             animation: fadeIn 1.2s ease-out both;
         }
+        .gallery img.animate,
+        .main-message.animate,
+        .title-text.animate,
+        .invite-text.animate,
+        .date-text.animate,
+        .party-text.animate,
+        .psakadrutyun-text.animate,
+        .time-text.animate,
+        .restoran-time.animate,
+        .love-text.animate,
+        .waiting-text.animate,
+        .confirm-text.animate,
+        .countdown-title.animate {
+          animation: popIn 0.8s ease-out both;
+        }
+
 
         img.dancingpeople {
           width: 250px !important;
@@ -943,13 +959,21 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    // Ընթացիկ ուշացման հաշվարկ
                     setTimeout(() => {
                         entry.target.classList.add('animate');
-                    }, index * 200); // 200ms ուշացում յուրաքանչյուր նկարի համար
+                    }, index * 200);
                 }
             });
         }, observerOptions);
+
+        // ⬇️ Ավելացրու հենց այստեղ
+        const elementsToAnimate = document.querySelectorAll(
+          '.gallery img, .main-message, .title-text, .invite-text, .date-text, .party-text, .psakadrutyun-text, .time-text, .restoran-time, .love-text, .waiting-text, .confirm-text, .countdown-title'
+        );
+
+        elementsToAnimate.forEach(element => {
+          observer.observe(element);
+        });
 
         document.addEventListener('DOMContentLoaded', function () {
             // Ֆոնտի բեռնման ստուգում
