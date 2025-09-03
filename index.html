@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hy">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,250 +13,261 @@
 
         /* Հայերեն ֆոնտեր */
         @font-face {
-           font-family: 'Vrdznagir';
-           src: url('Vrdznagir.woff2') format('woff2'),
+            font-family: 'Vrdznagir';
+            src: url('Vrdznagir.woff2') format('woff2'),
                 url('Vrdznagir.woff') format('woff'),
                 url('Vrdznagir.otf') format('opentype');
-           font-weight: normal;
-           font-style: normal;
-           font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
-           font-family: 'ArmCoronetU';
-           src: url('ArmCoronetU.ttf') format('truetype');
-           font-weight: 700;
-           font-style: normal;
-           font-display: swap;
-           unicode-range: U+0530-058F, U+FB13-FB17;
+            font-family: 'ArmCoronetU';
+            src: url('ArmCoronetU.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0530-058F, U+FB13-FB17;
         }
 
         /* ===== ԲԱԶԱՅԻՆ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ ===== */
         * {
-           margin: 0;
-           padding: 0;
-           box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html {
-           overflow-x: hidden;
-           width: 100%;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
-           background: #fffaf4;
-           padding: 20px 20px 60px 20px;
-           display: flex;
-           justify-content: center;
-           min-height: 100vh;
-           font-family: 'Gochi Hand', cursive;
-           overflow-x: hidden;
-           width: 100%;
-           max-width: 100vw;
+            background: #fffaf4;
+            padding: 20px 20px 60px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Gochi Hand', cursive;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         /* ===== ՀԻՄՆԱԿԱՆ ԿՈՆՏԵՅՆԵՐ ===== */
         .gallery {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           gap: 10px;
-           max-width: 900px;
-           width: 100%;
-           overflow-x: hidden;
-           position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 900px;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
         }
 
         /* ԲՈԼՈՐ ՆԿԱՐՆԵՐԸ NEWCOUPLE.PNG-Ի ՉԱՓՍԵՐՈՎ */
         .gallery img {
-           max-width: 100%;
-           width: 30%; /* newcouple.png-ի չափսով */
-           height: auto;
-           display: block;
-           overflow: hidden;
-           opacity: 0;
-           transform: scale(0.3) translateY(20px);
-           transition: all 0.6s ease-out;
+            max-width: 100%;
+            width: 30%;
+            /* newcouple.png-ի չափսով */
+            height: auto;
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.3) translateY(20px);
+            transition: all 0.6s ease-out;
         }
 
         /* ===== ՆՈՐՈՒՅԹ - ԳԼԽԱՎՈՐ ՀԱՂՈՐԴԱԳՐՈՒԹՅՈՒՆ ===== */
         .main-message {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 45px;
-           margin: 0 auto 30px auto;
-           font-weight: bold;
-           text-align: center;
-           max-width: 90%;
-           line-height: 1.4;
-           color: #000;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 45px;
+            margin: 0 auto 30px auto;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
+            color: #000;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
         }
 
         /* ===== ՏԵՔՍՏԱՅԻՆ ՈՃԵՐ ===== */
         .title-text {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 40px;
-           margin-top: 8px;
-           font-weight: bold;
-           text-align: center;
-           max-width: 90%;
-           line-height: 1.4;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 40px;
+            margin-top: 8px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
         }
 
         .date-text {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 40px;
-           margin-top: -50px;
-           margin-bottom: 0;
-           font-weight: bold;
-           text-align: center;
-           max-width: 90%;
-           line-height: 1.4;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 40px;
+            margin-top: -50px;
+            margin-bottom: 0;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.4;
         }
 
         .invite-text {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 28px;
-           margin: 6px auto;
-           line-height: 1.4;
-           text-align: center;
-           max-width: 90%;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin: 6px auto;
+            line-height: 1.4;
+            text-align: center;
+            max-width: 90%;
         }
 
         .party-text,
         .psakadrutyun-text {
             font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-             font-size: 40px;
-             line-height: 1.2;
-             margin-top: 15px;
-             color: #000;
-             text-align: center;
-             text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-             white-space: nowrap;   /* 🔑 բառերը չեն կոտրվի */
-             max-width: 100%;       /* թույլ տա տարածվել ամբողջ լայնությամբ */
+            font-size: 40px;
+            line-height: 1.2;
+            margin-top: 15px;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            white-space: nowrap;
+            /* 🔑 բառերը չեն կոտրվի */
+            max-width: 100%;
+            /* թույլ տա տարածվել ամբողջ լայնությամբ */
         }
 
         .party-location {
-           font-family: 'Dancing Script', cursive;
-           font-size: 28px;
-           margin-top: 3px;
-           text-align: center;
-           font-style: italic;
-           font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            margin-top: 3px;
+            text-align: center;
+            font-style: italic;
+            font-weight: 400;
         }
 
         .psakadrutyun-location {
-           font-family: 'ArmCoronetU', serif !important;
-           color: #000;
-           text-align: center;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-           max-width: 90%;
-           font-size: 28px;
-           margin-top: 5px;
-           line-height: 1.3;
-           font-weight: normal;
-           white-space: nowrap; /* Արգելում է տող բաժանելը */
+            font-family: 'ArmCoronetU', serif !important;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            max-width: 90%;
+            font-size: 28px;
+            margin-top: 5px;
+            line-height: 1.3;
+            font-weight: normal;
+            white-space: nowrap;
+            /* Արգելում է տող բաժանելը */
 
         }
 
         .time-text,
         .restoran-time {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 28px;
-           margin-top: 49px;
-           line-height: 1.3;
-           color: #000;
-           text-align: center;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-           max-width: 90%;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin-top: 49px;
+            line-height: 1.3;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            max-width: 90%;
         }
 
         .love-text,
         .waiting-text {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 28px;
-           margin-top: 20px;
-              margin-left: 30px; /* փոխիր px թիվը ըստ կարիքի */
-           line-height: 1.4;
-           color: #000;
-           text-align: center;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-           max-width: 90%;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 28px;
+            margin-top: 10px;
+            margin-left: 30px;
+            /* փոխիր px թիվը ըստ կարիքի */
+            line-height: 1.4;
+            color: #000;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            max-width: 90%;
         }
 
         .confirm-text {
-           font-family: 'ArmCoronetU', serif !important;
-           font-size: 26px;
-           margin-top: 30px;
-           color: #000;
-           font-style: normal;
-           line-height: 1.6;
-           text-align: center;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-           max-width: 90%;
+            font-family: 'ArmCoronetU', serif !important;
+            font-size: 26px;
+            margin-top: 30px;
+            color: #000;
+            font-style: normal;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            max-width: 90%;
         }
 
         /* ===== ՀԱՏՈՒԿ ՈՃԵՐ ՎԱՅՐԻ ԻԿՈՆՆԵՐԻ ՀԱՄԱՐ ===== */
         .location-icon {
-           width: 6% !important; /* Վայրի իկոնները փոքր մնան */
-           max-width: 40px !important;
-           margin: -15px auto -5px auto !important;
+            width: 6% !important;
+            /* Վայրի իկոնները փոքր մնան */
+            max-width: 40px !important;
+            margin: -15px auto -5px auto !important;
         }
 
         .location-container .location-icon {
-           margin: 0 !important;
-           width: 35px !important;
-           max-width: 35px !important;
+            margin: 0 !important;
+            width: 35px !important;
+            max-width: 35px !important;
         }
 
         /* ===== ԱՂՋԿԱ ՆԿԱՐ ===== */
         .row {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           width: 100%;
-           margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
         }
 
         .row img {
-           width: 300px !important;
-           height: auto !important;
-           position: relative;
-           display: block;
-           margin: 0 auto;
-           width: 30%; /* newcouple.png-ի չափսով */
-           top: -50px; /* նկարը բարձրացնում է 50px վերև */
+            width: 300px !important;
+            height: auto !important;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 30%;
+            /* newcouple.png-ի չափսով */
+            top: -50px;
+            /* նկարը բարձրացնում է 50px վերև */
         }
+
         .title-text {
             position: relative;
-            top: -70px; /* բարձրացնում է վերև */
+            top: -70px;
+            /* բարձրացնում է վերև */
             text-align: center;
         }
 
         .invite-text {
             position: relative;
-            top: -70px; /* նույն բարձրությունը, որպեսզի հավասար բարձրության վրա մնան */
+            top: -70px;
+            /* նույն բարձրությունը, որպեսզի հավասար բարձրության վրա մնան */
             text-align: center;
         }
 
         /* ===== ՎԱՅՐԻ ՏԵՂԵԿՈՒԹՅՈՒՆՆԵՐ ===== */
         .content-after-invite {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           gap: 15px;
-           width: 100%;
-           margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            margin-top: 10px;
         }
 
         .location-container {
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           gap: 8px;
-           margin-top: 10px;
-           position: relative;
-           z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 5;
         }
 
         .directions-btn {
@@ -273,463 +285,504 @@
             position: relative;
             z-index: 10;
 
-            top: -4px;   /* վերև տեղափոխելու համար */
-            left: -20px;  /* ձախ տեղափոխելու համար */
+            top: -4px;
+            /* վերև տեղափոխելու համար */
+            left: -20px;
+            /* ձախ տեղափոխելու համար */
         }
 
         .directions-btn:hover {
-           color: #666;
-           transform: translateY(-2px);
+            color: #666;
+            transform: translateY(-2px);
         }
 
         /* ===== ՍՐՏԻԿՆԵՐ ===== */
         .wait-heart {
-           display: inline-flex;
-           justify-content: center;
-           align-items: center;
-           gap: 6px;
-           margin-top: 0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-top: 0;
         }
 
         .wait-heart.inline {
-           display: inline-flex;
-           vertical-align: middle;
-           gap: 6px;
-           margin-left: 6px;
+            display: inline-flex;
+            vertical-align: middle;
+            gap: 6px;
+            margin-left: 6px;
         }
 
         .wait-heart svg {
-           width: 28px;
-           height: 28px;
-           fill: none;
-           stroke: #000;
-           stroke-width: 2.3;
-           stroke-linecap: round;
-           stroke-linejoin: round;
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #000;
+            stroke-width: 2.3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         /* ===== ՀԵՏՀԱՇՎԱՐԿԻ ՈՃԵՐ ===== */
         .countdown-section {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         margin-top:20px;
-         margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .countdown-title {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 32px;
-           font-weight: bold;
-           text-align: center;
-           color: #000;
-           text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-           margin-bottom: 20px;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
         }
 
         .countdown-container {
-           display: flex;
-           gap: 15px;
-           justify-content: center;
-           align-items: center;
-           flex-wrap: wrap;
-           background: transparent;
-           border: none;
-           box-shadow: none;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
         .countdown-item {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           background: transparent;
-           border: none;
-           box-shadow: none;
-           padding: 0;
-           margin: 0;
-           min-width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
+            min-width: 70px;
         }
 
         .countdown-number {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 36px;
-           font-weight: bold;
-           color: #000;
-           line-height: 1;
-           background: transparent;
-           border: none;
-           box-shadow: none;
-           padding: 0;
-           margin: 0;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            line-height: 1;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
         }
 
         .countdown-label {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
-           font-size: 14px;
-           color: #666;
-           margin-top: 5px;
-           background: transparent;
-           border: none;
-           box-shadow: none;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
         /* ===== ԱՆԻՄԱՑԻԱՆԵՐ ===== */
         @keyframes fadeIn {
-           from { opacity: 0.5; }
-           to { opacity: 1; }
+            from {
+                opacity: 0.5;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes popIn {
-           0% {
-               opacity: 0;
-               transform: scale(0.3) translateY(-20px);
-           }
-           50% {
-               transform: scale(1.15) translateY(-5px);
-           }
-           100% {
-               opacity: 1;
-               transform: scale(1) translateY(0);
-           }
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-20px);
+            }
+
+            50% {
+                transform: scale(1.15) translateY(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         @keyframes bounceIn {
-           0% {
-               opacity: 0;
-               transform: scale(0.1) rotate(-10deg);
-           }
-           60% {
-               transform: scale(1.2) rotate(5deg);
-           }
-           100% {
-               opacity: 1;
-               transform: scale(1) rotate(0deg);
-           }
+            0% {
+                opacity: 0;
+                transform: scale(0.1) rotate(-10deg);
+            }
+
+            60% {
+                transform: scale(1.2) rotate(5deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
         }
 
         @keyframes slideInUp {
-           0% {
-               opacity: 0;
-               transform: translateY(30px) scale(0.8);
-           }
-           100% {
-               opacity: 1;
-               transform: translateY(0) scale(1);
-           }
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .gallery {
-           animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.5s ease-in;
         }
 
         /* Բոլոր նկարների համար pop-in անիմացիա */
         .gallery img.animate {
-           animation: popIn 0.8s ease-out both;
+            animation: popIn 0.8s ease-out both;
         }
 
         /* Հատուկ անիմացիա զույգի նկարի համար */
         .girl.animate {
-           animation: bounceIn 1s ease-out both;
+            animation: bounceIn 1s ease-out both;
         }
 
         .main-message.animate {
-           animation: fadeIn 1.2s ease-out both;
+            animation: fadeIn 1.2s ease-out both;
         }
+
         img.dancingpeople {
-         width: 250px !important;
-         height: auto !important;
-         position: relative;
-         top: -20px; /* վերացրու բարձրացրած դիրքը */
-         margin: 0; /* reset */
+            width: 250px !important;
+            height: auto !important;
+            position: relative;
+            top: -20px;
+            /* վերացրու բարձրացրած դիրքը */
+            margin: 0;
+            /* reset */
         }
+
         img.newrest {
-           width: 250px !important;
-             height: auto !important;
-             position: relative;
-             top: -40px; /* փոխիր թվերը ըստ կարիքի */
+            width: 250px !important;
+            height: auto !important;
+            position: relative;
+            top: -50px;
+            /* փոխիր թվերը ըստ կարիքի */
         }
+
         img.fpng {
             width: 250px !important;
-             height: auto !important;
-             position: relative;
-            top: -40px; /* կամ -20px, կախված ոնց է սահում */
+            height: auto !important;
+            position: relative;
+            top: -40px;
+            /* կամ -20px, կախված ոնց է սահում */
         }
+
         img.lastpng {
-         width: 250px !important;
-         height: auto !important;
+            width: 250px !important;
+            height: auto !important;
         }
+
         img.ringsnew {
-         width: 250px !important;
-         height: auto !important;
-         position: relative;
-        top: -40px; /* կամ -20px, կախված ոնց է սահում */
+            width: 250px !important;
+            height: auto !important;
+            position: relative;
+            top: -40px;
+            /* կամ -20px, կախված ոնց է սահում */
         }
-        img.church{
-           width: 250px !important;
-             height: auto !important;
-             position: relative;
-             top: -30px; /* փոխիր թվերը ըստ կարիքի */
+
+        img.church {
+            width: 250px !important;
+            height: auto !important;
+            position: relative;
+            top: -30px;
+            /* փոխիր թվերը ըստ կարիքի */
         }
+
         .psakadrutyun-container {
-           display: flex;
-           flex-direction: column; /* stacked vertically */
-           align-items: center;    /* բոլոր երեխաները կենտրոնանում են横 */
-           text-align: center;     /* text-ն էլ կենտրոնացվի */
-           gap: 5px;               /* optional, տարանջատման համար */
-           margin-top: -50px;
-           padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            /* stacked vertically */
+            align-items: center;
+            /* բոլոր երեխաները կենտրոնանում են横 */
+            text-align: center;
+            /* text-ն էլ կենտրոնացվի */
+            gap: 5px;
+            /* optional, տարանջատման համար */
+            margin-top: -50px;
+            padding-top: 0;
         }
 
         .party-container {
-           display: flex;
-           flex-direction: column; /* stacked vertically */
-           align-items: center;    /* բոլոր երեխաները կենտրոնանում են横 */
-           text-align: center;     /* text-ն էլ կենտրոնացվի */
-           gap: 5px;               /* optional, տարանջատման համար */            
-        margin-top: -70px;
+            display: flex;
+            flex-direction: column;
+            /* stacked vertically */
+            align-items: center;
+            /* բոլոր երեխաները կենտրոնանում են横 */
+            text-align: center;
+            /* text-ն էլ կենտրոնացվի */
+            gap: 5px;
+            /* optional, տարանջատման համար */
+            margin-top: -70px;
 
         }
-
+        .countdown-number,
+        .countdown-label {
+          position: relative;
+          top: 10px; /* փոխիր px թիվը՝ որքան ներքև է պետք */
+        }
         .after-rest {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         gap: 5px; /* փոխիր թիվը՝ որքան բացատ ես ուզում */
-         margin-top: -50px; /* restnew.png-ից հետո բացատը կրճատել */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            /* փոխիր թիվը՝ որքան բացատ ես ուզում */
+            margin-top: -50px;
+            /* restnew.png-ից հետո բացատը կրճատել */
         }
 
 
 
         /* ===== ՄՈԲԱՅԼԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ (768px և ցածր) ===== */
         @media (max-width: 768px) {
-           body {
-               padding: 15px 15px 50px 15px;
-               overflow-x: hidden;
-           }
+            body {
+                padding: 15px 15px 50px 15px;
+                overflow-x: hidden;
+            }
 
-           .gallery {
-               gap: 5px;
-               width: 100%;
-               max-width: 100%;
-               overflow-x: hidden;
-           }
+            .gallery {
+                gap: 5px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
 
-           .gallery img {
-               width: 30%; /* Մոբայլում նույն չափ */
-               overflow: hidden;
-           }
+            .gallery img {
+                width: 30%;
+                /* Մոբայլում նույն չափ */
+                overflow: hidden;
+            }
 
-           .row img {
-               width: 30% !important;
-           }
+            .row img {
+                width: 30% !important;
+            }
 
-           .location-icon {
-               width: 6% !important;
-               max-width: 30px !important;
-               margin: -20px auto -10px auto !important;
-           }
+            .location-icon {
+                width: 6% !important;
+                max-width: 30px !important;
+                margin: -20px auto -10px auto !important;
+            }
 
-           .location-container .location-icon {
-               margin: 5px 0 0 12px !important;
-               width: 25px !important;
-               max-width: 25px !important;
-           }
+            .location-container .location-icon {
+                margin: 5px 0 0 12px !important;
+                width: 25px !important;
+                max-width: 25px !important;
+            }
 
-           .main-message {
-               font-size: 36px !important;
-               margin: 0 auto 25px auto !important;
-           }
+            .main-message {
+                font-size: 36px !important;
+                margin: 0 auto 25px auto !important;
+            }
 
-           .content-after-invite {
-               gap: 12px !important;
-               margin-top: 8px !important;
-           }
+            .content-after-invite {
+                gap: 12px !important;
+                margin-top: 8px !important;
+            }
 
-           .party-text,
-           .psakadrutyun-text {
-               font-size: 32px !important;
-               margin-top: 5px !important;
-           }
+            .party-text,
+            .psakadrutyun-text {
+                font-size: 32px !important;
+                margin-top: 5px !important;
+            }
 
-           .title-text {
-               font-size: 32px !important;
-           }
+            .title-text {
+                font-size: 32px !important;
+            }
 
-           .date-text {
-               font-size: 30px !important;
-               margin-bottom: 0 !important;
-           }
+            .date-text {
+                font-size: 30px !important;
+                margin-bottom: 0 !important;
+            }
 
-           .invite-text,
-           .love-text,
-           .waiting-text {
-               font-size: 22px !important;
-               margin-bottom: 5px !important;
-           }
+            .invite-text,
+            .love-text,
+            .waiting-text {
+                font-size: 22px !important;
+                margin-bottom: 5px !important;
+            }
 
-           .party-location,
-           .time-text,
-           .restoran-time {
-               font-size: 22px !important;
-               margin-top: 5px !important;
-           }
+            .party-location,
+            .time-text,
+            .restoran-time {
+                font-size: 22px !important;
+                margin-top: 5px !important;
+            }
 
-           .psakadrutyun-location {
-               font-size: 24px !important;
-           }
+            .psakadrutyun-location {
+                font-size: 24px !important;
+            }
 
-           .confirm-text {
-               font-size: 18px !important;
-               margin-top: 15px !important;
-           }
+            .confirm-text {
+                font-size: 18px !important;
+                margin-top: 15px !important;
+            }
 
-           .directions-btn {
-               font-size: 18px !important;
-               padding: 6px 12px !important;
-               margin-top: 2px !important;
-               margin-left: 10px !important;
-           }
+            .directions-btn {
+                font-size: 18px !important;
+                padding: 6px 12px !important;
+                margin-top: 2px !important;
+                margin-left: 10px !important;
+            }
 
-           .countdown-title {
-               font-size: 26px !important;
-           }
+            .countdown-title {
+                font-size: 26px !important;
+            }
 
-           .countdown-container {
-               gap: 10px !important;
-           }
+            .countdown-container {
+                gap: 10px !important;
+            }
 
-           .countdown-item {
-               padding: 0 !important;
-               min-width: 60px !important;
-           }
+            .countdown-item {
+                padding: 0 !important;
+                min-width: 60px !important;
+            }
 
-           .countdown-number {
-               font-size: 28px !important;
-           }
+            .countdown-number {
+                font-size: 28px !important;
+            }
 
-           .countdown-label {
-               font-size: 12px !important;
-           }
+            .countdown-label {
+                font-size: 12px !important;
+            }
         }
 
         /* ===== ՓՈՔՐ ՄՈԲԱՅԼ (480px և ցածր) ===== */
         @media (max-width: 480px) {
-           body {
-               padding: 10px 10px 30px 10px;
-               overflow-x: hidden;
-               width: 100%;
-           }
+            body {
+                padding: 10px 10px 30px 10px;
+                overflow-x: hidden;
+                width: 100%;
+            }
 
-           .gallery {
-               gap: 3px;
-               padding: 5px;
-               width: 100%;
-               max-width: 100%;
-               overflow-x: hidden;
-           }
+            .gallery {
+                gap: 3px;
+                padding: 5px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
 
-           .gallery img {
-               width: 30%; /* Փոքր մոբայլում նույն չափ */
-               overflow: hidden;
-           }
+            .gallery img {
+                width: 30%;
+                /* Փոքր մոբայլում նույն չափ */
+                overflow: hidden;
+            }
 
-           .row img {
-               width: 30% !important;
-           }
+            .row img {
+                width: 30% !important;
+            }
 
-           .location-icon {
-               width: 6% !important;
-               max-width: 25px !important;
-               margin: -25px auto -8px auto !important;
-           }
+            .location-icon {
+                width: 6% !important;
+                max-width: 25px !important;
+                margin: -25px auto -8px auto !important;
+            }
 
-           .location-container .location-icon {
-               margin: 0 !important;
-               width: 20px !important;
-               max-width: 20px !important;
-           }
+            .location-container .location-icon {
+                margin: 0 !important;
+                width: 20px !important;
+                max-width: 20px !important;
+            }
 
-           .main-message {
-               font-size: 28px !important;
-               margin: 0 auto 20px auto !important;
-           }
+            .main-message {
+                font-size: 28px !important;
+                margin: 0 auto 20px auto !important;
+            }
 
-           .content-after-invite {
-               gap: 8px !important;
-               margin-top: 5px !important;
-           }
+            .content-after-invite {
+                gap: 8px !important;
+                margin-top: 5px !important;
+            }
 
-           .party-text,
-           .psakadrutyun-text {
-               font-size: 26px !important;
-               margin-top: 5px !important;
-           }
+            .party-text,
+            .psakadrutyun-text {
+                font-size: 26px !important;
+                margin-top: 5px !important;
+            }
 
-           .title-text {
-               font-size: 26px !important;
-           }
+            .title-text {
+                font-size: 26px !important;
+            }
 
-           .date-text {
-               font-size: 24px !important;
-               margin-bottom: 0 !important;
-           }
+            .date-text {
+                font-size: 24px !important;
+                margin-bottom: 0 !important;
+            }
 
-           .invite-text,
-           .love-text,
-           .waiting-text {
-               font-size: 18px !important;
-               margin-top: 5px !important;
-               margin-bottom: 0 !important;
-           }
+            .invite-text,
+            .love-text,
+            .waiting-text {
+                font-size: 18px !important;
+                margin-top: 5px !important;
+                margin-bottom: 0 !important;
+            }
 
-           .party-location,
-           .time-text,
-           .restoran-time {
-               font-size: 18px !important;
-               margin-top: 5px !important;
-           }
+            .party-location,
+            .time-text,
+            .restoran-time {
+                font-size: 18px !important;
+                margin-top: 5px !important;
+            }
 
-           .psakadrutyun-location {
-               font-size: 20px !important;
-           }
+            .psakadrutyun-location {
+                font-size: 20px !important;
+            }
 
-           .confirm-text {
-               font-size: 16px !important;
-               margin-top: 10px !important;
-               line-height: 1.8 !important;
-               margin-bottom: 0 !important;
-               letter-spacing: 0.2px !important;
-               word-spacing: -1px !important;
-           }
+            .confirm-text {
+                font-size: 16px !important;
+                margin-top: 10px !important;
+                line-height: 1.8 !important;
+                margin-bottom: 0 !important;
+                letter-spacing: 0.2px !important;
+                word-spacing: -1px !important;
+            }
 
-           .location-container {
-               gap: 6px !important;
-           }
+            .location-container {
+                gap: 6px !important;
+            }
 
-           .directions-btn {
-               font-size: 16px !important;
-               padding: 4px 8px !important;
-           }
+            .directions-btn {
+                font-size: 16px !important;
+                padding: 4px 8px !important;
+            }
 
-           .countdown-title {
-               font-size: 22px !important;
-           }
+            .countdown-title {
+                font-size: 22px !important;
+            }
 
-           .countdown-container {
-               gap: 8px !important;
-           }
+            .countdown-container {
+                gap: 8px !important;
+            }
 
-           .countdown-item {
-               min-width: 50px !important;
-           }
+            .countdown-item {
+                min-width: 50px !important;
+            }
 
-           .countdown-number {
-               font-size: 24px !important;
-           }
+            .countdown-number {
+                font-size: 24px !important;
+            }
 
-           .countdown-label {
-               font-size: 10px !important;
-           }
+            .countdown-label {
+                font-size: 10px !important;
+            }
         }
 
         .font-loaded .title-text,
@@ -746,12 +799,12 @@
         .font-loaded .countdown-title,
         .font-loaded .countdown-number,
         .font-loaded .countdown-label {
-           font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
         }
 
         .font-loaded .party-location {
-           font-family: 'Dancing Script', serif;
-           font-style: italic;
+            font-family: 'Dancing Script', serif;
+            font-style: italic;
         }
     </style>
 </head>
@@ -814,67 +867,72 @@
             <img src="maybefinrest.png" alt="Ռեստորան" class="newrest">
 
             <div class="after-rest">
-              <!-- Սիրո հաղորդագրություն -->
-              <div class="love-text">
-                  Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմոցիաներ
-              </div>
+                <!-- Սիրո հաղորդագրություն -->
+                <div class="love-text">
+                    Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմոցիաներ
+                </div>
 
-              <!-- Սրտիկներ -->
-              <div class="wait-heart">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                  </svg>
-              </div>
+                <!-- Սրտիկներ -->
+                <div class="wait-heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
+                    </svg>
+                </div>
 
-              <!-- Հետհաշվարկ -->
-              <div class="countdown-section">
-                  <img src="bride.png" alt="Վերջին նկար " class="dancingpeople">
-                  <div class="countdown-title">Մեր հարսանիքին մնաց</div>
-                  <div class="countdown-container">
-                    <div class="countdown-item">
-                      <div id="days" class="countdown-number">0</div>
-                      <div class="countdown-label">օր</div>
+                <!-- Հետհաշվարկ -->
+                <div class="countdown-section">
+                    <img src="bride.png" alt="Վերջին նկար " class="dancingpeople">
+                    <div class="countdown-title">Մեր հարսանիքին մնաց</div>
+                    <div class="countdown-container">
+                        <div class="countdown-item">
+                            <div id="days" class="countdown-number">0</div>
+                            <div class="countdown-label">օր</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="hours" class="countdown-number">0</div>
+                            <div class="countdown-label">ժամ</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="minutes" class="countdown-number">0</div>
+                            <div class="countdown-label">րոպե</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="seconds" class="countdown-number">0</div>
+                            <div class="countdown-label">վայրկյան</div>
+                        </div>
                     </div>
-                    <div class="countdown-item">
-                      <div id="hours" class="countdown-number">0</div>
-                      <div class="countdown-label">ժամ</div>
-                    </div>
-                    <div class="countdown-item">
-                      <div id="minutes" class="countdown-number">0</div>
-                      <div class="countdown-label">րոպե</div>
-                    </div>
-                    <div class="countdown-item">
-                      <div id="seconds" class="countdown-number">0</div>
-                      <div class="countdown-label">վայրկյան</div>
-                    </div>
-                  </div>
-              </div>
+                </div>
 
-              <!-- Սպասելու տեքստ -->
-              <div class="waiting-text">
-                  Սիրով սպասում ենք բոլորիդ
-                  <span class="wait-heart inline">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
-                      </svg>
-                  </span>
-              </div>
+                <!-- Սպասելու տեքստ -->
+                <div class="waiting-text">
+                    Սիրով սպասում ենք բոլորիդ
+                    <span class="wait-heart inline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
+                        </svg>
+                    </span>
+                </div>
 
-              <!-- Վերջին նկար -->
-              <img src="lastnew.png" alt="Վերջին նկար" class="lastpng">
+                <!-- Վերջին նկար -->
+                <img src="lastnew.png" alt="Վերջին նկար" class="lastpng">
             </div>
         </div>
 
         <!-- Հաստատման տեքստ -->
         <div class="confirm-text">
-            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի 
-            <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
+            Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի
+            <span
+                style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
         </div>
     </div>
     <script>
@@ -895,7 +953,7 @@
             });
         }, observerOptions);
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Ֆոնտի բեռնման ստուգում
             const testDiv = document.createElement('div');
             testDiv.innerHTML = 'Մուղնու Սբ․ Գևորգ Եկեղեցի';
@@ -905,7 +963,7 @@
             testDiv.style.top = '-9999px';
             document.body.appendChild(testDiv);
 
-            setTimeout(function() {
+            setTimeout(function () {
                 console.log('🔍 Ֆոնտի ստուգում:');
                 console.log('Գործածվող ֆոնտ:', window.getComputedStyle(testDiv).fontFamily);
                 console.log('ArmBernhard.ttf ֆայլը պետք է լինի HTML ֆայլի նույն թղթապանակում');
@@ -965,6 +1023,6 @@
         updateCountdown(); // Առաջին կանչ
         setInterval(updateCountdown, 1000); // Յուրաքանչյուր վայրկյան թարմացնել
     </script>
-    </body>
-    </html>
+</body>
 
+</html>
