@@ -447,18 +447,21 @@
         }
 
         /* Բոլոր նկարների համար pop-in անիմացիա */
+        /* gallery */
         .gallery img.animate {
-            animation: popIn 0.8s ease-out both;
+            animation: popIn 1.4s ease-out both; /* նախկինում 0.8s */
         }
 
-        /* Հատուկ անիմացիա զույգի նկարի համար */
+        /* Զույգի նկարը */
         .girl.animate {
-            animation: bounceIn 1s ease-out both;
+            animation: bounceIn 1.8s ease-out both; /* նախկինում 1s */
         }
 
+        /* Գլխավոր հաղորդագրություն */
         .main-message.animate {
-            animation: fadeIn 1.2s ease-out both;
+            animation: fadeIn 2s ease-out both; /* նախկինում 1.2s */
         }
+        /* Մնացած տեքստային տարրերը */
         .gallery img.animate,
         .main-message.animate,
         .title-text.animate,
@@ -472,9 +475,8 @@
         .waiting-text.animate,
         .confirm-text.animate,
         .countdown-title.animate {
-          animation: popIn 0.8s ease-out both;
+          animation: popIn 1.4s ease-out both; /* նախկինում 0.8s */
         }
-
 
         img.dancingpeople {
           width: 250px !important;
