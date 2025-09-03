@@ -223,6 +223,18 @@
            display: block;
            margin: 0 auto;
            width: 30%; /* newcouple.png-ի չափսով */
+           top: -50px; /* նկարը բարձրացնում է 50px վերև */
+        }
+        .title-text {
+            position: relative;
+            top: -70px; /* բարձրացնում է վերև */
+            text-align: center;
+        }
+
+        .invite-text {
+            position: relative;
+            top: -70px; /* նույն բարձրությունը, որպեսզի հավասար բարձրության վրա մնան */
+            text-align: center;
         }
 
         /* ===== ՎԱՅՐԻ ՏԵՂԵԿՈՒԹՅՈՒՆՆԵՐ ===== */
@@ -423,7 +435,7 @@
            animation: fadeIn 1.2s ease-out both;
         }
         img.dancingpeople {
-         width: 350px !important;
+         width: 250px !important;
          height: auto !important;
          position: relative;
          top: 0; /* վերացրու բարձրացրած դիրքը */
@@ -436,12 +448,13 @@
              top: -40px; /* փոխիր թվերը ըստ կարիքի */
         }
         img.fpng {
-           width: 200px !important;
+            width: 250px !important;
              height: auto !important;
              position: relative;
+            top: -40px; /* կամ -20px, կախված ոնց է սահում */
         }
         img.lastpng {
-         width: 200px !important;
+         width: 250px !important;
          height: auto !important;
         }
         img.ringsnew {
@@ -451,7 +464,7 @@
         top: -40px; /* կամ -20px, կախված ոնց է սահում */
         }
         img.church{
-           width: 200px !important;
+           width: 250px !important;
              height: auto !important;
              position: relative;
              top: -30px; /* փոխիր թվերը ըստ կարիքի */
