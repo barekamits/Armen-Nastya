@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hy">
 <head>
@@ -155,6 +154,8 @@
             margin-top: 19px;
             line-height: 1.3;
             font-weight: normal;
+            white-space: nowrap; /* Արգելում է տող բաժանելը */
+
         }
 
         .time-text,
@@ -471,7 +472,7 @@
           flex-direction: column;
           align-items: center;
           gap: 5px; /* փոխիր թիվը՝ որքան բացատ ես ուզում */
-          margin-top: 30px; /* restnew.png-ից հետո բացատ */
+          margin-top: -260px; /* restnew.png-ից հետո բացատը կրճատել */
         }
 
 
@@ -810,7 +811,7 @@
 
               <!-- Հետհաշվարկ -->
               <div class="countdown-section">
-                  <img src="dancingpeople.png" alt="Վերջին նկար " class="dancingpeople">
+                  <img src="newpeople.png" alt="Վերջին նկար " class="dancingpeople">
                   <div class="countdown-title">Մեր հարսանիքին մնաց</div>
                   <div class="countdown-container">
                     <div class="countdown-item">
@@ -848,6 +849,7 @@
               <!-- Վերջին նկար -->
               <img src="20.png" alt="Վերջին նկար" class="lastpng">
             </div>
+        </div>
 
         <!-- Հաստատման տեքստ -->
         <div class="confirm-text">
@@ -855,7 +857,6 @@
             <span style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
         </div>
     </div>
-
     <script>
         // Scroll-based անիմացիա
         const observerOptions = {
