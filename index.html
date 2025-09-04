@@ -71,13 +71,24 @@
         .gallery img {
             max-width: 100%;
             width: 30%;
-            /* newcouple.png-ի չափսով */
             height: auto;
             display: block;
             overflow: hidden;
             opacity: 0;
             transform: scale(0.3) translateY(20px);
             transition: all 0.6s ease-out;
+        }
+
+        /* ===== ԲՈԼՈՐ ՏԵՔՍՏԱՅԻՆ ՏԱՐՐԵՐԻ ՀԱՄԱՐ ՄԻԱՍՆԱԿԱՆ ՈՃԵՐ ===== */
+        .text-element {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .text-element.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== ՆՈՐՈՒՅԹ - ԳԼԽԱՎՈՐ ՀԱՂՈՐԴԱԳՐՈՒԹՅՈՒՆ ===== */
@@ -134,9 +145,7 @@
             text-align: center;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
             white-space: nowrap;
-            /* 🔑 բառերը չեն կոտրվի */
             max-width: 100%;
-            /* թույլ տա տարածվել ամբողջ լայնությամբ */
         }
 
         .party-location {
@@ -159,8 +168,6 @@
             line-height: 1.3;
             font-weight: normal;
             white-space: nowrap;
-            /* Արգելում է տող բաժանելը */
-
         }
 
         .time-text,
@@ -181,7 +188,6 @@
             font-size: 28px;
             margin-top: 10px;
             margin-left: 30px;
-            /* փոխիր px թիվը ըստ կարիքի */
             line-height: 1.4;
             color: #000;
             text-align: center;
@@ -204,7 +210,6 @@
         /* ===== ՀԱՏՈՒԿ ՈՃԵՐ ՎԱՅՐԻ ԻԿՈՆՆԵՐԻ ՀԱՄԱՐ ===== */
         .location-icon {
             width: 6% !important;
-            /* Վայրի իկոնները փոքր մնան */
             max-width: 40px !important;
             margin: -15px auto -5px auto !important;
         }
@@ -231,22 +236,18 @@
             display: block;
             margin: 0 auto;
             width: 30%;
-            /* newcouple.png-ի չափսով */
             top: -50px;
-            /* նկարը բարձրացնում է 50px վերև */
         }
 
         .title-text {
             position: relative;
             top: -70px;
-            /* բարձրացնում է վերև */
             text-align: center;
         }
 
         .invite-text {
             position: relative;
             top: -70px;
-            /* նույն բարձրությունը, որպեսզի հավասար բարձրության վրա մնան */
             text-align: center;
         }
 
@@ -284,11 +285,8 @@
             font-weight: normal !important;
             position: relative;
             z-index: 10;
-
             top: -4px;
-            /* վերև տեղափոխելու համար */
             left: -20px;
-            /* ձախ տեղափոխելու համար */
         }
 
         .directions-btn:hover {
@@ -392,7 +390,6 @@
             from {
                 opacity: 0.5;
             }
-
             to {
                 opacity: 1;
             }
@@ -403,11 +400,9 @@
                 opacity: 0;
                 transform: scale(0.3) translateY(-20px);
             }
-
             50% {
                 transform: scale(1.15) translateY(-5px);
             }
-
             100% {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -419,11 +414,9 @@
                 opacity: 0;
                 transform: scale(0.1) rotate(-10deg);
             }
-
             60% {
                 transform: scale(1.2) rotate(5deg);
             }
-
             100% {
                 opacity: 1;
                 transform: scale(1) rotate(0deg);
@@ -433,12 +426,11 @@
         @keyframes slideInUp {
             0% {
                 opacity: 0;
-                transform: translateY(30px) scale(0.8);
+                transform: translateY(50px);
             }
-
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
             }
         }
 
@@ -446,44 +438,22 @@
             animation: fadeIn 0.5s ease-in;
         }
 
-        /* Բոլոր նկարների համար pop-in անիմացիա */
-        /* gallery */
+        /* Նկարների համար pop-in անիմացիա */
         .gallery img.animate {
-            animation: popIn 1.4s ease-out both; /* նախկինում 0.8s */
+            animation: popIn 1.4s ease-out both;
         }
 
         /* Զույգի նկարը */
         .girl.animate {
-            animation: bounceIn 1.8s ease-out both; /* նախկինում 1s */
-        }
-
-        /* Գլխավոր հաղորդագրություն */
-        .main-message.animate {
-            animation: fadeIn 2s ease-out both; /* նախկինում 1.2s */
-        }
-        /* Մնացած տեքստային տարրերը */
-        .gallery img.animate,
-        .main-message.animate,
-        .title-text.animate,
-        .invite-text.animate,
-        .date-text.animate,
-        .party-text.animate,
-        .psakadrutyun-text.animate,
-        .time-text.animate,
-        .restoran-time.animate,
-        .love-text.animate,
-        .waiting-text.animate,
-        .confirm-text.animate,
-        .countdown-title.animate {
-          animation: popIn 1.4s ease-out both; /* նախկինում 0.8s */
+            animation: bounceIn 1.8s ease-out both;
         }
 
         img.dancingpeople {
-          width: 250px !important;
-          height: auto !important;
-          position: relative;
-          top: 40px;  /* դրական թիվ → ներքև */
-          margin: 0;
+            width: 250px !important;
+            height: auto !important;
+            position: relative;
+            top: 40px;
+            margin: 0;
         }
 
         img.newrest {
@@ -491,15 +461,14 @@
             height: auto !important;
             position: relative;
             top: -50px;
-            /* փոխիր թվերը ըստ կարիքի */
         }
 
         img.fpng {
             width: 250px !important;
-              height: auto !important;
-              position: relative;
-              top: -60px;  /* դրական թիվ → ներքև */
-              margin: 0;
+            height: auto !important;
+            position: relative;
+            top: -60px;
+            margin: 0;
         }
 
         img.lastpng {
@@ -512,7 +481,6 @@
             height: auto !important;
             position: relative;
             top: -40px;
-            /* կամ -20px, կախված ոնց է սահում */
         }
 
         img.church {
@@ -520,19 +488,14 @@
             height: auto !important;
             position: relative;
             top: -30px;
-            /* փոխիր թվերը ըստ կարիքի */
         }
 
         .psakadrutyun-container {
             display: flex;
             flex-direction: column;
-            /* stacked vertically */
             align-items: center;
-            /* բոլոր երեխաները կենտրոնանում են横 */
             text-align: center;
-            /* text-ն էլ կենտրոնացվի */
             gap: 5px;
-            /* optional, տարանջատման համար */
             margin-top: -50px;
             padding-top: 0;
         }
@@ -540,32 +503,25 @@
         .party-container {
             display: flex;
             flex-direction: column;
-            /* stacked vertically */
             align-items: center;
-            /* բոլոր երեխաները կենտրոնանում են横 */
             text-align: center;
-            /* text-ն էլ կենտրոնացվի */
             gap: 5px;
-            /* optional, տարանջատման համար */
             margin-top: -70px;
-
         }
+
         .countdown-number,
         .countdown-label {
-          position: relative;
-          top: 10px; /* փոխիր px թիվը՝ որքան ներքև է պետք */
+            position: relative;
+            top: 10px;
         }
+
         .after-rest {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 5px;
-            /* փոխիր թիվը՝ որքան բացատ ես ուզում */
             margin-top: -50px;
-            /* restnew.png-ից հետո բացատը կրճատել */
         }
-
-
 
         /* ===== ՄՈԲԱՅԼԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ (768px և ցածր) ===== */
         @media (max-width: 768px) {
@@ -583,7 +539,6 @@
 
             .gallery img {
                 width: 30%;
-                /* Մոբայլում նույն չափ */
                 overflow: hidden;
             }
 
@@ -698,7 +653,6 @@
 
             .gallery img {
                 width: 30%;
-                /* Փոքր մոբայլում նույն չափ */
                 overflow: hidden;
             }
 
@@ -828,18 +782,17 @@
 <body>
     <div class="gallery">
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
-        <div class="main-message">Մենք ամուսնանում ենք</div>
+        <div class="main-message text-element">Մենք ամուսնանում ենք</div>
 
         <!-- zuyginkar -->
         <div class="row">
             <img src="newcouple.png" alt="Զույգ" class="girl">
         </div>
 
-
         <!-- Անուններ -->
-        <div class="title-text">Արմեն & Նաստյա</div>
+        <div class="title-text text-element">Արմեն & Նաստյա</div>
         <!-- Հրավիրական տեքստ -->
-        <div class="invite-text">
+        <div class="invite-text text-element">
             Սիրելի հարազատներ,<br>
             սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանյաց արարողությանը<br>
             և մեզ հետ տոնելու մեր նոր ընտանիքի ծնունդը
@@ -848,17 +801,17 @@
         <!-- bajakner -->
         <img src="champagnecup.png" alt="Նկար 1" class="fpng">
         <!-- Ամսաթիվ -->
-        <div class="date-text">Հոկտեմբերի 17</div>
+        <div class="date-text text-element">Հոկտեմբերի 17</div>
         <!-- Արարողության մանրամասներ -->
         <div class="content-after-invite">
 
             <!-- momeribajin -->
             <img src="aghavni.png" alt="Եկեղեցի" class="ringsnew">
             <div class="psakadrutyun-container">
-                <div class="psakadrutyun-text">Պսակադրություն</div>
-                <div class="time-text">14։30</div>
-                <div class="psakadrutyun-location">Մուղնու Սուրբ Գևորգ Եկեղեցի</div>
-                <div class="location-container">
+                <div class="psakadrutyun-text text-element">Պսակադրություն</div>
+                <div class="time-text text-element">14։30</div>
+                <div class="psakadrutyun-location text-element">Մուղնու Սուրբ Գևորգ Եկեղեցի</div>
+                <div class="location-container text-element">
                     <img src="locloc.png" alt="Վայր" class="location-icon">
                     <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/vsSB2tBZdUQkhiua7')">
                         Ինչպես հասնել
@@ -869,10 +822,10 @@
             <!-- Ռեստորանի բաժին -->
             <img src="newchurch.png" alt="Նկար 9" class="church">
             <div class="party-container">
-                <div class="party-text">Տոնական խնջույք</div>
-                <div class="restoran-time">17։00</div>
-                <div class="party-location">Ohana YVN</div>
-                <div class="location-container">
+                <div class="party-text text-element">Տոնական խնջույք</div>
+                <div class="restoran-time text-element">17։00</div>
+                <div class="party-location text-element">Ohana YVN</div>
+                <div class="location-container text-element">
                     <img src="locloc.png" alt="Վայր" class="location-icon">
                     <button class="directions-btn" onclick="window.open('https://maps.app.goo.gl/qS18StQrPPL7462v8')">
                         Ինչպես հասնել
@@ -884,31 +837,22 @@
 
             <div class="after-rest">
                 <!-- Սիրո հաղորդագրություն -->
-                <div class="love-text">
+                <div class="love-text text-element">
                     Խնդրում ենք Ձեզ հետ բերել ՍԵՐ և անսահման դրական էմոցիաներ
                 </div>
 
                 <!-- Սրտիկներ -->
-                <div class="wait-heart">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
-                    </svg>
+                <div class="wait-heart text-element">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                             d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z" />
                     </svg>
                 </div>
-                   <img src="bride.png" alt="Վերջին նկար " class="dancingpeople">
+                <img src="bride.png" alt="Վերջին նկար " class="dancingpeople">
                 <!-- Հետհաշվարկ -->
                 <div class="countdown-section">
-                 
-                    <div class="countdown-title">Մեր հարսանիքին մնաց</div>
-                    <div class="countdown-container">
+                    <div class="countdown-title text-element">Մեր հարսանիքին մնաց</div>
+                    <div class="countdown-container text-element">
                         <div class="countdown-item">
                             <div id="days" class="countdown-number">0</div>
                             <div class="countdown-label">օր</div>
@@ -929,7 +873,7 @@
                 </div>
 
                 <!-- Սպասելու տեքստ -->
-                <div class="waiting-text">
+                <div class="waiting-text text-element">
                     Սիրով սպասում ենք բոլորիդ
                     <span class="wait-heart inline">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -945,7 +889,7 @@
         </div>
 
         <!-- Հաստատման տեքստ -->
-        <div class="confirm-text">
+        <div class="confirm-text text-element">
             Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև սեպտեմբերի
             <span
                 style="font-family: 'Dancing Script', cursive; font-weight: 400; color: #000; font-size: 1.1em; font-style: italic;">20</span>-ը
@@ -954,8 +898,8 @@
     <script>
         // Scroll-based անիմացիա
         const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -963,19 +907,15 @@
                 if (entry.isIntersecting) {
                     setTimeout(() => {
                         entry.target.classList.add('animate');
-                    }, index * 200);
+                    }, index * 150);
                 }
             });
         }, observerOptions);
 
-        // ⬇️ Ավելացրու հենց այստեղ
+        // Բոլոր տարրերը, որոնք պետք է անիմացիա ունենան
         const elementsToAnimate = document.querySelectorAll(
-          '.gallery img, .main-message, .title-text, .invite-text, .date-text, .party-text, .psakadrutyun-text, .time-text, .restoran-time, .love-text, .waiting-text, .confirm-text, .countdown-title'
+            '.gallery img, .text-element'
         );
-
-        elementsToAnimate.forEach(element => {
-          observer.observe(element);
-        });
 
         document.addEventListener('DOMContentLoaded', function () {
             // Ֆոնտի բեռնման ստուգում
@@ -995,8 +935,7 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // Բոլոր նկարները ավելացնել observer-ին
-            const elementsToAnimate = document.querySelectorAll('.gallery img, .main-message');
+            // Բոլոր տարրերը ավելացնել observer-ին
             elementsToAnimate.forEach(element => {
                 observer.observe(element);
             });
