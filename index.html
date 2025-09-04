@@ -944,20 +944,7 @@
 </head>
 
 <body>
-    <!-- Երգի տարրը -->
-    <audio id="weddingSong" loop>
-        <source src="Мендельсон - Свадебный Марш.mp3" type="audio/mpeg">
-        <source src="wedding-song.ogg" type="audio/ogg">
-        Ձեր բրաուզերը չի աջակցում աուդիո տարրին:
-    </audio>
-    
-    <!-- Երաժշտության կառավարման կոճակներ -->
-    <div class="music-controls">
-        <span class="music-text">Երաժշտություն</span>
-        <button class="music-btn" id="playBtn">▶</button>
-        <button class="music-btn" id="pauseBtn">❚❚</button>
-    </div>
-    
+   
     <div class="gallery">
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
         <div class="main-message">Մենք ամուսնանում ենք</div>
@@ -1100,54 +1087,6 @@
             });
         }, observerOptions);
 
-        // Երգի կառավարման ֆունկցիաներ
-        function setupMusicControls() {
-            const weddingSong = document.getElementById('weddingSong');
-            const playBtn = document.getElementById('playBtn');
-            const pauseBtn = document.getElementById('pauseBtn');
-            
-            if (!weddingSong || !playBtn || !pauseBtn) return;
-            
-            // Սկզբում դադարեցված վիճակ
-            weddingSong.pause();
-            pauseBtn.style.display = 'none';
-            
-            // Նվագարկելու կոճակ
-            playBtn.addEventListener('click', function() {
-                weddingSong.play()
-                    .then(() => {
-                        playBtn.style.display = 'none';
-                        pauseBtn.style.display = 'flex';
-                    })
-                    .catch(error => {
-                        console.log('Նվագարկման սխալ:', error);
-                        // Ցույց տալ հաղորդագրություն, եթե անհրաժեշտ է
-                    });
-            });
-            
-            // Դադարեցնելու կոճակ
-            pauseBtn.addEventListener('click', function() {
-                weddingSong.pause();
-                pauseBtn.style.display = 'none';
-                playBtn.style.display = 'flex';
-            });
-            
-            // Ավտոմատ փորձել նվագարկել, երբ օգտագործողը ինտերակցում է էջի հետ
-            document.addEventListener('click', tryAutoPlayOnce, { once: true });
-            document.addEventListener('touchstart', tryAutoPlayOnce, { once: true });
-            document.addEventListener('keydown', tryAutoPlayOnce, { once: true });
-            
-            function tryAutoPlayOnce() {
-                weddingSong.play()
-                    .then(() => {
-                        playBtn.style.display = 'none';
-                        pauseBtn.style.display = 'flex';
-                    })
-                    .catch(error => {
-                        // Սխալը անտեսել, քանի որ մենք արդեն ունենք ձեռքով կառավարման կոճակներ
-                    });
-            }
-        }
 
         document.addEventListener('DOMContentLoaded', function () {
             // Ավտոմատ ակտիվացնել անիմացիան էջի բացվելուց հետո
@@ -1200,8 +1139,6 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // Երաժշտության կառավարման կոճակների տեղադրում
-            setupMusicControls();
 
             // Հետհաշվարկի ֆունկցիա
             function updateCountdown() {
@@ -1235,3 +1172,31 @@
 </body>
 
 </html>
+
+    <!-- Ավելացնում ենք աուդիո տարրը -->
+    <audio id="background-music" loop>
+        <source src="Мендельсон - Свадебный Марш.mp3" type="audio/mpeg">
+        Ձեր բրաուզերը չի աջակցում աուդիո տարրին։
+    </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const music = document.getElementById("background-music");
+
+            // Փորձում ենք ավտոմատ նվագարկել
+            const playMusic = () => {
+                music.play().catch(error => {
+                    console.log("Ավտոմատ նվագարկումը ձախողվեց։ Սպասում ենք օգտատիրոջ փոխազդեցությանը։", error);
+                });
+            };
+
+            playMusic();
+
+            // Օգտատիրոջ փոխազդեցության դեպքում նվագարկել
+            document.body.addEventListener("click", playMusic, { once: true });
+            document.body.addEventListener("touchend", playMusic, { once: true });
+        });
+    </script>
+</body>
+</html>
+
