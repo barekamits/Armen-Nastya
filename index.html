@@ -1111,29 +1111,12 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ
+            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - MOBILE: 0 վայրկյան, DESKTOP: 1000 վայրկյան
             if (isMobile) {
-                // Mobile-ի դեպքում սպասել user interaction-ի
-                const tryPlayOnInteraction = () => {
-                    if (!window.songStarted) {
-                        startWeddingSong();
-                    }
-                };
-
-                // Փորձել բոլոր հնարավոր interaction-ներով
-                document.body.addEventListener('touchstart', tryPlayOnInteraction, { once: true });
-                document.addEventListener('click', tryPlayOnInteraction, { once: true });
-                window.addEventListener('scroll', tryPlayOnInteraction, { once: true });
-
-                // 8 վայրկյան հետո ինքնաբերաբար միացնել, եթե դեռ չի միացել
-                setTimeout(() => {
-                    if (!window.songStarted) {
-                        startWeddingSong();
-                    }
-                }, 8000);
-
+                // Mobile-ի դեպքում միացնել ԱՆՄԻՋԱՊԵՍ (0 վայրկյան հետո)
+                setTimeout(startWeddingSong, 0);
             } else {
-                // Desktop-ի դեպքում միացնել անմիջապես
+                // Desktop-ի դեպքում միացնել 1 վայրկյան հետո
                 setTimeout(startWeddingSong, 1000);
             }
 
