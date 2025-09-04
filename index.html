@@ -1024,7 +1024,7 @@
                 window.songStarted = true;
                 weddingSong.volume = 0.5;
 
-                // Սահմանել երգի սկսման վայրկյանը (փոխել այս թիվը)
+                // Սահմանել երգի սկսման վայրկյանը
                 const startFromSecond = 0;
                 weddingSong.currentTime = startFromSecond;
 
@@ -1035,32 +1035,26 @@
                     playPromise.catch(error => {
                         console.log('Ավտոմատ նվագարկումը արգելված է:', error);
 
-                        // Mobile-ի համար փորձել touch interaction-ով
-                        document.body.addEventListener('touchstart', function touchHandler() {
-                            weddingSong.play();
-                            document.body.removeEventListener('touchstart', touchHandler);
-                        });
+                        // Փորձել միացնել page interaction-ով
+                        const tryPlayOnInteraction = () => {
+                            if (!window.songStarted) {
+                                weddingSong.play().catch(e => console.log('Դեռ չի աշխատում:', e));
+                            }
+                        };
 
-                        // Փորձել scroll interaction-ով
-                        window.addEventListener('scroll', function scrollHandler() {
-                            weddingSong.play();
-                            window.removeEventListener('scroll', scrollHandler);
-                        }, { once: true });
+                        // Փորձել բոլոր հնարավոր interaction-ներով
+                        document.addEventListener('click', tryPlayOnInteraction, { once: true });
+                        document.addEventListener('touchstart', tryPlayOnInteraction, { once: true });
+                        document.addEventListener('keydown', tryPlayOnInteraction, { once: true });
 
-                        // Փորձել click interaction-ով
-                        document.addEventListener('click', function clickHandler() {
-                            weddingSong.play();
-                            document.removeEventListener('click', clickHandler);
-                        }, { once: true });
+                        // Fallback - փորձել միացնել որոշ ժամանակ հետո
+                        setTimeout(tryPlayOnInteraction, 3000);
                     });
                 }
             }
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Mobile detection
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
             // Ավտոմատ ակտիվացնել անիմացիան էջի բացվելուց հետո
             const mainMessage = document.querySelector('.main-message');
             if (mainMessage) {
@@ -1111,14 +1105,8 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - MOBILE: 0 վայրկյան, DESKTOP: 1000 վայրկյան
-            if (isMobile) {
-                // Mobile-ի դեպքում միացնել ԱՆՄԻՋԱՊԵՍ (0 վայրկյան հետո)
-                setTimeout(startWeddingSong, 0);
-            } else {
-                // Desktop-ի դեպքում միացնել 1 վայրկյան հետո
-                setTimeout(startWeddingSong, 0);
-            }
+            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - ՓՈՐՁԵԼ ԱՎՏՈՄԱՏ
+            setTimeout(startWeddingSong, 500);
 
             // Հետհաշվարկի ֆունկցիա
             function updateCountdown() {
