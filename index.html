@@ -1193,6 +1193,11 @@
             playMusic();
 
             // Օգտատիրոջ փոխազդեցության դեպքում նվագարկել
+            music.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+
             document.body.addEventListener("click", playMusic, { once: true });
             document.body.addEventListener("touchend", playMusic, { once: true });
         });
