@@ -1105,8 +1105,90 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - ՓՈՐՁԵԼ ԱՎՏՈՄԱՏ
-            setTimeout(startWeddingSong, 500);
+            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - ԱՎՏՈՄԱՏ ՄԻԱՑՄԱՆ ՓՈՐՁ
+            // Ստեղծել և ավելացնել iframe-ը երաժշտության համար
+            function addMusicIframe() {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.sandbox = 'allow-same-origin allow-scripts';
+                iframe.src = 'about:blank';
+                document.body.appendChild(iframe);
+                
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    doc.open();
+                    doc.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>Audio Player</title>
+                        </head>
+                        <body>
+                            <audio id="iframeAudio" autoplay loop>
+                                <source src="Мендельсон - Свадебный Марш.mp3" type="audio/mpeg">
+                                <source src="wedding-song.ogg" type="audio/ogg">
+                            </audio>
+                            <script>
+                                document.getElementById('iframeAudio').volume = 0.5;
+                                setTimeout(function() {
+                                    try {
+                                        document.getElementById('iframeAudio').play();
+                                    } catch(e) {
+                                        console.log('Iframe audio play error:', e);
+                                    }
+                                }, 1000);
+                           <\/script>
+                        </body>
+                        </html>
+                    `);
+                    doc.close();
+                } catch(e) {
+                    console.log('Iframe creation error:', e);
+                }
+            }
+
+            // Փորձել ավտոմատ միացնել երաժշտությունը
+            setTimeout(function() {
+                try {
+                    // Փորձ 1: Ուղղակի ավտոմատ նվագարկում
+                    startWeddingSong();
+                    
+                    // Փորձ 2: Iframe մեթոդը
+                    setTimeout(addMusicIframe, 2000);
+                    
+                    // Փորձ 3: User gesture simulation (սահմանափակ արդյունավետությամբ)
+                    setTimeout(function() {
+                        try {
+                            // Ստեղծել և կլիկ անել տեսանելի չէ տարրի վրա
+                            const clicker = document.createElement('div');
+                            clicker.style.position = 'absolute';
+                            clicker.style.top = '0';
+                            clicker.style.left = '0';
+                            clicker.style.width = '1px';
+                            clicker.style.height = '1px';
+                            clicker.style.opacity = '0';
+                            clicker.style.pointerEvents = 'none';
+                            document.body.appendChild(clicker);
+                            
+                            // Սիմուլյացիա կլիկի
+                            const clickEvent = new MouseEvent('click', {
+                                view: window,
+                                bubbles: true,
+                                cancelable: true
+                            });
+                            clicker.dispatchEvent(clickEvent);
+                            
+                            // Ջնջել տարրը
+                            setTimeout(() => document.body.removeChild(clicker), 100);
+                        } catch(e) {
+                            console.log('Click simulation error:', e);
+                        }
+                    }, 3000);
+                    
+                } catch(e) {
+                    console.log('Auto-play error:', e);
+                }
+            }, 1000);
 
             // Հետհաշվարկի ֆունկցիա
             function updateCountdown() {
