@@ -411,6 +411,48 @@
             box-shadow: none;
         }
 
+        /* ===== ԵՐԳԻ ԿՈՂՄՆԱԿԻ ՈՃԵՐ ===== */
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            background-color: #f0f0f0;
+        }
+
+        .music-text {
+            font-family: 'Vrdznagir', 'Times New Roman', Georgia, serif;
+            font-size: 16px;
+            color: #333;
+        }
+
         /* ===== ԱՆԻՄԱՑԻԱՆԵՐ ===== */
         @keyframes fadeIn {
            from {
@@ -720,6 +762,23 @@
             .countdown-label {
                 font-size: 12px !important;
             }
+
+            /* Մոբայլի համար երաժշտության կառավարման կոճակներ */
+            .music-controls {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 12px;
+            }
+
+            .music-btn {
+                font-size: 20px;
+                width: 35px;
+                height: 35px;
+            }
+
+            .music-text {
+                font-size: 14px;
+            }
         }
 
         /* ===== ՓՈՔՐ ՄՈԲԱՅԼ (480px և ցածր) ===== */
@@ -840,6 +899,23 @@
             .countdown-label {
                 font-size: 10px !important;
             }
+
+            /* Փոքր մոբայլի համար երաժշտության կառավարման կոճակներ */
+            .music-controls {
+                bottom: 10px;
+                right: 10px;
+                padding: 6px 10px;
+            }
+
+            .music-btn {
+                font-size: 18px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .music-text {
+                font-size: 12px;
+            }
         }
 
         .font-loaded .title-text,
@@ -874,6 +950,13 @@
         <source src="wedding-song.ogg" type="audio/ogg">
         Ձեր բրաուզերը չի աջակցում աուդիո տարրին:
     </audio>
+    
+    <!-- Երաժշտության կառավարման կոճակներ -->
+    <div class="music-controls">
+        <span class="music-text">Երաժշտություն</span>
+        <button class="music-btn" id="playBtn">▶</button>
+        <button class="music-btn" id="pauseBtn">❚❚</button>
+    </div>
     
     <div class="gallery">
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
@@ -1017,40 +1100,52 @@
             });
         }, observerOptions);
 
-        // Երգի սկսման ֆունկցիա
-        function startWeddingSong() {
+        // Երգի կառավարման ֆունկցիաներ
+        function setupMusicControls() {
             const weddingSong = document.getElementById('weddingSong');
-            if (weddingSong && !window.songStarted) {
-                window.songStarted = true;
-                weddingSong.volume = 0.5;
-
-                // Սահմանել երգի սկսման վայրկյանը
-                const startFromSecond = 0;
-                weddingSong.currentTime = startFromSecond;
-
-                // Փորձել միացնել երգը
-                const playPromise = weddingSong.play();
-
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log('Ավտոմատ նվագարկումը արգելված է:', error);
-
-                        // Փորձել միացնել page interaction-ով
-                        const tryPlayOnInteraction = () => {
-                            if (!window.songStarted) {
-                                weddingSong.play().catch(e => console.log('Դեռ չի աշխատում:', e));
-                            }
-                        };
-
-                        // Փորձել բոլոր հնարավոր interaction-ներով
-                        document.addEventListener('click', tryPlayOnInteraction, { once: true });
-                        document.addEventListener('touchstart', tryPlayOnInteraction, { once: true });
-                        document.addEventListener('keydown', tryPlayOnInteraction, { once: true });
-
-                        // Fallback - փորձել միացնել որոշ ժամանակ հետո
-                        setTimeout(tryPlayOnInteraction, 3000);
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            
+            if (!weddingSong || !playBtn || !pauseBtn) return;
+            
+            // Սկզբում դադարեցված վիճակ
+            weddingSong.pause();
+            pauseBtn.style.display = 'none';
+            
+            // Նվագարկելու կոճակ
+            playBtn.addEventListener('click', function() {
+                weddingSong.play()
+                    .then(() => {
+                        playBtn.style.display = 'none';
+                        pauseBtn.style.display = 'flex';
+                    })
+                    .catch(error => {
+                        console.log('Նվագարկման սխալ:', error);
+                        // Ցույց տալ հաղորդագրություն, եթե անհրաժեշտ է
                     });
-                }
+            });
+            
+            // Դադարեցնելու կոճակ
+            pauseBtn.addEventListener('click', function() {
+                weddingSong.pause();
+                pauseBtn.style.display = 'none';
+                playBtn.style.display = 'flex';
+            });
+            
+            // Ավտոմատ փորձել նվագարկել, երբ օգտագործողը ինտերակցում է էջի հետ
+            document.addEventListener('click', tryAutoPlayOnce, { once: true });
+            document.addEventListener('touchstart', tryAutoPlayOnce, { once: true });
+            document.addEventListener('keydown', tryAutoPlayOnce, { once: true });
+            
+            function tryAutoPlayOnce() {
+                weddingSong.play()
+                    .then(() => {
+                        playBtn.style.display = 'none';
+                        pauseBtn.style.display = 'flex';
+                    })
+                    .catch(error => {
+                        // Սխալը անտեսել, քանի որ մենք արդեն ունենք ձեռքով կառավարման կոճակներ
+                    });
             }
         }
 
@@ -1105,90 +1200,8 @@
                 document.body.classList.add('font-loaded');
             }, 500);
 
-            // ԵՐԳԻ ՄԻԱՑՄԱՆ ԼՈԳԻԿԱ - ԱՎՏՈՄԱՏ ՄԻԱՑՄԱՆ ՓՈՐՁ
-            // Ստեղծել և ավելացնել iframe-ը երաժշտության համար
-            function addMusicIframe() {
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.sandbox = 'allow-same-origin allow-scripts';
-                iframe.src = 'about:blank';
-                document.body.appendChild(iframe);
-                
-                try {
-                    const doc = iframe.contentDocument || iframe.contentWindow.document;
-                    doc.open();
-                    doc.write(`
-                        <!DOCTYPE html>
-                        <html>
-                        <head>
-                            <title>Audio Player</title>
-                        </head>
-                        <body>
-                            <audio id="iframeAudio" autoplay loop>
-                                <source src="Мендельсон - Свадебный Марш.mp3" type="audio/mpeg">
-                                <source src="wedding-song.ogg" type="audio/ogg">
-                            </audio>
-                            <script>
-                                document.getElementById('iframeAudio').volume = 0.5;
-                                setTimeout(function() {
-                                    try {
-                                        document.getElementById('iframeAudio').play();
-                                    } catch(e) {
-                                        console.log('Iframe audio play error:', e);
-                                    }
-                                }, 1000);
-                           <\/script>
-                        </body>
-                        </html>
-                    `);
-                    doc.close();
-                } catch(e) {
-                    console.log('Iframe creation error:', e);
-                }
-            }
-
-            // Փորձել ավտոմատ միացնել երաժշտությունը
-            setTimeout(function() {
-                try {
-                    // Փորձ 1: Ուղղակի ավտոմատ նվագարկում
-                    startWeddingSong();
-                    
-                    // Փորձ 2: Iframe մեթոդը
-                    setTimeout(addMusicIframe, 2000);
-                    
-                    // Փորձ 3: User gesture simulation (սահմանափակ արդյունավետությամբ)
-                    setTimeout(function() {
-                        try {
-                            // Ստեղծել և կլիկ անել տեսանելի չէ տարրի վրա
-                            const clicker = document.createElement('div');
-                            clicker.style.position = 'absolute';
-                            clicker.style.top = '0';
-                            clicker.style.left = '0';
-                            clicker.style.width = '1px';
-                            clicker.style.height = '1px';
-                            clicker.style.opacity = '0';
-                            clicker.style.pointerEvents = 'none';
-                            document.body.appendChild(clicker);
-                            
-                            // Սիմուլյացիա կլիկի
-                            const clickEvent = new MouseEvent('click', {
-                                view: window,
-                                bubbles: true,
-                                cancelable: true
-                            });
-                            clicker.dispatchEvent(clickEvent);
-                            
-                            // Ջնջել տարրը
-                            setTimeout(() => document.body.removeChild(clicker), 100);
-                        } catch(e) {
-                            console.log('Click simulation error:', e);
-                        }
-                    }, 3000);
-                    
-                } catch(e) {
-                    console.log('Auto-play error:', e);
-                }
-            }, 1000);
+            // Երաժշտության կառավարման կոճակների տեղադրում
+            setupMusicControls();
 
             // Հետհաշվարկի ֆունկցիա
             function updateCountdown() {
