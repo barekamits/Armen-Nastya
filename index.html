@@ -255,7 +255,7 @@
                 margin: 20px 0;
             }
 
-           
+
     .row img {
   width: 300px !important;
   height: auto !important;
@@ -652,21 +652,29 @@
                 pointer-events: none;
                 z-index: -1;
             }
-         .music-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
+            .music-row {
+                
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* հորիզոնտալ կենտրոն */
+              gap: 0; /* նկարի ու կոճակի միջև հեռավորությունը փոքրացրել ենք */
+                 margin-left: -30px; /* բլոկը տեղափոխում է ձախ, կարող ես հարմար փոփոխել */
+                margin-top: -38px; /* վերև է տեղափոխում */
+             
+            }
 
-#music-btn {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: block;
-  margin: 8px auto 0 auto;
-}
-            
+            #music-btn {
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+              display: block;
+                 transform: translateY(-25px); /* մի փոքր վերև շարժում */
+            }
+            .girl {
+              width: 250px; /* կամ ավելի մեծ, փորձիր ըստ ցանկության */
+              height: auto; /* պահպանվում է հարաբերակցությունը */
+            }
+
             @keyframes pulse {
                 0% { transform: scale(1); }
                 50% { transform: scale(1.1); }
@@ -783,7 +791,7 @@
                     font-size: 12px !important;
                 }
 
-            
+
             .music-container {
     margin-top: 180px;
   }
@@ -912,7 +920,7 @@
                     font-size: 10px !important;
                 }
 
-               
+
           .music-container {
     margin-top: 150px;
   }
@@ -952,11 +960,10 @@
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
         <div class="main-message">Մենք ամուսնանում ենք</div>
 
-        <!-- zuyginkar -->
-     <div class="row music-row">
-  <img src="newcouple.png" alt="Զույգ" class="girl">
-  <img src="musicpic.png" alt="Music Icon" id="music-btn">
-</div>
+        <div class="music-row">
+          <img src="newcouple.png" alt="Զույգ" class="girl">
+          <img src="musicnew.png" alt="Music Icon" id="music-btn">
+        </div>
 
 
         <!-- Անուններ -->
@@ -1029,7 +1036,7 @@
                    <img src="bride.png" alt="Վերջին նկար " class="dancingpeople">
                 <!-- Հետհաշվարկ -->
                 <div class="countdown-section">
-                 
+
                     <div class="countdown-title">Մեր հարսանիքին մնաց</div>
                     <div class="countdown-container">
                         <div class="countdown-item">
@@ -1198,7 +1205,6 @@
     </script>
 </body>
 </html>
-
 
 
 
