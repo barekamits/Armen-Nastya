@@ -653,14 +653,14 @@
                 z-index: -1;
             }
             .music-row {
-                
               display: flex;
               flex-direction: column;
-              align-items: center; /* հորիզոնտալ կենտրոն */
-              gap: 0; /* նկարի ու կոճակի միջև հեռավորությունը փոքրացրել ենք */
-                 margin-left: -30px; /* բլոկը տեղափոխում է ձախ, կարող ես հարմար փոփոխել */
-                margin-top: -38px; /* վերև է տեղափոխում */
-             
+              align-items: center;
+              gap: 0;
+              margin-left: -30px;
+              margin-top: 5px; /* տարածություն վերևից */
+              margin-bottom: 25px; /* տարածություն ներքևից */
+              transform: scale(1.5);
             }
 
             #music-btn {
@@ -960,7 +960,7 @@
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
         <div class="main-message">Մենք ամուսնանում ենք</div>
 
-        <div class="music-row">
+     <div class="music-row">
           <img src="newcouple.png" alt="Զույգ" class="girl">
           <img src="musicnew.png" alt="Music Icon" id="music-btn">
         </div>
