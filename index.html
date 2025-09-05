@@ -653,19 +653,19 @@
                 pointer-events: none;
                 z-index: -1;
             }
-            .music-container {
+            .music-row {
   display: flex;
-  justify-content: flex-end; /* աջ */
-  align-items: center;       /* ուղղահայաց կենտրոն */
-  margin-top: 250px;         /* վերևից տարածություն */
-  width: 100%;               /* որ span անի ամբողջ տարածքը */
+  flex-direction: column; /* նկարն ու կոճակը տակ-տակ */
+  align-items: center;    /* կենտրոնացնում ենք հորիզոնական */
+  gap: 10px;              /* նկարից ու կոճակից հեռավորություն */
 }
 
 #music-btn {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
 }
+            
             @keyframes pulse {
                 0% { transform: scale(1); }
                 50% { transform: scale(1.1); }
@@ -946,17 +946,16 @@
 </head>
 
 <body>
-<div class="music-container">
-  <img src="musicpic.png" alt="Music Icon" id="music-btn">
-</div>
+
     <div class="gallery">
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
         <div class="main-message">Մենք ամուսնանում ենք</div>
 
         <!-- zuyginkar -->
-        <div class="row">
-            <img src="newcouple.png" alt="Զույգ" class="girl">
-        </div>
+     <div class="row music-row">
+  <img src="newcouple.png" alt="Զույգ" class="girl">
+  <img src="musicpic.png" alt="Music Icon" id="music-btn">
+</div>
 
 
         <!-- Անուններ -->
@@ -1198,6 +1197,7 @@
     </script>
 </body>
 </html>
+
 
 
 
