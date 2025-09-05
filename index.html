@@ -653,22 +653,19 @@
                 pointer-events: none;
                 z-index: -1;
             }
-            #music-btn {
-                position: relative;
-                width: 120px;
-                height: 90px;
-                cursor: pointer;
-                z-index: 9999;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 24px;
-                right:65px;
+            .music-container {
+  display: flex;
+  justify-content: flex-end; /* աջ */
+  align-items: center;       /* ուղղահայաց կենտրոն */
+  margin-top: 250px;         /* վերևից տարածություն */
+  width: 100%;               /* որ span անի ամբողջ տարածքը */
+}
 
-                transform: translateY(250px) scale(2.5); /* 1.5 անգամ մեծացնում ենք */
-            }
-
+#music-btn {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
             @keyframes pulse {
                 0% { transform: scale(1); }
                 50% { transform: scale(1.1); }
@@ -786,13 +783,13 @@
                 }
 
             
-                #music-btn {
-                    width: 50px;
-                    height: 50px;
-                    top: -10px;
-                    right: 15px;
-                    transform: translateY(250px) scale(2.5); 
-                }
+            .music-container {
+    margin-top: 180px;
+  }
+  #music-btn {
+    width: 50px;
+    height: 50px;
+  }
             }
 
             /*  480px  */
@@ -915,13 +912,13 @@
                 }
 
                
-                #music-btn {
-                    width: 40px;
-                    height: 40px;
-                    top: -10px;
-                    right: 10px;
-                    transform: translateY(250px) scale(2.5); 
-                }
+          .music-container {
+    margin-top: 150px;
+  }
+  #music-btn {
+    width: 40px;
+    height: 40px;
+  }
             }
 
             .font-loaded .title-text,
@@ -949,8 +946,9 @@
 </head>
 
 <body>
-    <!-- ===== ICON BUTTON ===== -->
-    <img src="musicpic.png" alt="Music Icon" id="music-btn">
+<div class="music-container">
+  <img src="musicpic.png" alt="Music Icon" id="music-btn">
+</div>
     <div class="gallery">
         <!-- ՆՈՐՈՒՅԹ - Գլխավոր հաղորդագրություն -->
         <div class="main-message">Մենք ամուսնանում ենք</div>
