@@ -255,17 +255,16 @@
                 margin: 20px 0;
             }
 
-            .row img {
-                width: 300px !important;
-                height: auto !important;
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                width: 30%;
-                top: -50px;
-                left: -5px;          /* տանում ենք ձախ 20px */
-
-            }
+           
+    .row img {
+  width: 300px !important;
+  height: auto !important;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 0;   /* փոխի -50px → 0 */
+  left: 0;  /* հանի ձախ շեղումը */
+}
 
             .title-text {
                 position: relative;
@@ -653,11 +652,11 @@
                 pointer-events: none;
                 z-index: -1;
             }
-            .music-row {
+         .music-row {
   display: flex;
-  flex-direction: column; /* նկարն ու կոճակը տակ-տակ */
-  align-items: center;    /* կենտրոնացնում ենք հորիզոնական */
-  gap: 10px;              /* նկարից ու կոճակից հեռավորություն */
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 #music-btn {
@@ -665,7 +664,7 @@
   height: 40px;
   cursor: pointer;
   display: block;
-  margin: 8px auto 0 auto; /* մեքենայից փոքր հեռավորություն */
+  margin: 8px auto 0 auto;
 }
             
             @keyframes pulse {
@@ -1199,6 +1198,7 @@
     </script>
 </body>
 </html>
+
 
 
 
